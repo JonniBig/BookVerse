@@ -6,3 +6,8 @@
 */
 @import url('./reset.css');
 @import url('./header.css');
+@import url('./shopping-list.css');
+@import url('./home.css');
+@import url('./mobileMenu.css');
+@import url('./modalWindow.css');
+@import url('./categories.css');
