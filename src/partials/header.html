@@ -1,13 +1,106 @@
 <header class="header">
+  <a class="link logo" href="index.html">
+    <div class="logo-box">
+      <svg class="icon icon-logo">
+        <use xlink:href="#icon-logo"></use>
+        <symbol id="icon-logo" viewBox="0 0 32 32">
+          <path
+            fill="#f6f6f6"
+            style="fill: var(--color1, #f6f6f6)"
+            d="M0 0l16.343 16.171 15.657 15.829v-32h-32z"
+          ></path>
+          <path
+            fill="#f6f6f6"
+            style="fill: var(--color1, #f6f6f6)"
+            d="M4.457 4.229l11.943 11.829 11.257 11.486h-23.2v-23.314z"
+          ></path>
+          <path
+            fill="#4f2ee8"
+            style="fill: var(--color2, #4f2ee8)"
+            d="M27.733 27.618l-11.943-11.829-11.257-11.486h23.2v23.314z"
+          ></path>
+          <path
+            fill="#4f2ee8"
+            style="fill: var(--color2, #4f2ee8)"
+            d="M9.257 9.029l13.6 13.6h-13.6v-13.6z"
+          ></path>
+          <path
+            fill="#f6f6f6"
+            style="fill: var(--color1, #f6f6f6)"
+            d="M9.257 9.029l13.6 13.6v-13.6h-13.6z"
+          ></path>
+        </symbol>
+      </svg>
+      <img
+        src="./images/Bookshelf.png"
+        alt="Bookshelf"
+        width="77"
+        height="13"
+      /></div
+  ></a>
   <nav class="nav">
-    <ul class="nav-list">
-      <li class="nav-item">
-        <a href="./page-2.html" class="nav-link">Page 2</a>
+    <ul class="list">
+      <li>
+        <a class="link header-link current" href="./index.html">Home</a>
       </li>
-
-      <li class="nav-item">
-        <a href="./page-3.html" class="nav-link">Page 3</a>
+      <li>
+        <a class="link header-link current" href="./shopping-list.html">
+          Shopping list</a
+        >
       </li>
     </ul>
   </nav>
+  <div class="buttons">
+    <input type="checkbox" id="switch" /><label for="switch"></label>
+    <!-- <div class="log-form">
+          <img src="./images/user.svg" alt="avatar" /> Hello
+        </div> -->
+    <button
+      class="burger-btn menu-mobile-open js-open-menu"
+      type="button"
+      aria-label="Menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <img src="./images/align-left.svg" alt="btn" width="28" height="28" />
+    </button>
+  </div>
+  <!-- <div class="mobile-menu js-menu-container is-open" id="mobile-menu">
+        <div class="container mobil-menu-modal js-close-menu">
+          <button
+            class="mobile-menu-close js-close-menu"
+            type="button"
+            aria-label="Mobile menu"
+          >
+            <svg class="mobile-menu-close-icon" width="24" height="24">
+              <use href="./images/x-close.svg"></use>
+            </svg>
+          </button>
+
+          <ul class="mobil-nav-list list">
+            <li class="mobil-nav-item">
+              <a class="mobil-nav-link current link" href="#how-it-works"
+                >How It Works</a
+              >
+            </li>
+            <li class="mobil-nav-item">
+              <a class="mobil-nav-link link" href="#fruits">Fruits</a>
+            </li>
+            <li class="mobil-nav-item">
+              <a class="mobil-nav-link link" href="#contacts">Contacts</a>
+            </li>
+          </ul>
+          <button
+            class="button-basket-mobil"
+            type="button"
+            aria-label="Button basket"
+          >
+            <svg class="basket" width="28" height="28">
+              <use
+                href="/Class_inDesign/assets/icons-766296df.svg#icon-basket"
+              ></use>
+            </svg>
+          </button>
+        </div>
+      </div> -->
 </header>
