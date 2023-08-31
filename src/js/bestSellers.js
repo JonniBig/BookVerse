@@ -11,6 +11,7 @@ export async function fetchBookShelf(data) {
 }
 
 export function createMarkupBookShelf(arr) {
+    
   const arrBookShelf = arr.map(
       ({
           list_name,
@@ -28,6 +29,7 @@ export function createMarkupBookShelf(arr) {
          <p class="author_bookshelf">${author}</p>
         </div>`;
     }
-  );
+    );
+    
   bestSellers.insertAdjacentHTML('beforeend', arrBookShelf.join(''));
 }
