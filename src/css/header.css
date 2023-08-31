@@ -5,7 +5,9 @@
   border: 1px solid #333;
   border-radius: 0 0 8px 8px;
   align-items: center;
+  background-color: var(--white-color);
 }
+
 .icon {
   display: inline-block;
   width: 24px;
@@ -56,4 +58,129 @@
   height: 45px;
   background-color: #4f2ee8;
   border-radius: 36px;
+}
+
+/* Mobile menu burger */
+
+/* Phone */
+@media screen and (max-width: 767px) {
+  .menu-mobile-open {
+    padding: 0;
+    line-height: 0;
+    background-color: transparent;
+    border: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .menu-mobile-open {
+    display: none;
+  }
+}
+
+.button {
+  cursor: pointer;
+  font-family: inherit;
+  color: currentColor;
+}
+
+.menu-mobile-open {
+  padding: 0;
+  line-height: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.menu-mobile-open-icon {
+  stroke: #111111;
+}
+
+.mobile-menu {
+  position: fixed;
+  z-index: 1000;
+
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+
+  background: linear-gradient(
+    32deg,
+    rgba(200, 192, 247, 1) 0%,
+    rgba(79, 46, 232, 1) 90%
+  );
+}
+
+.mobile-menu.is-open {
+  opacity: 1;
+
+  transform: translateY(50px);
+  transition-property: transform, opacity;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobil-menu-modal {
+  position: relative;
+  padding-top: 183px;
+  display: flex;
+  flex-direction: column;
+
+  /* background-image: url(./images/books.jpg);
+  background-position: 12px 86px, 97% -20px; */
+}
+
+.mobile-menu-close {
+  position: absolute;
+  top: -37px;
+  right: 20px;
+  width: 28px;
+  height: 28px;
+
+  margin-left: auto;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  line-height: 0;
+  border: none;
+  background-color: #ffffff;
+}
+
+.mobile-menu-close-icon {
+  stroke: #111111;
+}
+
+.mobil-nav-list {
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.mobil-nav-item-home {
+  color: #111111;
+  padding: 8px 16px;
+  background-color: #eac645;
+  border: 1px solid #eac645;
+  border-radius: 36px;
+}
+
+.mobil-nav-item {
+  color: #ffffff;
+}
+
+.mobil-lock {
+  fill: #ffffff;
+}
+
+.mobil-nav-link {
+  display: flex;
+  align-items: center;
 }

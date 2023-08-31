@@ -1,0 +1,47 @@
+:root {
+  --white-color: #ffffff;
+  --black1-color: #000000;
+  --black2-color: #202024;
+  --yellow-color: #eac645;
+  --violet-color: #4f2ee8;
+}
+
+body {
+  /* text */
+  /* font-family: 'DM Sans', sans-serif;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.04em; */
+
+  /* color */
+  background-color: #f6f6f6;
+  color: #111111;
+}
+
+.container {
+  /* Phone styles */
+  min-width: 320px;
+  max-width: 375px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Tablet style */
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+/* Desktop style */
+@media only screen and (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}

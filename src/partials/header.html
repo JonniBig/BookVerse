@@ -1,14 +1,15 @@
 <header class="header">
-  <a class="link logo" href="index.html">
-    <div class="logo-box">
-      <svg class="icon icon-logo" width="24" height="24">
-        <use href="../images/icomoon.svg#icon-logo"></use>
-      </svg>
-      <svg class="logo-text" width="77" height="13">
-        <use href="../images/icomoon.svg#icon-bookshelf"></use>
-      </svg></div
-  ></a>
-  <nav class="nav">
+  <div class="container">
+    <a class="link logo" href="index.html">
+      <div class="logo-box">
+        <svg class="icon icon-logo" width="24" height="24">
+          <use href="./images/icomoon.svg#icon-logo"></use>
+        </svg>
+        <svg class="logo-text" width="77" height="13">
+          <use href="./images/icomoon.svg#icon-bookshelf"></use>
+        </svg></div
+    ></a>
+    <!-- <nav class="nav">
     <ul class="list">
       <li>
         <a class="link header-link current" href="./index.html">Home</a>
@@ -19,58 +20,53 @@
         >
       </li>
     </ul>
-  </nav>
+  </nav> -->
+  </div>
   <div class="buttons">
-    <input type="checkbox" id="switch" /><label for="switch"></label>
+    <!-- <input type="checkbox" id="switch" /><label for="switch"></label> -->
     <!-- <div class="log-form">
           <img src="./images/user.svg" alt="avatar" /> Hello
         </div> -->
+
+    <!-- Irina Kolos-->
     <button
-      class="burger-btn menu-mobile-open js-open-menu"
+      class="menu-mobile-open js-open-menu"
       type="button"
       aria-label="Menu"
       aria-expanded="false"
       aria-controls="mobile-menu"
     >
-      <img src="./images/align-left.svg" alt="btn" width="28" height="28" />
+      <svg class="menu-mobile-open-icon" width="28" height="28">
+        <use href="./images/icomoon.svg#icon-align-left"></use>
+      </svg>
     </button>
   </div>
-  <!-- <div class="mobile-menu js-menu-container is-open" id="mobile-menu">
-        <div class="container mobil-menu-modal js-close-menu">
-          <button
-            class="mobile-menu-close js-close-menu"
-            type="button"
-            aria-label="Mobile menu"
-          >
-            <svg class="mobile-menu-close-icon" width="24" height="24">
-              <use href="./images/x-close.svg"></use>
-            </svg>
-          </button>
 
-          <ul class="mobil-nav-list list">
-            <li class="mobil-nav-item">
-              <a class="mobil-nav-link current link" href="#how-it-works"
-                >How It Works</a
-              >
-            </li>
-            <li class="mobil-nav-item">
-              <a class="mobil-nav-link link" href="#fruits">Fruits</a>
-            </li>
-            <li class="mobil-nav-item">
-              <a class="mobil-nav-link link" href="#contacts">Contacts</a>
-            </li>
-          </ul>
-          <button
-            class="button-basket-mobil"
-            type="button"
-            aria-label="Button basket"
-          >
-            <svg class="basket" width="28" height="28">
-              <use
-                href="/Class_inDesign/assets/icons-766296df.svg#icon-basket"
-              ></use>
+  <div class="mobile-menu js-menu-container is-open" id="mobile-menu">
+    <div class="container mobil-menu-modal js-close-menu">
+      <button
+        class="mobile-menu-close js-close-menu"
+        type="button"
+        aria-label="Mobile menu"
+      >
+        <svg class="mobile-menu-close-icon" width="28" height="28">
+          <use href="./images/icomoon.svg#icon-x-close"></use>
+        </svg>
+      </button>
+
+      <ul class="mobil-nav-list list">
+        <li class="mobil-nav-item-home">
+          <a class="mobil-nav-link current link" href="">Home</a>
+        </li>
+        <li class="mobil-nav-item">
+          <a class="mobil-nav-link link" href=""
+            >Shopping list
+            <svg class="mobil-lock" width="20" height="20">
+              <use href="./images/icomoon.svg#icon-shopping-bag"></use>
             </svg>
-          </button>
-        </div>
-      </div> -->
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </header>
