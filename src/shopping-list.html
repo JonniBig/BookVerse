@@ -16,10 +16,33 @@
   <body>
     <load ="partials/header.html" />
     <main>
-      <load ="partials/categories.html" />
-      <load ="partials/home.html" />
-      <load ="partials/mobileMenu.html" />
-      <load ="partials/modalWindow.html" />
+      <div class="container-book-shop">
+        <div class="support"></div>
+        <div class="book-shop">
+          <h2 class="book-shop-title">
+            Shopping <span class="colored">List</span>
+          </h2>
+          <ul class="book-shop-list"></ul>
+
+          <div class="empty-list">
+            <p class="empty-list-text">
+              This page is empty, add some books and proceed to order.
+            </p>
+            <img
+              srcset="
+                ./images/EmptyListMob@1x.png 265w,
+                ./images/EmptyListMob@2x.png 530w,
+                ./images/EmptyListTab@1x.png 322w,
+                ./images/EmptyListTab@2x.png 644w
+              "
+              sizes="(min-width: 768px) 322px, (min-width: 375px) 265px, 100vw"
+              src="./images/EmptyListMob@1x.png"
+              alt="empty-list-img"
+              class="empty-list-img"
+            />
+          </div>
+        </div>
+      </div>
     </main>
     <script type="module" src="/main.js"></script>
   </body>
