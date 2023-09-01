@@ -12,12 +12,12 @@
       rel="stylesheet"
     />
     
-    <script type="module" crossorigin src="/BookVerse/assets/mobileMenuBurger-50186b55.js"></script>
-    <link rel="stylesheet" href="/BookVerse/assets/mobileMenuBurger-7216db51.css">
+    <script type="module" crossorigin src="/BookVerse/assets/mobileMenuBurger-608cc902.js"></script>
+    <link rel="stylesheet" href="/BookVerse/assets/mobileMenuBurger-558e275d.css">
   </head>
   <body>
     <header class="header">
-  <div class="container">
+  <div class="container header-container">
     <a class="link logo" href="index.html">
       <div class="logo-box">
         <svg class="icon icon-logo" width="24" height="24">
@@ -38,9 +38,9 @@
         >
       </li>
     </ul>
-  </nav> -->
-  </div>
-  <div class="buttons">
+    </nav> -->
+
+    <!-- <div class="buttons"> -->
     <!-- <input type="checkbox" id="switch" /><label for="switch"></label> -->
     <!-- <div class="log-form">
           <img src="./images/user.svg" alt="avatar" /> Hello
@@ -60,7 +60,7 @@
     </button>
   </div>
 
-  <div class="mobile-menu js-menu-container is-open" id="mobile-menu">
+  <div class="mobile-menu js-menu-container" id="mobile-menu">
     <div class="container mobil-menu-modal js-close-menu">
       <button
         class="mobile-menu-close js-close-menu"
@@ -72,19 +72,30 @@
         </svg>
       </button>
 
-      <ul class="mobil-nav-list list">
-        <li class="mobil-nav-item-home">
-          <a class="mobil-nav-link current link" href="">Home</a>
-        </li>
-        <li class="mobil-nav-item">
-          <a class="mobil-nav-link link" href=""
-            >Shopping list
-            <svg class="mobil-lock" width="20" height="20">
-              <use href="/BookVerse/assets/icomoon-1a3ef3c4.svg#icon-shopping-bag"></use>
-            </svg>
-          </a>
-        </li>
-      </ul>
+      <!-- <a class="mobil-icon link" href="">
+        <svg class="icon-hello" width="30" height="30">
+          <use href="./image/icomoon.svg#icon-vector"></use>
+        </svg>
+        Hello!
+      </a> -->
+
+      <div class="menu-container">
+        <ul class="mobil-nav-list list">
+          <li class="mobil-nav-item-home">
+            <a class="mobil-nav-link current link" href="./home.html">Home</a>
+          </li>
+          <li class="mobil-nav-item">
+            <a class="mobil-nav-link link" href="./shopping-list.html"
+              >Shopping list
+              <svg class="mobil-lock" width="20" height="20">
+                <use href="/BookVerse/assets/icomoon-1a3ef3c4.svg#icon-shopping-bag"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- <button class="menu-login" type="button">Log out</button> -->
     </div>
   </div>
 </header>
