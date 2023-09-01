@@ -24,6 +24,8 @@ function renderCategories(categories) {
   const categoryList = document.createElement('ul');
   categoryList.classList.add('book_list');
 
+  let firstCategoryLink = null;
+
   categories.forEach(category => {
     const categoryItem = document.createElement('li');
     const categoryLink = document.createElement('a');
@@ -32,6 +34,31 @@ function renderCategories(categories) {
     categoryLink.classList.add('category_link');
     categoryLink.textContent = category.list_name;
     categoryLink.href = '#'; // посилання на обробник події
+
+    if (!firstCategoryLink) {
+      firstCategoryLink = categoryLink;
+      firstCategoryLink.classList.add('uppercase');
+    }
+
+    categoryLink.addEventListener('focus', () => {
+      categoryLink.classList.add('uppercase');
+    });
+
+    categoryLink.addEventListener('blur', () => {
+      categoryLink.classList.remove('uppercase');
+    });
+
+    categoryLink.addEventListener('mouseover', () => {
+      categoryLink.classList.add('uppercase');
+
+      if (firstCategoryLink && firstCategoryLink !== categoryLink) {
+        firstCategoryLink.classList.remove('uppercase');
+      }
+    });
+
+    categoryLink.addEventListener('mouseout', () => {
+      categoryLink.classList.remove('uppercase');
+    });
 
     categoryItem.appendChild(categoryLink);
     categoryList.appendChild(categoryItem);
