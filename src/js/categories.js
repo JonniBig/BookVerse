@@ -33,7 +33,7 @@ function renderCategories(categories) {
     categoryItem.classList.add('category_item');
     categoryLink.classList.add('category_link');
     categoryLink.textContent = category.list_name;
-    categoryLink.href = '#'; // посилання на обробник події
+    categoryLink.href = '#'; // посилання на обробник події для подальшої звязки по кожній категорії
 
     if (!firstCategoryLink) {
       firstCategoryLink = categoryLink;

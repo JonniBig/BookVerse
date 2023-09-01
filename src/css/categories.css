@@ -3,15 +3,6 @@
     height: 228px;
 }
 
-.categories::-webkit-scrollbar {
-    width: 8px;
-}
-
-.categories::-webkit-scrollbar-thumb {
-    background-color: #E0E0E0;
-    border-radius: 12px;
-}
-
 .book_list {
     display: flex;
     width: 307px;
@@ -20,6 +11,15 @@
     align-items: flex-start;
     gap: 24px;
     overflow-y: scroll;
+}
+
+.book_list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.book_list::-webkit-scrollbar-thumb {
+    background-color: #E0E0E0;
+    border-radius: 12px;
 }
 
 .uppercase {
