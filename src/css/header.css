@@ -1,10 +1,9 @@
 .header {
-  padding: 0 20px;
   border: 1px solid var(--black1-color);
   border-radius: 0 0 8px 8px;
   background-color: var(--white-color);
 }
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
   .header {
     padding: 0 32px;
   }
@@ -13,7 +12,7 @@
   .header {
     padding: 0 24px;
   }
-}
+} */
 
 .header-container {
   display: flex;
@@ -208,7 +207,7 @@
 .mobile-menu-close {
   position: absolute;
   top: -45px;
-  right: 20px;
+  right: 0px;
   width: 28px;
   height: 28px;
 
