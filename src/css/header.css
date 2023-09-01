@@ -1,11 +1,17 @@
 .header {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   padding: 0 20px;
   border: 1px solid #333;
   border-radius: 0 0 8px 8px;
   align-items: center;
   background-color: var(--white-color);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .icon {
@@ -16,8 +22,7 @@
   stroke: currentColor;
   fill: currentColor;
 }
-.logo {
-}
+
 .logo-box {
   display: flex;
   gap: 8px;
@@ -65,34 +70,29 @@
 /* Phone */
 @media screen and (max-width: 767px) {
   .menu-mobile-open {
+    min-height: 40px;
+    min-width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
     padding: 0;
-    line-height: 0;
     background-color: transparent;
+    cursor: pointer;
     border: none;
+    border-radius: 50%;
+    outline: none;
+  }
+  .menu-mobile-open-icon {
+    stroke: var(--black1-color);
   }
 }
-
+/* Tablet */
 @media screen and (min-width: 768px) {
   .menu-mobile-open {
     display: none;
   }
-}
-
-.button {
-  cursor: pointer;
-  font-family: inherit;
-  color: currentColor;
-}
-
-.menu-mobile-open {
-  padding: 0;
-  line-height: 0;
-  background-color: transparent;
-  border: none;
-}
-
-.menu-mobile-open-icon {
-  stroke: #111111;
 }
 
 .mobile-menu {
@@ -107,11 +107,11 @@
 
   opacity: 0;
 
-  background: linear-gradient(
-    32deg,
-    rgba(200, 192, 247, 1) 0%,
-    rgba(79, 46, 232, 1) 90%
-  );
+  background-image: url(../images/header/books.png),
+    linear-gradient(32deg, rgba(200, 192, 247, 1) 0%, rgba(79, 46, 232, 1) 90%);
+  background-size: contain, auto;
+  background-repeat: no-repeat;
+  background-position: bottom, center;
 }
 
 .mobile-menu.is-open {
@@ -125,17 +125,14 @@
 
 .mobil-menu-modal {
   position: relative;
-  padding-top: 183px;
+
   display: flex;
   flex-direction: column;
-
-  /* background-image: url(./images/books.jpg);
-  background-position: 12px 86px, 97% -20px; */
 }
 
 .mobile-menu-close {
   position: absolute;
-  top: -37px;
+  top: -32px;
   right: 20px;
   width: 28px;
   height: 28px;
@@ -156,11 +153,22 @@
   stroke: #111111;
 }
 
+.mobil-icon {
+  padding-top: 20px;
+}
+
+.menu-container {
+  padding-top: 126px;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+}
+
 .mobil-nav-list {
   text-transform: uppercase;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 16px;
 }
 
@@ -183,4 +191,5 @@
 .mobil-nav-link {
   display: flex;
   align-items: center;
+  gap: 4px;
 }
