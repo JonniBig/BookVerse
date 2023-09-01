@@ -1,0 +1,22 @@
+.book-list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.book-item {
+  max-width: 218;
+  max-height: 336;
+}
+
+.img-book {
+  max-width: 218;
+  max-height: 316;
+}
+
+/* .title-book {
+}
+
+.author-book {
+} */
