@@ -35,5 +35,9 @@
     <symbol id="icon-x-close" viewBox="0 0 32 32">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3.429" d="M24 8 8 24M8 8l16 16"/>
     </symbol>
+    <!--Arrow -->
+     <symbol id="icon-arrow-right" viewBox="0 0 32 32">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3.2" d="M5.333 16h21.333m0 0-8-8m8 8-8 8"/>
+    </symbol>
   </defs>
 </svg>
