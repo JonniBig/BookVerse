@@ -8,12 +8,12 @@
 
 body {
   /* text */
-  /* font-family: 'DM Sans', sans-serif;
+  font-family: 'DM Sans', sans-serif;
 
   font-weight: 400;
   font-size: 14px;
   line-height: 1.29;
-  letter-spacing: -0.04em; */
+  letter-spacing: -0.04em;
 
   /* color */
   background-color: #f6f6f6;
@@ -40,8 +40,10 @@ body {
 }
 
 /* Desktop style */
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 1440px) {
   .container {
-    max-width: 1280px;
+    max-width: 1440px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
