@@ -1,6 +1,5 @@
-
 // Функція яка відправляє запит по категоріям для відображення результатів
-let CATEGORY_NAME = "Childrens Middle Grade Hardcover";
+let CATEGORY_NAME = "Hardcover Fiction";
 async function fetchAndDisplayBooks() {
   const apiUrl = `https://books-backend.p.goit.global/books/category?category=${CATEGORY_NAME}`;
   
@@ -11,6 +10,16 @@ async function fetchAndDisplayBooks() {
     const resultContainer = document.getElementById("result-container");
     resultContainer.innerHTML = ""; // Очищає попередній вміст  <дів id="result-container" class="list-selected-books"></д> //
 
+   // Додати заголовок h2 з назвою категорії
+    const titleCategoryName = document.createElement("h2");
+    titleCategoryName.classList.add("title-category-name");
+    titleCategoryName.textContent = CATEGORY_NAME;
+    resultContainer.appendChild(titleCategoryName);
+    
+
+
+
+    
     if (books.length === 0) {
       // При відсутність книг, відображає повідомлення Р з класом notFound
       const noBooksMessage = document.createElement("p");
@@ -19,7 +28,7 @@ async function fetchAndDisplayBooks() {
       resultContainer.appendChild(noBooksMessage);
     } else {
       // Відображаємо книги їх у вигляді списку (картинка назва автор)
-      const ul = document.createElement("ul");
+           const ul = document.createElement("ul");
       ul.className = "book-list"; // Клас стилізації UL
 
       books.forEach(book => {
@@ -27,13 +36,16 @@ async function fetchAndDisplayBooks() {
         li.className = "book-item"; // Клас стилізації LI
 
         const img = document.createElement("img");
+        img.classList.add("img-book");
         img.src = book.book_image;
         img.alt = book.title;
 
         const title = document.createElement("p");
+        title.classList.add("title-book");
         title.textContent = book.title;
 
         const author = document.createElement("p");
+        author.classList.add("author-book");
         author.textContent = book.author;
 
 
@@ -54,3 +66,5 @@ async function fetchAndDisplayBooks() {
 
 // Виклик фенкції для запиту на серевер для отримання списку книг
 fetchAndDisplayBooks();
+
+ 
