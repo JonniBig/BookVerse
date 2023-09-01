@@ -1,3 +1,7 @@
+.category_link:hover {
+    cursor: pointer;
+}
+
 .categories {
     display: flex;
     width: 335px;
