@@ -1,0 +1,32 @@
+/**
+  |============================
+  | СТИЛІ ДО КАРТОК З ВИБРАНИМИ КНИГАМИ
+  |============================
+*/
+.categoryes-book-title {
+}
+.book-list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.categoryes-book-item {
+  max-width: 218;
+  height: 366;
+}
+
+.categoryes-book-img {
+  max-width: 218;
+  height: 316;
+}
+
+.title-book {
+  color: var(--black1-color);
+}
+
+.author-book {
+  /* font-size: 14px; */
+  color: #b4afaf;
+}
