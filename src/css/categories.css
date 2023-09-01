@@ -1,4 +1,5 @@
 .categories {
+    display: flex;
     width: 335px;
     height: 228px;
 }
@@ -22,16 +23,22 @@
     border-radius: 12px;
 }
 
+.category_link.active-category {
+    color: #4F2EE8;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
 .uppercase {
-    color: var(--violet-color);
-    font-weight: 700;
+    color: #4F2EE8;
+    font-weight: 600;
     text-transform: uppercase;
 }
 
 .category_link {
     color: rgba(17, 17, 17, 0.60);
     font-family: DM Sans;
-    font-size: 15px;
+    font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: 1.12;
@@ -39,7 +46,7 @@
 }
 
 .category_link.uppercase {
-    color: var(--violet-color);
+    color: #4F2EE8;
     font-weight: 700;
     text-transform: uppercase;
 }
@@ -48,7 +55,7 @@
     height: 18px;
 }
 
- @media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) {
     .categories {
         width: 337px;
         height: 472px;
