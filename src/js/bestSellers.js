@@ -8,7 +8,6 @@ export async function fetchBookShelf() {
   const response = await axios.get(url);
   // console.log(response.data);
   return response.data;
-
 }
 fetchBookShelf();
 
@@ -16,47 +15,31 @@ async function getBooks(data) {
   try {
     const response = await fetchBookShelf(data);
 
-    response.map((listBooks) => {
-      console.log(listBooks);
+    response.map(listBooks => {
       return createMarkupBookShelf(listBooks);
-    })
-
+    });
   } catch (error) {
-    console.error("Try again!");
+    console.error('Try again!');
   }
 }
 
 getBooks();
 
-export function createMarkupBookShelf(book) {
-  const {
-    list_name,
-    book_image,
-    author,
-    title,
-} = book;
-  const arrBookShelf = `
-  <h1 class="title_books">Best Sellers <span class="">Books</span></h1>
-  <div>${list_name}</div>`
+export function createMarkupBookShelf(books) {
+  const { list_name, book_image, author, title } = books;
 
-  // const arrBookShelf = arr(
-  //     ({
-  //         list_name,
-  //         book_image,
-  //         author,
-  //          title
-          
-    // }) => {
-  //     return `<div class="photo-card">
-  //       <div class="img_wrap">
-  //           <a class="book_link" href="${book_image}">
-  //               <img src="${}" alt="${}" width="300" loading="lazy" />
-  //           </a>
-  //       </div>
-  //        <p class="title_bookshelf">${title}</p>
-  //        <p class="author_bookshelf">${author}</p>
-  //       </div>`;
-  //   }
-  // );
+  // console.log(books);
+  const arrBookShelf = `
+  <div class="best_list">
+    <h2 class="best_list_name">${list_name}</h2>
+    <div class="best_list_item">
+      <a class="best_list_link" href="${book_image}">
+         <img src="${book_image}" alt="${title}" width="300" loading="lazy" />
+      </a>
+      <p class="best_list_title">${title}</p>
+      <p class="best_list_author">${author}</p>
+    </div>
+  </div>`;
+
   bestSellers.insertAdjacentHTML('beforeend', arrBookShelf);
 }
