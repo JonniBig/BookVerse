@@ -11,8 +11,7 @@ async function getBook() {
   try {
     // Запит на бекенд за допомогою axios
     const getData = await axios.get(`${url}`);
-    console.log(getData.data)
-    return getData.data;
+     return getData.data;
   } catch (error) {
     console.log(error);
   }
@@ -20,7 +19,7 @@ async function getBook() {
 
 getBook().then(data => {
   localStorage.removeItem('ListofBooks');
-  const savedBook = data[1].books;
+  const savedBook = data[10].books;
   localStorage.setItem('ListOfBooks', JSON.stringify(savedBook));
 });
 const savedData = JSON.parse(localStorage.getItem('ListOfBooks'));
@@ -31,7 +30,7 @@ function addCard() {
     emptyList.classList.remove('is-hidden');
     return;
   }
-  // listCards.innerHTML = "";
+  listCards.innerHTML = "";
   listCards.insertAdjacentHTML('beforeend', makeMarkup11(savedData));
   const options = {
     totalItems: 10,
@@ -51,6 +50,11 @@ function makeMarkup11(arr) {
     .flatMap(
       ({ book_image, title, list_name, description, author, buy_links }) =>
         `<li class="shop-list-item">
+
+              <svg class="icon-damp" width="28" height="28">
+                <use href="./images/icomoon.svg#icon-dump"></use>
+              </svg>
+           
          <img
            src="${book_image}"
            alt="${title}"
