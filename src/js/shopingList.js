@@ -11,7 +11,7 @@ async function getBook() {
   try {
     // Запит на бекенд за допомогою axios
     const getData = await axios.get(`${url}`);
-     return getData.data;
+    return getData.data;
   } catch (error) {
     console.log(error);
   }
@@ -24,37 +24,51 @@ getBook().then(data => {
 });
 const savedData = JSON.parse(localStorage.getItem('ListOfBooks'));
 
-
 function addCard() {
   if (savedData.length === 0) {
     emptyList.classList.remove('is-hidden');
+    localStorage.removeItem('ListofBooks');
+    listCards.innerHTML = '';
+    listCards.classList.add('is-hidden');
     return;
   }
-  listCards.innerHTML = "";
+  listCards.classList.remove('is-hidden');
+  emptyList.classList.add('is-hidden');
+  listCards.innerHTML = '';
   listCards.insertAdjacentHTML('beforeend', makeMarkup11(savedData));
-  const options = {
-    totalItems: 10,
-    itemsPerPage: 2,
-    visiblePages: 3,
-    page: 1,
-    centerAlign: true,
-    firstItemClassName: 'tui-first-child',
-    lastItemClassName: 'tui-last-child',
-  }
- 
-  const myPagination = new Pagination(container, options)
+  // const options = {
+  //   totalItems: 10,
+  //   itemsPerPage: 2,
+  //   visiblePages: 3,
+  //   page: 1,
+  //   centerAlign: true,
+  //   firstItemClassName: 'tui-first-child',
+  //   lastItemClassName: 'tui-last-child',
+  // };
+
+  // const myPagination = new Pagination(container, options);
+  const dumpEl = document.querySelectorAll('.icon-damp').forEach(item=>item.addEventListener('click', deleteCard));
+}
+
+function deleteCard(evt) {
+  evt.preventDefault();
+  const cardId = evt.target.id;
+  const cardIndex = savedData.findIndex(option => option._id === cardId);
+  savedData.splice(cardIndex, 1);
+  localStorage.removeItem('ListofBooks');
+  localStorage.setItem('ListOfBooks', JSON.stringify(savedData));
+  addCard();
+
 }
 
 function makeMarkup11(arr) {
   return arr
     .flatMap(
-      ({ book_image, title, list_name, description, author, buy_links }) =>
+      ({ book_image, title, list_name, description, author, buy_links, _id }) =>
         `<li class="shop-list-item">
-
               <svg class="icon-damp" width="28" height="28">
-                <use href="./images/icomoon.svg#icon-dump"></use>
+                <use href="./images/icomoon.svg#icon-dump" id="${_id}"></use>
               </svg>
-           
          <img
            src="${book_image}"
            alt="${title}"
