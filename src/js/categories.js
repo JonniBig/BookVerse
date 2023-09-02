@@ -1,64 +1,64 @@
 import axios from 'axios';
+import fetchAndDisplayBooks from './categories-book.js';
 
 const BASE_URL = 'https://books-backend.p.goit.global/';
-
 const categoriesContainer = document.querySelector('.categories');
 
-function fetchCategories() {
-  axios
-    .get(`${BASE_URL}books/category-list`)
-    .then(response => {
-      const categories = response.data;
-      const categoriesAll = { list_name: 'All categories' };
-      categories.unshift(categoriesAll);
-      renderCategories(categories);
-    })
-    .catch(error => {
-      console.error('Помилка при отриманні категорій:', error);
-    });
+async function fetchCategories() {
+  try {
+    const { data: categories } = await axios.get(
+      `${BASE_URL}books/category-list`
+    );
+    const categoriesAll = { list_name: 'All categories' };
+    categories.unshift(categoriesAll);
+
+    renderCategories(categories);
+
+    const firstCategoryLink = categories[0].categoryLink;
+    if (firstCategoryLink) {
+      firstCategoryLink.classList.add('active-category');
+    }
+  } catch (error) {
+    console.error('Помилка при отриманні категорій:', error);
+  }
 }
 
-function renderCategories(categories) {
+async function renderCategories(categories) {
   categoriesContainer.innerHTML = '';
 
   const categoryList = document.createElement('ul');
   categoryList.classList.add('book_list');
 
-  let firstCategoryLink = null;
-
   categories.forEach(category => {
+    const { list_name: categoryName } = category;
     const categoryItem = document.createElement('li');
-    const categoryLink = document.createElement('a');
-
     categoryItem.classList.add('category_item');
+    const categoryLink = document.createElement('a');
+    categoryLink.textContent = categoryName;
+
+    categoryLink.addEventListener('click', async () => {
+      await fetchAndDisplayBooks(categoryName);
+
+      categories.forEach(cat => {
+        cat.categoryLink.classList.remove('active-category');
+      });
+
+      categoryLink.classList.add('active-category');
+    });
+
     categoryLink.classList.add('category_link');
-    categoryLink.textContent = category.list_name;
-    categoryLink.href = '#'; // посилання на обробник події для подальшої звязки по кожній категорії
 
-    if (!firstCategoryLink) {
-      firstCategoryLink = categoryLink;
-      firstCategoryLink.classList.add('uppercase');
-    }
-
-    categoryLink.addEventListener('focus', () => {
-      categoryLink.classList.add('uppercase');
+    ['focus', 'blur', 'mouseover', 'mouseout'].forEach(eventType => {
+      categoryLink.addEventListener(eventType, () => {
+        if (eventType === 'focus' || eventType === 'mouseover') {
+          categoryLink.classList.add('uppercase');
+        } else {
+          categoryLink.classList.remove('uppercase');
+        }
+      });
     });
 
-    categoryLink.addEventListener('blur', () => {
-      categoryLink.classList.remove('uppercase');
-    });
-
-    categoryLink.addEventListener('mouseover', () => {
-      categoryLink.classList.add('uppercase');
-
-      if (firstCategoryLink && firstCategoryLink !== categoryLink) {
-        firstCategoryLink.classList.remove('uppercase');
-      }
-    });
-
-    categoryLink.addEventListener('mouseout', () => {
-      categoryLink.classList.remove('uppercase');
-    });
+    category.categoryLink = categoryLink;
 
     categoryItem.appendChild(categoryLink);
     categoryList.appendChild(categoryItem);

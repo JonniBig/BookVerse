@@ -1,10 +1,9 @@
 .header {
-  padding: 0 20px;
-  border: 1px solid #333;
+  border: 1px solid var(--black1-color);
   border-radius: 0 0 8px 8px;
   background-color: var(--white-color);
 }
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
   .header {
     padding: 0 32px;
   }
@@ -13,7 +12,7 @@
   .header {
     padding: 0 24px;
   }
-}
+} */
 
 .header-container {
   display: flex;
@@ -77,6 +76,7 @@
 }
 @media only screen and (min-width: 1440px) {
   .nav {
+    margin-left: 76px;
   }
 }
 .nav a.current {
@@ -92,7 +92,7 @@
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.log-form {
+/* .log-form {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -100,12 +100,15 @@
   height: 45px;
   background-color: var(--violet-color);
   border-radius: 36px;
-}
+} */
 
 /* Mobile menu burger */
 
 /* Phone */
 @media screen and (max-width: 767px) {
+  .log-form {
+    display: none;
+  }
   .menu-mobile-open {
     display: flex;
 
@@ -120,9 +123,45 @@
   .menu-mobile-open-icon {
     stroke: var(--black1-color);
   }
+  .menu-log-form {
+    display: flex;
+    align-items: center;
+    width: 184px;
+    height: 45px;
+
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--white-color);
+
+    gap: 8px;
+  }
+
+  .menu-icon-hello {
+    fill: var(--white-color);
+    padding-left: 12px;
+  }
 }
 /* Tablet */
 @media screen and (min-width: 768px) {
+  .log-form {
+    display: flex;
+    align-items: center;
+    width: 184px;
+    height: 45px;
+
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--white-color);
+    background-color: var(--violet-color);
+    border-radius: 36px;
+    gap: 8px;
+  }
+
+  .icon-hello {
+    fill: var(--white-color);
+    padding-left: 12px;
+  }
+
   .menu-mobile-open {
     display: none;
   }
@@ -142,15 +181,17 @@
 
   background-image: url(../images/header/books.png),
     linear-gradient(32deg, rgba(200, 192, 247, 1) 0%, rgba(79, 46, 232, 1) 90%);
+
   background-size: contain, auto;
   background-repeat: no-repeat;
   background-position: bottom, center;
+  transform: translate(100%, 50px);
 }
 
 .mobile-menu.is-open {
   opacity: 1;
 
-  transform: translateY(50px);
+  transform: translateY(64px);
   transition-property: transform, opacity;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -158,14 +199,14 @@
 
 .mobil-menu-modal {
   position: relative;
-
-  display: flex;
-  flex-direction: column;
+  padding-top: 20px;
+  /* display: flex;
+  flex-direction: column; */
 }
 
 .mobile-menu-close {
   position: absolute;
-  top: -32px;
+  top: -45px;
   right: 20px;
   width: 28px;
   height: 28px;
@@ -192,6 +233,8 @@
 
 .menu-container {
   padding-top: 126px;
+  /* padding-bottom: 427px; */
+  padding-bottom: 45vh;
   display: flex;
   justify-content: center;
   font-size: 14px;
@@ -203,21 +246,33 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
+
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 .mobil-nav-item-home {
-  color: #111111;
+  color: var(--white-color);
+}
+
+.mobil-nav-item-shopping {
+  color: var(--white-color);
+}
+/* ........ */
+.mobil-nav-item-active {
   padding: 8px 16px;
   background-color: var(--yellow-color);
   border: 1px solid var(--yellow-color);
   border-radius: 36px;
+  color: #111111;
 }
-
-.mobil-nav-item {
-  color: var(--white-color);
-}
-
+/* ..... */
 .mobil-lock {
+  fill: var(--black1-color);
+}
+
+.mobil-lock-active {
   fill: var(--white-color);
 }
 
@@ -225,6 +280,26 @@
   display: flex;
   align-items: center;
   gap: 4px;
+}
+
+.menu-login {
+  min-width: 118px;
+  min-height: 48px;
+  padding: 14px 24px;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 14px;
+  color: currentColor;
+  background-color: var(--white-color);
+  border: 1px solid var(--black1-color);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.arrow {
+  stroke: var(--yellow-color);
 }
 
 /* toogle button */
