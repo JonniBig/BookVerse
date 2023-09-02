@@ -13,7 +13,7 @@ async function fetchAndDisplayBooks(categoryName) {
      // Замініть це на назву вибраної категорії
     const resultContainer = document.getElementById("result-container");
     resultContainer.innerHTML = ""; // Очищення попереднього вмісту
-    // Рядок CATEGORY_NAME розбиваємо на слова
+    //розбиваємо на слова
     const words = categoryName.split(" ");
     if (words.length > 1) {
       // Більше одного слова, прибираємо останнє слово
@@ -78,7 +78,7 @@ async function fetchAndDisplayBooks(categoryName) {
   }
 }
 
-// Виклик фенкції для запиту на серевер для отримання списку книг
+// Виклик фyнкції для запиту на серевер для отримання списку книг
 fetchAndDisplayBooks();
 
  export default fetchAndDisplayBooks;
