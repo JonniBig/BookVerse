@@ -12,9 +12,9 @@
       rel="stylesheet"
     />
     
-    <script type="module" crossorigin src="/BookVerse/assets/index-9708aee2.js"></script>
-    <link rel="modulepreload" crossorigin href="/BookVerse/assets/mobileMenuBurger-fe6a4018.js">
-    <link rel="stylesheet" href="/BookVerse/assets/mobileMenuBurger-1ba6f5a2.css">
+    <script type="module" crossorigin src="/BookVerse/assets/index-f84954a9.js"></script>
+    <link rel="modulepreload" crossorigin href="/BookVerse/assets/mobileMenuBurger-0724ccc6.js">
+    <link rel="stylesheet" href="/BookVerse/assets/mobileMenuBurger-a6e64497.css">
   </head>
   <body>
     <header class="header container">
@@ -112,6 +112,7 @@
 </header>
 
     <main class="container">
+      
       <div class="categories">
   <!-- Тут буде відображатися список категорій -->
 </div>
@@ -125,13 +126,34 @@
     </ol>
     <button class="found-down"></button>
 </div>
-      <div>
-  <h1 class="title_books">
-    Best Sellers <span class="title_books_item">Books</span>
-  </h1>
-  <ul class="bestseller"></ul>
+      
+<div class="container">
+  <div class="right-wrapper">
+    
+      <h1 class="title_books">
+        Best Sellers <span class="title_books_item">Books</span>
+      </h1>
+    </div>
+    <div class="bestseller-list">
+      <ul class="bestseller"></ul>
+      <li class="book-item">
+        <p class="book-categorie-choice"></p>
+        <img class="book-wrap" src="" alt="book-wrapper">
+        <p class="book-name"></p>
+        <p class="book-author"></p>
+      </li>
+    </div>
+  </div>
 </div>
 
+
+  <div class="left-wrapper">
+    
+    <include src="./partials/categories-book.html"></include>
+    <include src="./partials/foundation.html"></include>
+  </aside>
+  </div>
+ 
       <div id="result-container" class="list-selected-books"></div>
 
       
