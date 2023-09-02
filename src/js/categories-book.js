@@ -1,19 +1,24 @@
 // Функція яка відправляє запит по категоріям для відображення результатів
-
 import axios from 'axios';
 
 async function fetchAndDisplayBooks(categoryName) {
-  const apiUrl = `https://books-backend.p.goit.global/books/category?category=${categoryName}`;
-
-  
-  try {
+  const lowerCaseCategory = categoryName.toLowerCase();
+  if (lowerCaseCategory === 'all categories') {
+    window.location.href = 'index.html'; 
+    return; 
+  }
+   const apiUrl = `https://books-backend.p.goit.global/books/category?category=${categoryName}`;
+    try {
     const response = await axios.get(apiUrl);
     const books = response.data;
 
      // Замініть це на назву вибраної категорії
     const resultContainer = document.getElementById("result-container");
     resultContainer.innerHTML = ""; // Очищення попереднього вмісту
-    // Рядок CATEGORY_NAME розбиваємо на слова
+    //розбиваємо на слова
+       
+ 
+      
     const words = categoryName.split(" ");
     if (words.length > 1) {
       // Більше одного слова, прибираємо останнє слово
@@ -61,24 +66,22 @@ async function fetchAndDisplayBooks(categoryName) {
         author.classList.add("categoryes-author-book");
         author.textContent = book.author  || 'N/A';
 
-
-
         li.appendChild(img);
         li.appendChild(title);
         li.appendChild(author);
-
 
         ul.appendChild(li);
       });
 
       resultContainer.appendChild(ul);
-    }
+      }
+      
   } catch (error) {
     console.error("Error fetching books:", error);
   }
 }
 
-// Виклик фенкції для запиту на серевер для отримання списку книг
+// Виклик фyнкці для запиту на серевер для отримання списку книг
 fetchAndDisplayBooks();
 
  export default fetchAndDisplayBooks;
