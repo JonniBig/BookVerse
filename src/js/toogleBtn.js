@@ -1,10 +1,29 @@
-const switchInput = document.getElementById('switch');
-const body = document.body;
+const switchElement = document.getElementById('switch');
+const bodyElement = document.body;
 
-switchInput.addEventListener('change', () => {
-  if (switchInput.checked) {
-    body.classList.add('dark-theme');
+function saveThemeChoice(isDark) {
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+}
+
+function loadSavedTheme() {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    bodyElement.classList.add('dark-theme');
+    switchElement.checked = true;
   } else {
-    body.classList.remove('dark-theme');
+    bodyElement.classList.remove('dark-theme');
+    switchElement.checked = false;
+  }
+}
+
+loadSavedTheme();
+
+switchElement.addEventListener('change', function () {
+  if (switchElement.checked) {
+    bodyElement.classList.add('dark-theme');
+    saveThemeChoice(true);
+  } else {
+    bodyElement.classList.remove('dark-theme');
+    saveThemeChoice(false);
   }
 });
