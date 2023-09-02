@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const bestSellers = document.querySelector('.bestseller_list');
+const bestSellers = document.querySelector('.bestseller');
 
 const URL = 'https://books-backend.p.goit.global/books/top-books';
 export async function fetchBookShelf() {
@@ -10,6 +10,7 @@ export async function fetchBookShelf() {
 
   return response.data;
 }
+fetchBookShelf();
 
 async function getBooks(data) {
   try {
@@ -31,22 +32,16 @@ export function createMarkupBookShelf(category) {
   const arrBookShelf = `
   <div class="best_list">
     <h2 class="best_list_name">${list_name}</h2>
-    <div class="best_list_card>
-     <ul class="best_card">
+     <ul>
          ${books
            .map(book => {
              return renderBook(book);
            })
            .join('')}
       </ul>
-
-    </div> 
-  </div>`;
-
       <button type="button" class="see-more">SEE MORE</button>
   </div>
   `;
-
 
   bestSellers.insertAdjacentHTML('beforeend', arrBookShelf);
 }
@@ -58,6 +53,4 @@ export function renderBook({ book_image, title, author }) {
       <p>${author}</p>
     </div>`;
 }
-
-fetchBookShelf();
 
