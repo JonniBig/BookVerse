@@ -6,7 +6,7 @@
 .book-shop {
     margin-top: 40px;
 
-    min-width: 335px;
+    min-width: 320px;
 }
 
 .book-shop-title {
@@ -168,7 +168,7 @@
 /* ------------/BOOK CARD------------- */
 /* ------------MEDIA QUERRY----------- */
 
-@media only screen and (min-width: 767px) {
+@media only screen and (min-width: 768px) {
     .book-shop {
 
         min-width: 704px;
@@ -196,7 +196,7 @@
     }
 }
 
-@media only screen and (min-width: 1439px) {
+@media only screen and (min-width: 1440px) {
     .container-book-shop {
         display: flex;
     }
