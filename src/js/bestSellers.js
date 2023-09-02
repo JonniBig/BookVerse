@@ -4,7 +4,9 @@ const bestSellers = document.querySelector('.bestseller_list');
 
 const URL = 'https://books-backend.p.goit.global/books/top-books';
 export async function fetchBookShelf() {
+
   const response = await axios.get(URL);
+  // console.log(response.data);
 
   return response.data;
 }
@@ -37,8 +39,14 @@ export function createMarkupBookShelf(category) {
            })
            .join('')}
       </ul>
+
     </div> 
   </div>`;
+
+      <button type="button" class="see-more">SEE MORE</button>
+  </div>
+  `;
+
 
   bestSellers.insertAdjacentHTML('beforeend', arrBookShelf);
 }
@@ -50,4 +58,6 @@ export function renderBook({ book_image, title, author }) {
       <p>${author}</p>
     </div>`;
 }
+
 fetchBookShelf();
+

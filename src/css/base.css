@@ -19,6 +19,14 @@ body {
   background-color: #f6f6f6;
   color: #111111;
 }
+.dark-theme {
+  background-color: var(--black2-color);
+  color: var(--white-color);
+}
+.dark-theme .header {
+  background-color: var(--black1-color);
+  color: var(--white-color);
+}
 
 .container {
   /* Phone styles */
@@ -36,6 +44,7 @@ body {
     max-width: 768px;
     padding-left: 32px;
     padding-right: 32px;
+   
   }
 }
 
@@ -45,5 +54,6 @@ body {
     max-width: 1440px;
     padding-left: 24px;
     padding-right: 24px;
+    
   }
 }
