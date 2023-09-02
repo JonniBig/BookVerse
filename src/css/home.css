@@ -1,4 +1,26 @@
 
+.bestseller {
+  width: 335px;
+  height: 228px;
+}
+
+.best_list_name {
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.42px;
+  text-transform: uppercase;
+  color: #b4afaf;
+}
+
+/* .best_card {
+  display: flex;
+  flex-wrap: wrap;
+} */
+
+
 .title_books {
     font-size: 32px;
     font-weight: 700;
@@ -165,4 +187,5 @@
       margin-bottom: 20px;
     }
   }
+
 
