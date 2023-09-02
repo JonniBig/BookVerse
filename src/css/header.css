@@ -207,7 +207,7 @@
 .mobile-menu-close {
   position: absolute;
   top: -45px;
-  right: 0px;
+  right: 20px;
   width: 28px;
   height: 28px;
 
@@ -233,7 +233,8 @@
 
 .menu-container {
   padding-top: 126px;
-  padding-bottom: 427px;
+  /* padding-bottom: 427px; */
+  padding-bottom: 45vh;
   display: flex;
   justify-content: center;
   font-size: 14px;
