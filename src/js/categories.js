@@ -1,14 +1,16 @@
 import axios from 'axios';
+
 import fetchAndDisplayBooks from './categories-book.js';
 
+
 const BASE_URL = 'https://books-backend.p.goit.global/';
+
 const categoriesContainer = document.querySelector('.categories');
 
 async function fetchCategories() {
   try {
-    const { data: categories } = await axios.get(
-      `${BASE_URL}books/category-list`
-    );
+    const response = await axios.get(`${BASE_URL}books/category-list`);
+    const categories = response.data;
     const categoriesAll = { list_name: 'All categories' };
     categories.unshift(categoriesAll);
 
@@ -30,14 +32,14 @@ async function renderCategories(categories) {
   categoryList.classList.add('book_list');
 
   categories.forEach(category => {
-    const { list_name: categoryName } = category;
     const categoryItem = document.createElement('li');
     categoryItem.classList.add('category_item');
     const categoryLink = document.createElement('a');
-    categoryLink.textContent = categoryName;
+    categoryLink.textContent = category.list_name;
 
     categoryLink.addEventListener('click', async () => {
-      await fetchAndDisplayBooks(categoryName);
+      const categoryName = category.list_name;
+      await fetchBooksForCategory(categoryName); //сюди потрібно підставити функцію яка буде рендерити книги по категоріях
 
       categories.forEach(cat => {
         cat.categoryLink.classList.remove('active-category');
@@ -48,14 +50,20 @@ async function renderCategories(categories) {
 
     categoryLink.classList.add('category_link');
 
-    ['focus', 'blur', 'mouseover', 'mouseout'].forEach(eventType => {
-      categoryLink.addEventListener(eventType, () => {
-        if (eventType === 'focus' || eventType === 'mouseover') {
-          categoryLink.classList.add('uppercase');
-        } else {
-          categoryLink.classList.remove('uppercase');
-        }
-      });
+    categoryLink.addEventListener('focus', () => {
+      categoryLink.classList.add('uppercase');
+    });
+
+    categoryLink.addEventListener('blur', () => {
+      categoryLink.classList.remove('uppercase');
+    });
+
+    categoryLink.addEventListener('mouseover', () => {
+      categoryLink.classList.add('uppercase');
+    });
+
+    categoryLink.addEventListener('mouseout', () => {
+      categoryLink.classList.remove('uppercase');
     });
 
     category.categoryLink = categoryLink;

@@ -1,93 +1,93 @@
 .category_link:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .categories {
-    display: flex;
-    width: 335px;
-    height: 228px;
+  display: flex;
+  width: auto;
+  height: 228px;
 }
 
 .book_list {
-    display: flex;
-    width: 307px;
-    height: 228px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 24px;
-    overflow-y: scroll;
+  display: flex;
+  width: 307px;
+  height: 228px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  overflow-y: scroll;
 }
 
 .book_list::-webkit-scrollbar {
-    width: 8px;
+  width: 8px;
 }
 
 .book_list::-webkit-scrollbar-thumb {
-    background-color: #E0E0E0;
-    border-radius: 12px;
+  background-color: #e0e0e0;
+  border-radius: 12px;
 }
 
 .category_link.active-category {
-    color: #4F2EE8;
-    font-weight: 600;
-    text-transform: uppercase;
+  color: #4f2ee8;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 .uppercase {
-    color: #4F2EE8;
-    font-weight: 600;
-    text-transform: uppercase;
+  color: #4f2ee8;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 .category_link {
-    color: rgba(17, 17, 17, 0.60);
-    font-family: DM Sans;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.12;
-    letter-spacing: -0.32px;
+  color: rgba(17, 17, 17, 0.6);
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.32px;
 }
 
 .category_link.uppercase {
-    color: #4F2EE8;
-    font-weight: 700;
-    text-transform: uppercase;
+  color: #4f2ee8;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .category_item {
-    height: 18px;
+  height: 18px;
 }
 
 @media only screen and (min-width: 768px) {
-    .categories {
-        width: 337px;
-        height: 472px;
-    }
+  .categories {
+    width: 337px;
+    height: 472px;
+  }
 
-    .book_list {
-        width: 309px;
-        height: 472px;
-        gap: 32px;
-    }
+  .book_list {
+    width: 309px;
+    height: 472px;
+    gap: 32px;
+  }
 
-    .category_link {
-        line-height: 1.33;
-        letter-spacing: -0.36px;
-    }
+  .category_link {
+    line-height: 1.33;
+    letter-spacing: -0.36px;
+  }
 
-    .category_item {
-        height: 24px;
-    }
+  .category_item {
+    height: 24px;
+  }
 }
 
 /* Desktop style */
 @media only screen and (min-width: 1280px) {
-    .categories {
-        width: 356px;
-    }
+  .categories {
+    width: 356px;
+  }
 
-    .book_list {
-        width: 328px;
-    }
+  .book_list {
+    width: 328px;
+  }
 }
