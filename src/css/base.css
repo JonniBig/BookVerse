@@ -23,6 +23,10 @@ body {
   background-color: var(--black2-color);
   color: var(--white-color);
 }
+.dark-theme .header {
+  background-color: var(--black1-color);
+  color: var(--white-color);
+}
 
 .container {
   /* Phone styles */
