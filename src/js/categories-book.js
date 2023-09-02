@@ -1,13 +1,16 @@
 // Функція яка відправляє запит по категоріям для відображення результатів
-let CATEGORY_NAME = "Young Adult Paperback Monthly";
+import axios from 'axios';
+
+let CATEGORY_NAME = categoryName;
+
 async function fetchAndDisplayBooks() {
-  const apiUrl = `https://books-backend.p.goit.global/books/category?category=${CATEGORY_NAME}`;
+  const apiUrl = `https://books-backend.p.goit.global/books/category?category=${categoryName}`;
   
   try {
     const response = await axios.get(apiUrl);
     const books = response.data;
 
-     // Замініть це на назву вибраної категорії
+     // Заміна  на назву вибраної категорії
     const resultContainer = document.getElementById("result-container");
     resultContainer.innerHTML = ""; // Очищення попереднього вмісту
     // Рядок CATEGORY_NAME розбиваємо на слова
@@ -15,13 +18,14 @@ async function fetchAndDisplayBooks() {
     if (words.length > 1) {
       // Більше одного слова, прибираємо останнє слово
       const lastWord = words.pop();
-      // Додаємо останнє слово зі стилем кольору
-      words.push(`<span style="color: #4F2EE8;">${lastWord}</span>`);
+      // Додаємо останнє слово + стилізація кольору
+      words.push(`<span style="color: var(--violet-color);">${lastWord}</span>`);
     }
     // Складаємо назад в один рядок
     const formattedCategoryName = words.join(" "); 
     //Повертаємо заголовок з відформатовоною назвою категорії назад)
     const categoryTitle = document.createElement("h2");
+    categoryTitle.classList.add("categoryes-book-title");
     categoryTitle.innerHTML = formattedCategoryName;
     resultContainer.appendChild(categoryTitle);
 
@@ -29,7 +33,7 @@ async function fetchAndDisplayBooks() {
     if (books.length === 0) {
       const noBooksMessage = document.createElement("p");
       noBooksMessage.classList.add("notFound");
-      noBooksMessage.textContent = "У вибраній категорії не знайдено книг. Виберіть іншу категорію.";
+      noBooksMessage.textContent = "Вибраної категорії не існує. Виберіть іншу категорію.";
       resultContainer.appendChild(noBooksMessage);
     } else {
       // Відображаємо книги їх у вигляді списку (картинка назва автор)
@@ -38,19 +42,21 @@ async function fetchAndDisplayBooks() {
 
       books.forEach(book => {
         const li = document.createElement("li");
-        li.className = "book-item"; // Клас стилізації LI
+        li.className = "categoryes-book-item"; // Клас стилізації LI
 
         const img = document.createElement("img");
-        img.classList.add("img-book");
+        img.classList.add("categoryes-book-img");
+        img.height = 316;
+        img.width = 218;
         img.src = book.book_image;
         img.alt = book.title;
 
         const title = document.createElement("p");
-        title.classList.add("title-book");
+        title.classList.add("categoryes-title-book");
         title.textContent = book.title;
 
         const author = document.createElement("p");
-        author.classList.add("author-book");
+        author.classList.add("categoryes-author-book");
         author.textContent = book.author;
 
 

@@ -17,7 +17,7 @@ body {
 
   /* color */
   background-color: #f6f6f6;
-  color: #111111;
+  /* color: #111111; */
 }
 .dark-theme {
   background-color: var(--black2-color);
