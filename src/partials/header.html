@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header container">
   <div class="header-container">
     <a class="link logo" href="index.html">
       <div class="logo-box">
@@ -24,8 +24,14 @@
 
     <input type="checkbox" id="switch" /><label for="switch"></label>
     <!-- <div class="log-form">
-          <img src="./images/user.svg" alt="avatar" /> Hello
-        </div> -->
+      <img src="./images/user.svg" alt="avatar" /> Hello
+    </div> -->
+    <a class="log-form" href="">
+      <svg class="icon-hello" width="30" height="30">
+        <use href="./images/icomoon.svg#icon-vector"></use>
+      </svg>
+      Hello!
+    </a>
 
     <!-- Irina Kolos-->
     <button
@@ -53,19 +59,19 @@
         </svg>
       </button>
 
-      <!-- <a class="mobil-icon link" href="">
-        <svg class="icon-hello" width="30" height="30">
-          <use href="./image/icomoon.svg#icon-vector"></use>
+      <a class="menu-log-form" href="">
+        <svg class="menu-icon-hello" width="30" height="30">
+          <use href="./images/icomoon.svg#icon-vector"></use>
         </svg>
         Hello!
-      </a> -->
+      </a>
 
       <div class="menu-container">
         <ul class="mobil-nav-list list">
           <li class="mobil-nav-item-home">
             <a class="mobil-nav-link current link" href="./index.html">Home</a>
           </li>
-          <li class="mobil-nav-item">
+          <li class="mobil-nav-item-shopping">
             <a class="mobil-nav-link link" href="./shopping-list.html"
               >Shopping list
               <svg class="mobil-lock" width="20" height="20">
@@ -76,7 +82,12 @@
         </ul>
       </div>
 
-      <!-- <button class="menu-login" type="button">Log out</button> -->
+      <button class="menu-login" type="button">
+        Log out
+        <svg class="arrow" width="20" height="20">
+          <use href="./images/icomoon.svg#icon-arrow-right"></use>
+        </svg>
+      </button>
     </div>
   </div>
 </header>

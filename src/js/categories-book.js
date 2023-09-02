@@ -4,12 +4,13 @@ import axios from 'axios';
 
 async function fetchAndDisplayBooks(categoryName) {
   const apiUrl = `https://books-backend.p.goit.global/books/category?category=${categoryName}`;
+
   
   try {
     const response = await axios.get(apiUrl);
     const books = response.data;
 
-     // Заміна  на назву вибраної категорії
+     // Замініть це на назву вибраної категорії
     const resultContainer = document.getElementById("result-container");
     resultContainer.innerHTML = ""; // Очищення попереднього вмісту
     //розбиваємо на слова
@@ -17,22 +18,23 @@ async function fetchAndDisplayBooks(categoryName) {
     if (words.length > 1) {
       // Більше одного слова, прибираємо останнє слово
       const lastWord = words.pop();
-      // Додаємо останнє слово + стилізація кольору
-      words.push(`<span style="color: var(--violet-color);">${lastWord}</span>`);
+      // Додаємо останнє слово зі стилем кольору
+      words.push(`<span style="color: #4F2EE8;">${lastWord}</span>`);
     }
     // Складаємо назад в один рядок
     const formattedCategoryName = words.join(" "); 
     //Повертаємо заголовок з відформатовоною назвою категорії назад)
     const categoryTitle = document.createElement("h2");
-    categoryTitle.classList.add("categoryes-book-title");
     categoryTitle.innerHTML = formattedCategoryName;
     resultContainer.appendChild(categoryTitle);
 
     // При відсутність книг, відображає повідомлення Р з класом notFound
     if (books.length === 0) {
       const noBooksMessage = document.createElement("p");
+
       noBooksMessage.classList.add("categoryesNotFound");
       noBooksMessage.textContent = "Вибраної категорії не існує. Виберіть іншу категорію.";
+
       resultContainer.appendChild(noBooksMessage);
     } else {
       // Відображаємо книги їх у вигляді списку (картинка назва автор)
@@ -41,9 +43,10 @@ async function fetchAndDisplayBooks(categoryName) {
 
       books.forEach(book => {
         const li = document.createElement("li");
-        li.className = "categoryes-book-item"; // Клас стилізації LI
+        li.className = "book-item"; // Клас стилізації LI
 
         const img = document.createElement("img");
+
         img.classList.add("categoryes-book-img");
         img.height = 316;
         img.width = 218;
@@ -57,6 +60,7 @@ async function fetchAndDisplayBooks(categoryName) {
         const author = document.createElement("p");
         author.classList.add("categoryes-author-book");
         author.textContent = book.author  || 'N/A';
+
 
 
         li.appendChild(img);
