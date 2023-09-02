@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { fetchAndDisplayBooks } from './categories-book.js';
+import fetchAndDisplayBooks from './categories-book.js';
 
 const BASE_URL = 'https://books-backend.p.goit.global/';
 const categoriesContainer = document.querySelector('.categories');
