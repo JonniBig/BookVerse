@@ -1,9 +1,7 @@
 // Функція яка відправляє запит по категоріям для відображення результатів
 import axios from 'axios';
 
-let CATEGORY_NAME = categoryName;
-
-async function fetchAndDisplayBooks() {
+async function fetchAndDisplayBooks(categoryName) {
   const apiUrl = `https://books-backend.p.goit.global/books/category?category=${categoryName}`;
   
   try {
@@ -14,7 +12,7 @@ async function fetchAndDisplayBooks() {
     const resultContainer = document.getElementById("result-container");
     resultContainer.innerHTML = ""; // Очищення попереднього вмісту
     // Рядок CATEGORY_NAME розбиваємо на слова
-    const words = CATEGORY_NAME.split(" ");
+    const words = categoryName.split(" ");
     if (words.length > 1) {
       // Більше одного слова, прибираємо останнє слово
       const lastWord = words.pop();
@@ -32,13 +30,13 @@ async function fetchAndDisplayBooks() {
     // При відсутність книг, відображає повідомлення Р з класом notFound
     if (books.length === 0) {
       const noBooksMessage = document.createElement("p");
-      noBooksMessage.classList.add("notFound");
+      noBooksMessage.classList.add("categoryesNotFound");
       noBooksMessage.textContent = "Вибраної категорії не існує. Виберіть іншу категорію.";
       resultContainer.appendChild(noBooksMessage);
     } else {
       // Відображаємо книги їх у вигляді списку (картинка назва автор)
       const ul = document.createElement("ul");
-      ul.className = "book-list"; // Клас стилізації UL
+      ul.className = "categoryes-book-list"; // Клас стилізації UL
 
       books.forEach(book => {
         const li = document.createElement("li");
@@ -48,16 +46,16 @@ async function fetchAndDisplayBooks() {
         img.classList.add("categoryes-book-img");
         img.height = 316;
         img.width = 218;
-        img.src = book.book_image;
-        img.alt = book.title;
+        img.src = book.book_image || 'default-image.jpg';
+        img.alt = book.title || 'N/A';
 
         const title = document.createElement("p");
         title.classList.add("categoryes-title-book");
-        title.textContent = book.title;
+        title.textContent = book.title  || 'N/A';
 
         const author = document.createElement("p");
         author.classList.add("categoryes-author-book");
-        author.textContent = book.author;
+        author.textContent = book.author  || 'N/A';
 
 
         li.appendChild(img);
@@ -78,4 +76,4 @@ async function fetchAndDisplayBooks() {
 // Виклик фенкції для запиту на серевер для отримання списку книг
 fetchAndDisplayBooks();
 
- 
+ export default fetchAndDisplayBooks;

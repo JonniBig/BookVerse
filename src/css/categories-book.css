@@ -8,7 +8,7 @@
   float: right;
 }
 
-.notFound {
+.categoryesNotFound {
   font-weight: 700;
 }
 
@@ -19,7 +19,7 @@
   font-weight: 700;
   line-height: 52px;
 }
-.book-list {
+.categoryes-book-list {
   list-style: none;
   display: flex;
   gap: 20px;
