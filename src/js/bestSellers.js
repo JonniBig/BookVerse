@@ -4,9 +4,10 @@ const bestSellers = document.querySelector('.bestseller');
 
 const URL = 'https://books-backend.p.goit.global/books/top-books';
 export async function fetchBookShelf() {
-  const url = `${URL}`;
-  const response = await axios.get(url);
-  // console.log(response.data);
+
+  const response = await axios.get(URL);
+
+
   return response.data;
 }
 fetchBookShelf();
@@ -28,7 +29,6 @@ getBooks();
 export function createMarkupBookShelf(books) {
   const { list_name, book_image, author, title } = books;
 
-  // console.log(books);
   const arrBookShelf = `
   <div class="best_list">
     <h2 class="best_list_name">${list_name}</h2>
