@@ -1,10 +1,10 @@
 // Функція яка відправляє запит по категоріям для відображення результатів
 import axios from 'axios';
 
-let CATEGORY_NAME = "Young Adult Paperback Monthly";
+let CATEGORY_NAME = categoryName;
 
 async function fetchAndDisplayBooks() {
-  const apiUrl = `https://books-backend.p.goit.global/books/category?category=${CATEGORY_NAME}`;
+  const apiUrl = `https://books-backend.p.goit.global/books/category?category=${categoryName}`;
   
   try {
     const response = await axios.get(apiUrl);
@@ -33,7 +33,7 @@ async function fetchAndDisplayBooks() {
     if (books.length === 0) {
       const noBooksMessage = document.createElement("p");
       noBooksMessage.classList.add("notFound");
-      noBooksMessage.textContent = "У вибраній категорії не знайдено книг. Виберіть іншу категорію.";
+      noBooksMessage.textContent = "Вибраної категорії не існує. Виберіть іншу категорію.";
       resultContainer.appendChild(noBooksMessage);
     } else {
       // Відображаємо книги їх у вигляді списку (картинка назва автор)
@@ -52,11 +52,11 @@ async function fetchAndDisplayBooks() {
         img.alt = book.title;
 
         const title = document.createElement("p");
-        title.classList.add("title-book");
+        title.classList.add("categoryes-title-book");
         title.textContent = book.title;
 
         const author = document.createElement("p");
-        author.classList.add("author-book");
+        author.classList.add("categoryes-author-book");
         author.textContent = book.author;
 
 
