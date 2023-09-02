@@ -1,5 +1,6 @@
 .container-book-shop {
     margin: 0 auto;
+
 }
 
 .book-shop {
@@ -13,6 +14,10 @@
     font-size: 32px;
     line-height: 1.19;
     letter-spacing: -0.04em;
+}
+
+.colored {
+    color: var(--violet-color);
 }
 
 .empty-list {
@@ -38,6 +43,103 @@
     margin: 0 auto;
 }
 
+/* --------BOOK CARD------------ */
+
+.book-shop-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.shop-list-item {
+    display: flex;
+    gap: 14px;
+
+    width: 100%;
+    border: 2px solid #4F2EE866;
+    border-radius: 16px;
+    margin-bottom: 20px;
+}
+
+.shop-book-img {
+    border-radius: 8px;
+    margin: 14px 0 14px 14px;
+    height: 142px;
+}
+
+.info-box {
+    width: 100%;
+}
+
+.book-title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 70%;
+    white-space: nowrap;
+    margin-top: 14px;
+    margin-bottom: 4px;
+
+    font-family: DM Sans;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+}
+
+.book-category {
+    margin-bottom: 8px;
+
+    font-family: DM Sans;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    color: #B4AFAF;
+}
+
+.book-deskr {
+    width: 100%;
+    height: 68px;
+    margin-bottom: 17px;
+    padding-right: 5px;
+
+    text-overflow: ellipsis;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+
+    font-family: DM Sans;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: -0.04em;
+}
+
+.bottom-card-book {
+    display: flex;
+    gap: 16px;
+}
+
+.book-author {
+    font-family: DM Sans;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.17;
+    letter-spacing: -0.04em;
+    color: #B4AFAF;
+}
+
+.book-links {
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+}
+
+/* ------------/BOOK CARD------------- */
+/* ------------MEDIA QUERRY----------- */
+
 @media only screen and (min-width: 767px) {
     .book-shop {
         margin-left: 32px;
@@ -51,6 +153,10 @@
     .empty-list-text {
         letter-spacing: -0.02em;
     }
+
+    .shop-list-item {
+        width: 704px;
+    }
 }
 
 @media only screen and (min-width: 1439px) {
@@ -63,10 +169,42 @@
         height: 474px;
         margin-top: 40px;
         margin-left: 24px;
-        background-color: blue;
+        background-color: var(--violet-color);
     }
 
     .book-shop {
         min-width: 996px;
     }
+}
+
+/* ----------------/MEDIA QUERRY---------------- */
+
+
+#style-4::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+}
+
+#style-4::-webkit-scrollbar {
+    width: 2px;
+    background-color: #F5F5F5;
+}
+
+#style-4::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border: 1px solid #555555;
+
+}
+
+.is-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
 }
