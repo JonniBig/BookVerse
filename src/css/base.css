@@ -59,20 +59,34 @@ body {
 
 .scroll-button {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 40px;
+  right: 40px;
   width: 40px;
   height: 40px;
-  background-color: var(--violet-color);
+  background-color: #836fde;
   fill: var(--yellow-color);
   border-radius: 30%;
   border: 1.5px solid var(--black1-color);
+  display: none;
+  cursor: pointer;
+  transition: background-color 0.3s, fill 0.3s;
+
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.scroll-button:hover {
+  background-color: var(--violet-color);
 }
 @media only screen and (min-width: 768px) {
   .scroll-button {
-    bottom: 32px;
-    right: 32px;
+    bottom: 30px;
+    right: 30px;
     width: 50px;
     height: 50px;
   }
+}
+
+.scroll-button.show {
+  display: block; /* Показуємо кнопку при прокрутці */
 }

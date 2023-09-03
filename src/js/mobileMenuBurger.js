@@ -33,12 +33,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (currentPage.includes('index.html')) {
     menuItemHome.classList.add('mobil-nav-item-active');
-    menuItemShopping.classList.remove('mobil-nav-item-active'); // Знімаємо активний стиль з "Shopping list"
-    iconShoppingBag.classList.remove('mobil-lock-active'); // Знімаємо активний стиль для іконки
+    menuItemShopping.classList.remove('mobil-nav-item-active');
+    iconShoppingBag.classList.remove('mobil-lock-active');
   } else if (currentPage.includes('shopping-list.html')) {
     menuItemShopping.classList.add('mobil-nav-item-active');
-    menuItemHome.classList.remove('mobil-nav-item-active'); // Знімаємо активний стиль з "Home"
-    iconShoppingBag.classList.add('mobil-lock-active'); // Додаємо активний стиль для іконки
+    menuItemHome.classList.remove('mobil-nav-item-active');
+    iconShoppingBag.classList.add('mobil-lock-active');
   }
 });
 
