@@ -1,0 +1,81 @@
+/* .backdrop is-hidden{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 100;
+    transition: opacity 200ms ease, visibility 200ms ease;
+}
+
+.backdrop {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+}
+
+.book-info{
+    position: absolute;
+    width: 335px;
+    border-radius: 18px;
+    border-color:1px solid #111;
+    z-index: 100;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0) scale(1);
+    scroll-behavior: smooth;
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+}
+
+.button-close-modal{
+    padding-right: 30px;
+    width: 24px;
+    height: 24px;
+    border: none;
+    background-color: #e4d6d6;
+}
+
+.close-modal-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* fill: #111; */
+/* } */
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(27, 31, 37, 0.526);
+  }
+
+  .is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .modal {
+    width: 335px;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+      0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0);
+  }
