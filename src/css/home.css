@@ -1,34 +1,35 @@
 
-.book-item{
-    width: 335px;
-    height: 571px;
+
+.title-books {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.19;
+
+
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
-.bestseller{
-    display: block;
-}
-.left-wrapper{
-    display: block;
+
+.best-list-name {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.29;
+    letter-spacing: 0.02em;
+    color: #B4AFAF;
+
+    margin-bottom: 18px;
 }
 
-.right-wrapper{
-    display:block ;
-}
-
-.book-wrap {
-  
-    width: 335px;
-    height: 485px;
-    margin-bottom: 14px;
-    border-radius: 8px;
-
-}
 .book-name {
   
     margin-bottom: 4px;
 
     color:var(--black-text-color);
     font-size: 16px;
+    font-weight: 700;
     line-height: 1.12;
     letter-spacing: -0.04em;
 
@@ -36,98 +37,178 @@
 
     text-overflow: ellipsis;
     overflow: hidden;
-     white-space: nowrap;
+    white-space: nowrap;
+
+    margin-top: 14px;
+    margin-bottom: 4px;
 }
 
 .book-author {
 
     margin-bottom: 8px;
 
-   font-size: 12px;
-   letter-spacing: -0.04em;
-   line-height: 1.17;
+    font-size: 12px;
+    letter-spacing: -0.04em;
+    line-height: 1.17;
 
-   font-style: italic;
-   text-overflow: ellipsis;
-   overflow: hidden;
-   white-space: nowrap;
+    font-style: italic;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
    
-   
+
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1439px) {
-    .left-wrapper {
-    display: flex;
+.see-more {
+  margin-bottom: 40px;
+  padding: 14px 28px;
+
+  font-weight: 700;
+  letter-spacing: -0.01em;
+
+  border: 2px solid var(--violet-color);
+  border-radius: 25px;
 }
-.container{
+
+.dark-theme .see-more {
+  background-color: var(--black2-color);
+}
+
+.colored {
+  color: var(--violet-color);
+}
+
+
+.book-item{
+/*     width: 335px; */
+    height: 571px;
+
+}
+
+.bestseller {
+  display: block;
+}
+.left-wrapper {
+  display: block;
+}
+
+.right-wrapper {
+  display: block;
+}
+
+.book-wrap {
+
+  
+/*     width: 335px;
+    height: 485px; */
+    margin-bottom: 14px;
+    border-radius: 8px;
+
+}
+
+.categoryes-book-img {
+    max-width: 218;
+    height: 316;
+  }
+
+
+.book-name {
+  margin-bottom: 4px;
+
+  color: var(--black-text-color);
+  font-size: 16px;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+
+  text-transform: uppercase;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.book-author {
+  margin-bottom: 8px;
+
+  font-size: 12px;
+  letter-spacing: -0.04em;
+  line-height: 1.17;
+
+  font-style: italic;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+
+  .container {
     display: flex;
     flex-wrap: wrap;
-}
-}
-
+  }
 
 
 @media only screen and (min-width: 768px) {
-    .bestseller {
+  .bestseller {
     display: flex;
     flex-wrap: wrap;
     gap: 25px;
     row-gap: 40px;
+  }
 }
 
+
+@media only screen and (min-width: 1440px) {
+.bestseller{
+    display: flex;
+    
 }
-@media  screen and (min-width: 1440px) { 
-    .container {    
-        
-        flex-direction: row;
-     } 
-     }
-
-
-
-   
-
-@media only screen and (min-width: 1440px){
-    .left-wrapper{
-        gap:32px ;
-        display: block;
-    }
 }
 
 @media only screen and (min-width: 1440px) {
+    
+    .container{
+display: flex;
+flex-direction: column;
+    } 
+
+  }
+
+
+@media only screen and (min-width: 1440px) {
+
     .book-item{
-        flex-wrap: calc((100%-32px)/5);
+        flex-wrap: calc((100%-24px)/5);
       
       
     }
   }
   
-  
-  
+
   @media only screen and (min-width: 768px) {
      .book-wrap{
       
       width: 218px;
       height: 316px;
     }
-  }
-  
-  @media only screen and (min-width: 1440px) {
-    
-     .book-wrap{
-  
-      width:180px;
-      height: 256px;
-      
-    }
-  }
-  
-  
-  
-  @media only screen and (min-width: 768px) {
-     .book-author{
-       
-      margin-bottom: 20px;
-    }
+
   }
 
+@media only screen and (min-width: 768px) {
+  .book-wrap {
+    width: 218px;
+    height: 316px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .book-wrap {
+    width: 180px;
+    height: 256px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .book-author {
+    margin-bottom: 20px;
+  }
+}
