@@ -26,6 +26,7 @@ body {
 .dark-theme .header {
   background-color: var(--black1-color);
   color: var(--white-color);
+  border: 1.5px solid var(--white-color);
 }
 
 .container {
@@ -44,7 +45,6 @@ body {
     max-width: 768px;
     padding-left: 32px;
     padding-right: 32px;
-   
   }
 }
 
@@ -54,6 +54,25 @@ body {
     max-width: 1440px;
     padding-left: 24px;
     padding-right: 24px;
-    
+  }
+}
+
+.scroll-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: var(--violet-color);
+  fill: var(--yellow-color);
+  border-radius: 30%;
+  border: 1.5px solid var(--black1-color);
+}
+@media only screen and (min-width: 768px) {
+  .scroll-button {
+    bottom: 32px;
+    right: 32px;
+    width: 50px;
+    height: 50px;
   }
 }
