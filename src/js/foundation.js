@@ -3,8 +3,7 @@ import { createMarkupBookShelf } from "./bestSellers";
 const foundations = [
     {
         title: 'Save the Children',
-        url:
-            'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
+        url: 'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
         img: 'children.png',
     },
     {
@@ -13,24 +12,15 @@ const foundations = [
         img: 'hope.png',
     },
     {
-        title: 'UNITED24',
-        url: 'https://u24.gov.ua/uk',
-        img: 'united.png',
-    },
-    {
         title: 'International Medical Corps',
         url: 'https://internationalmedicalcorps.org/country/ukraine/',
         img: 'medical.png',
-    },
-    {
-        title: 'Medicins Sans Frontieres',
-        url: 'https://www.msf.org/ukraine',
-        img: 'medecins.png',
+        
     },
     {
         title: 'RAZOM',
         url: 'https://www.razomforukraine.org/',
-        img: 'razom.png',
+        img: 'razom.png',        
     },
     {
         title: 'Action against hunger',
@@ -38,14 +28,24 @@ const foundations = [
         img: 'action.png',
     },
     {
+        title: 'Serhiy Prytula Charity Foundation',
+        url: 'https://prytulafoundation.org/en',
+        img: 'sergiy.png',
+    },
+    {
+        title: 'Medicins Sans Frontieres',
+        url: 'https://www.msf.org/ukraine',
+        img: 'medecins.png',
+    },
+    {
         title: 'World vision',
         url: 'https://www.wvi.org/emergencies/ukraine',
         img: 'world.png',
     },
     {
-        title: 'Serhiy Prytula Charity Foundation',
-        url: 'https://prytulafoundation.org/en',
-        img: 'sergiy.png',
+        title: 'UNITED24',
+        url: 'https://u24.gov.ua/uk',
+        img: 'united.png',
     },
 ];
 
@@ -62,8 +62,8 @@ function handleScrollFoundations() {
     } else {
         foundationList.scrollTo({ top: 0, behavior: "smooth" });
     } 
-    downBtn.classList.toggle("found-down")
-    downBtn.classList.toggle("found-up")
+    downBtn.classList.toggle("found-down");
+    downBtn.classList.toggle("found-up");
 }
 
 function showFoundations() {
