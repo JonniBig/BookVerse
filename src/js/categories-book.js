@@ -45,6 +45,7 @@ async function fetchAndDisplayBooks(categoryName) {
         const li = document.createElement('li');
         li.className = 'book-item'; 
         li.id = `book-${book._id}`;
+        
 
         const img = document.createElement('img');
 
