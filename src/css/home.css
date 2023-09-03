@@ -88,9 +88,9 @@
 .bestseller {
   display: block;
 }
-.left-wrapper {
-  display: block;
-}
+/* .left-wrapper { */
+  /* display: block; */
+/* } */
 
 .right-wrapper {
   display: block;
@@ -141,12 +141,6 @@
 }
 
 
-  .container {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-
 @media only screen and (min-width: 768px) {
   .bestseller {
     display: flex;
@@ -164,14 +158,6 @@
 }
 }
 
-@media only screen and (min-width: 1440px) {
-    
-    .container{
-display: flex;
-flex-direction: column;
-    } 
-
-  }
 
 
 @media only screen and (min-width: 1440px) {

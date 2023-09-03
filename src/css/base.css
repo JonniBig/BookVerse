@@ -45,6 +45,15 @@ body {
 
 }
 
+@media only screen and (min-width: 768px) {
+  .left-wrapper {
+    display: flex;
+   
+  }
+
+}
+
+
 /* Desktop style */
 @media only screen and (min-width: 1440px) {
   .container {
@@ -53,5 +62,10 @@ body {
     padding-right: 24px;
     
   }
-  
+  .main-container{
+display: flex;
+  }
+  .left-wrapper {
+  flex-direction: column;
+}
 }
