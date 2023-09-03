@@ -1,4 +1,4 @@
-import { createMarkupBookShelf } from "./bestSellers"
+import { createMarkupBookShelf } from "./bestSellers";
 
 const foundations = [
     {
@@ -47,14 +47,27 @@ const foundations = [
         url: 'https://prytulafoundation.org/en',
         img: 'sergiy.png',
     },
-]
+];
 
-showFoundations()
+const foundationList = document.querySelector(".found-list");
+const downBtn = document.querySelector(".found-down");
+
+showFoundations();
+
+downBtn.addEventListener("click", handleScrollFoundations);
+
+function handleScrollFoundations() {
+    if (downBtn.matches(".found-down")) {
+        foundationList.scrollTo({ top: 500, behavior: "smooth" });
+        
+    } else {
+        foundationList.scrollTo({ top: 0, behavior: "smooth" });
+
+    } 
+}
 
 function showFoundations() {
-    const foundationList = document.querySelector(".found-list")
-    
-    foundationList.innerHTML = createMarkupListItems()
+    foundationList.innerHTML = createMarkupListItems();
 }
 
 function createMarkupListItems() {
@@ -65,7 +78,7 @@ function createMarkupListItem(item, i) {
     return `
         <li class="found-item" value="${i + 1}">
             <a href="${item.url}" class="found-link" title="${item.title}" target="_blank"> 
-                <img src="../images/found/${item.img}" alt="${item.title}" class="found-logo">
+                <img src="./images/found/${item.img}" alt="${item.title}" class="found-logo">
             </a>
         </li>
     `
