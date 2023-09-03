@@ -1,4 +1,4 @@
-import{a as h}from"./mobileMenuBurger-9f5bb1c4.js";const b=document.querySelector(".bestseller"),C="https://books-backend.p.goit.global/books/top-books";async function y(){return(await h.get(C)).data}y();async function E(t){try{(await y(t)).map(n=>v(n))}catch{console.error("Try again!")}}E();function v(t){const{list_name:e,books:n}=t,i=`
+import{a as h}from"./mobileMenuBurger-d4156733.js";const b=document.querySelector(".bestseller"),C="https://books-backend.p.goit.global/books/top-books";async function y(){return(await h.get(C)).data}y();async function E(t){try{(await y(t)).map(n=>v(n))}catch{console.error("Try again!")}}E();function v(t){const{list_name:e,books:n}=t,i=`
   <div class="best_list">
     <h2 class="best_list_name">${e}</h2>
      <ul>
