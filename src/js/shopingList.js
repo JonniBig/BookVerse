@@ -19,10 +19,12 @@ async function getBook() {
 
 getBook().then(data => {
   localStorage.removeItem('ListofBooks');
-  const savedBook = data[10].books;
+  const savedBook = data[15].books;
   localStorage.setItem('ListOfBooks', JSON.stringify(savedBook));
 });
 const savedData = JSON.parse(localStorage.getItem('ListOfBooks'));
+
+addCard();
 
 function addCard() {
   if (savedData.length === 0) {
@@ -36,10 +38,12 @@ function addCard() {
   emptyList.classList.add('is-hidden');
   listCards.innerHTML = '';
   listCards.insertAdjacentHTML('beforeend', makeMarkup11(savedData));
+  // listCards.firstChild.classList.add('tui-first-child');
+  // listCards.lastChild.classList.add('tui-last-child');
   // const options = {
-  //   totalItems: 10,
-  //   itemsPerPage: 2,
-  //   visiblePages: 3,
+  //   // totalItems: 5,
+  //   itemsPerPage: 3,
+  //   visiblePages: 2,
   //   page: 1,
   //   centerAlign: true,
   //   firstItemClassName: 'tui-first-child',
@@ -47,7 +51,9 @@ function addCard() {
   // };
 
   // const myPagination = new Pagination(container, options);
-  const dumpEl = document.querySelectorAll('.icon-damp').forEach(item=>item.addEventListener('click', deleteCard));
+  const dumpEl = document
+    .querySelectorAll('.icon-damp')
+    .forEach(item => item.addEventListener('click', deleteCard));
 }
 
 function deleteCard(evt) {
@@ -58,7 +64,6 @@ function deleteCard(evt) {
   localStorage.removeItem('ListofBooks');
   localStorage.setItem('ListOfBooks', JSON.stringify(savedData));
   addCard();
-
 }
 
 function makeMarkup11(arr) {
@@ -67,31 +72,33 @@ function makeMarkup11(arr) {
       ({ book_image, title, list_name, description, author, buy_links, _id }) =>
         `<li class="shop-list-item">
               <svg class="icon-damp" width="28" height="28">
-                <use href="./images/icomoon.svg#icon-dump" id="${_id}"></use>
+                <use href="../images/icomoon.svg#icon-dump" id="${_id}"></use>
               </svg>
-         <img
-           src="${book_image}"
-           alt="${title}"
-           class="shop-book-img"
-           loading="lazy"
-           width="100px"
-           height="142px"
-         />
+         
+           <img
+             src="${book_image}"
+             alt="${title}"
+             class="shop-book-img"
+             loading="lazy"
+             width="100px"
+             height: 142px;
+             />
+         
           <div class="info-box">
            <h3 class="book-title">${title}</h3>
            <p class="book-category">${list_name}</p>
            <p class="book-deskr" id="style-4">${description}</p>
            <div class="bottom-card-book">
-             <p class="book-author">${author}</p>
+             <p class="book-author-bottom">${author}</p>
              <div class="book-links">
                <a href="${buy_links[0].url}" target="_blank" rel="noreferrer noopener" aria-label="Link to Amazon">
-                 <img src="./images/shopingList/amazon.png" alt="Logo Amazon" width="32px" />
+                 <img src="../images/shopingList/amazon.png" alt="Logo Amazon" width="32px" class="link-1"/>
                </a>
                <a href="${buy_links[1].url}" target="_blank" rel="noreferrer noopener" aria-label="Link to Apple book shop">
-                 <img src="./images/shopingList/apple.png" alt="Logo Apple book store" width="16px" />
+                 <img src="../images/shopingList/apple.png" alt="Logo Apple book store" width="16px" class="link-2"/>
                </a>
                <a href="${buy_links[4].url}" target="_blank" rel="noreferrer noopener" aria-label="Link to Book shop">
-                 <img src="./images/shopingList/book_shop.png" alt="Logo book shop" width="16px"/>
+                 <img src="../images/shopingList/book_shop.png" alt="Logo book shop" width="16px" class="link-3"/>
                </a>
              </div>
            </div>
@@ -101,4 +108,4 @@ function makeMarkup11(arr) {
     .join(' ');
 }
 
-addCard();
+

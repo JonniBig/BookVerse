@@ -2,6 +2,10 @@
   cursor: pointer;
 }
 
+.dark-theme .category_link:hover {
+  color: var(--yellow-color);
+}
+
 .categories {
   display: flex;
   width: auto;
@@ -33,6 +37,10 @@
   text-transform: uppercase;
 }
 
+.dark-theme .category_link.active-category {
+  color: var(--yellow-color);
+}
+
 .uppercase {
   color: #4f2ee8;
   font-weight: 600;
@@ -49,6 +57,9 @@
   letter-spacing: -0.32px;
 }
 
+.dark-theme .category_link {
+  color: rgba(255, 255, 255, 0.6);
+}
 .category_link.uppercase {
   color: #4f2ee8;
   font-weight: 700;
