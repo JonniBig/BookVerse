@@ -16,9 +16,7 @@ async function fetchAndDisplayBooks(categoryName) {
     const resultContainer = document.getElementById("result-container");
     resultContainer.innerHTML = ""; // Очищення попереднього вмісту
     //розбиваємо на слова
-       
- 
-      
+             
     const words = categoryName.split(" ");
     if (words.length > 1) {
       // Більше одного слова, прибираємо останнє слово
@@ -55,7 +53,7 @@ async function fetchAndDisplayBooks(categoryName) {
         img.classList.add("categoryes-book-img");
         img.height = 316;
         img.width = 218;
-        img.src = book.book_image || 'default-image.jpg';
+        img.src = book.book_image || '../images/plug picture/plug335x485@1x.jpg';
         img.alt = book.title || 'N/A';
 
         const title = document.createElement("p");
