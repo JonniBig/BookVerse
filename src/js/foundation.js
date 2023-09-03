@@ -58,12 +58,12 @@ downBtn.addEventListener("click", handleScrollFoundations);
 
 function handleScrollFoundations() {
     if (downBtn.matches(".found-down")) {
-        foundationList.scrollTo({ top: 500, behavior: "smooth" });
-        
+        foundationList.scrollTo({ top: 500, behavior: "smooth" });     
     } else {
         foundationList.scrollTo({ top: 0, behavior: "smooth" });
-
     } 
+    downBtn.classList.toggle("found-down")
+    downBtn.classList.toggle("found-up")
 }
 
 function showFoundations() {
