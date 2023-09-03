@@ -5,20 +5,15 @@ window.addEventListener('scroll', trackScroll);
 goTopBtn.addEventListener('click', goTop);
 
 function trackScroll() {
-  const scrolled = window.pageYOffset;
-
+  const scrolled = document.documentElement.scrollTop;
   const coords = document.documentElement.clientHeight;
 
-  if (scrolled > coords) {
-    goTopBtn.classList.add('go-top--show');
-  } else {
-    goTopBtn.classList.remove('go-top--show');
-  }
+  goTopBtn.classList.toggle('show', scrolled > coords);
 }
 
 function goTop() {
-  if (window.pageYOffset > 0) {
-    window.scrollBy(0, -25); //другий аргумент - це швидкість скролу
-    setTimeout(goTop, 0);
+  if (document.documentElement.scrollTop > 0) {
+    window.scrollBy(0, -40);
+    requestAnimationFrame(goTop);
   }
 }

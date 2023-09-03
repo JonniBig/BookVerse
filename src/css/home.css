@@ -28,6 +28,10 @@
   border-radius: 25px;
 }
 
+.dark-theme .see-more {
+  background-color: var(--black2-color);
+}
+
 .colored {
   color: var(--violet-color);
 }
