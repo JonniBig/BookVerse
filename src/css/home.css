@@ -79,18 +79,16 @@
 }
 
 
-.book-item{
+/* .book-item{ */
 /*     width: 335px; */
-    height: 571px;
+    /* height: 571px; */
 
-}
+/* } */
 
 .bestseller {
   display: block;
 }
-/* .left-wrapper { */
-  /* display: block; */
-/* } */
+
 
 .right-wrapper {
   display: block;
