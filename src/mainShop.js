@@ -1,5 +1,5 @@
 
-
+import './js/foundation';
 import './js/mobileMenu';
 
 import './js/toogleBtn';
