@@ -1,12 +1,12 @@
 import axios from 'axios';
+import fetchAndDisplayBooks from './categories-book';
 
 const bestSellers = document.querySelector('.bestseller');
+const btnSeeMore = document.querySelector('.see-more');
 
 const URL = 'https://books-backend.p.goit.global/books/top-books';
 export async function fetchBookShelf() {
-
   const response = await axios.get(URL);
-  // console.log(response.data);
 
   return response.data;
 }
@@ -44,13 +44,18 @@ export function createMarkupBookShelf(category) {
   `;
 
   bestSellers.insertAdjacentHTML('beforeend', arrBookShelf);
+
+  const seeMoreButton = bestSellers.querySelector('.see-more:last-of-type');
+  seeMoreButton.addEventListener('click', () => {
+    fetchAndDisplayBooks(list_name);
+  });
 }
 
+btnSeeMore.addEventListener('click', fetchAndDisplayBooks(categoryName));
 export function renderBook({ book_image, title, author }) {
-  return `<img width="218" height="auto" src="${book_image}" alt="${title}"/>
+  return `<img class="book-wrap" src="${book_image}" alt="${title}"/>
     <div'>
-      <p>${title}</p>
-      <p>${author}</p>
+      <p class="book-name">${title}</p>
+      <p class="book-author">${author}</p>
     </div>`;
 }
-
