@@ -1,20 +1,62 @@
-.title_books {
-  font-size: 32px;
-  font-weight: 700;
-  letter-spacing: -0.04em;
-  line-height: 1.19;
+
+
+.title-books {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.19;
+
 
   margin-top: 40px;
   margin-bottom: 40px;
 }
 
-.best_list_name {
-  text-transform: uppercase;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.29;
-  letter-spacing: 0.02em;
-  color: #b4afaf;
+
+.best-list-name {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.29;
+    letter-spacing: 0.02em;
+    color: #B4AFAF;
+
+    margin-bottom: 18px;
+}
+
+.book-name {
+  
+    margin-bottom: 4px;
+
+    color:var(--black-text-color);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.04em;
+
+    text-transform: uppercase;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
+    margin-top: 14px;
+    margin-bottom: 4px;
+}
+
+.book-author {
+
+    margin-bottom: 8px;
+
+    font-size: 12px;
+    letter-spacing: -0.04em;
+    line-height: 1.17;
+
+    font-style: italic;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+   
+
 }
 
 .see-more {
@@ -36,9 +78,11 @@
   color: var(--violet-color);
 }
 
-.book-item {
-  width: 335px;
-  height: 571px;
+
+.book-item{
+/*     width: 335px; */
+    height: 571px;
+
 }
 
 .bestseller {
@@ -53,11 +97,21 @@
 }
 
 .book-wrap {
-  width: 335px;
-  height: 485px;
-  margin-bottom: 14px;
-  border-radius: 8px;
+
+  
+/*     width: 335px;
+    height: 485px; */
+    margin-bottom: 14px;
+    border-radius: 8px;
+
 }
+
+.categoryes-book-img {
+    max-width: 218;
+    height: 316;
+  }
+
+
 .book-name {
   margin-bottom: 4px;
 
@@ -118,8 +172,23 @@
 }
 
 @media only screen and (min-width: 1440px) {
-  .book-item {
-    flex-wrap: calc((100%-32px) / 5);
+
+    .book-item{
+        flex-wrap: calc((100%-24px)/5);
+      
+      
+    }
+  }
+  
+  
+  
+  @media only screen and (min-width: 768px) {
+     .book-wrap{
+      
+      width: 218px;
+      height: 316px;
+    }
+
   }
 }
 

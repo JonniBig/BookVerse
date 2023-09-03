@@ -30,11 +30,12 @@ export function createMarkupBookShelf(category) {
   const { list_name, books } = category;
 
   const arrBookShelf = `
-  <div class="best_list">
-    <h2 class="best_list_name">${list_name}</h2>
-     <ul>
+  <div class="best-list">
+    <h2 class="best-list-name">${list_name}</h2>
+      <ul class="best-book-category">
          ${books
            .map(book => {
+            // console.log(book);
              return renderBook(book);
            })
            .join('')}
@@ -46,11 +47,15 @@ export function createMarkupBookShelf(category) {
   bestSellers.insertAdjacentHTML('beforeend', arrBookShelf);
 }
 
-export function renderBook({ book_image, title, author }) {
-  return `<img width="218" height="auto" src="${book_image}" alt="${title}"/>
-    <div'>
-      <p>${title}</p>
-      <p>${author}</p>
-    </div>`;
+export function renderBook({ book_image, title, author, _id }) {
+
+  return `
+  <li class="book-item" id="${_id}">
+    <img class="book-wrap" src="${book_image}" alt="${title}"/>
+      <div>
+        <p class="book-name">${title}</p>
+        <p class="book-author">${author}</p>
+      </div>
+  </li>`;
 }
 
