@@ -8,14 +8,15 @@ const foundations = [
   {
     title: 'Save the Children',
     url: 'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
+    // img: new URL('../../images/found/children.png', import.meta.url),
     img: isLocalhost
-      ? '/images/found/children.png'
-      : 'https://jonnibig.github.io/BookVerse/images/found/children.png',
+      ? '../../images/found/save-the-children.png'
+      : 'https://github.com/JonniBig/BookVerse/blob/main/src/images/found/children.png',
   },
   {
     title: 'Project HOPE',
     url: 'https://www.projecthope.org/country/ukraine/',
-    img: 'https://jonnibig.github.io/BookVerse/images/found/hope.png',
+    img: 'https://github.com/JonniBig/BookVerse/blob/main/src/images/found/hope.png',
   },
   {
     title: 'International Medical Corps',
