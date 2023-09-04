@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // Якщо поточна сторінка - Shopping List
       navItemShopping.classList.add('nav-item-active');
       navItemHome.classList.remove('nav-item-active');
-      navLockIcon.classList.adde('nav-lock-active');
+      navLockIcon.classList.add('nav-lock-active');
     }
   }
 

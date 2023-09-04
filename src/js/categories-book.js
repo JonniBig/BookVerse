@@ -24,7 +24,7 @@ async function fetchAndDisplayBooks(categoryName) {
     const formattedCategoryName = words.join(' ');
 
     const categoryTitle = document.createElement('h2');
-    categoryTitle.classList.add('title_books');
+    categoryTitle.classList.add('title-books');
     categoryTitle.innerHTML = formattedCategoryName;
     resultContainer.appendChild(categoryTitle);
 
@@ -43,7 +43,7 @@ async function fetchAndDisplayBooks(categoryName) {
       books.forEach(book => {
         const li = document.createElement('li');
         li.className = 'book-item';
-        li.id = `book-${book._id}`;
+        li.id = `${book._id}`;
 
         const a = document.createElement('a');
         a.href = '/book-details.html?id=' + book._id;
@@ -78,6 +78,10 @@ async function fetchAndDisplayBooks(categoryName) {
       });
 
       resultContainer.appendChild(ul);
+    }
+     const activeCategoryLi = document.querySelector(`li[data-category="${categoryName}"]`);
+    if (activeCategoryLi) {
+      activeCategoryLi.classList.add('active-category');
     }
   } catch (error) {
     console.error('Error fetching books:', error);

@@ -1,4 +1,4 @@
-import { createMarkupBookShelf } from './bestSellers';
+
 
 const isLocalhost =
   window.location.hostname === 'localhost' ||
@@ -81,12 +81,14 @@ function createMarkupListItems() {
 
 function createMarkupListItem(item, i) {
   return `
-        <li class="found-item" value="${i + 1}">
-            <a href="${item.url}" class="found-link" title="${
+    <li class="found-item" value="${i + 1}">
+        <a href="${item.url}" class="found-link" title="${
     item.title
   }" target="_blank"> 
+
                 <img src="${item.img}" alt="${item.title}" class="found-logo">
             </a>
         </li>
     `;
+
 }
