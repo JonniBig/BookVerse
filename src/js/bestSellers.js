@@ -32,14 +32,16 @@ export function createMarkupBookShelf(category) {
   const arrBookShelf = `
   <div class="best-list">
     <h2 class="best-list-name">${list_name}</h2>
-      <ul class="best-book-category">
+      <ul class="best-book-category books-is-hidden">
          ${books
            .map(book => {
              return renderBook(book);
            })
            .join('')}
       </ul>
-      <button type="button" class="see-more" data-category="${list_name}">SEE MORE</button>
+      <div class="btn-see-more">
+        <button type="button" class="see-more" data-category="${list_name}">SEE MORE</button>
+      </div>
   </div>
   `;
   bestSellers.insertAdjacentHTML('beforeend', arrBookShelf);
@@ -91,10 +93,12 @@ function bindSeeMoreEvent() {
 export function renderBook({ book_image, title, author, _id }) {
   return `
   <li class="book-item" id="${_id}">
-    <img class="book-wrap" src="${book_image}" alt="${title}"/>
-      <div>
-        <p class="book-name">${title}</p>
-        <p class="book-author">${author}</p>
-      </div>
+    <a href="" class="best-img-link">
+      <img class="book-wrap" src="${book_image}" alt="${title}"/>
+        <div class="book-info-block">
+          <p class="book-name">${title}</p>
+          <p class="book-author">${author}</p>
+        </div>
+    </a>
   </li>`;
 }

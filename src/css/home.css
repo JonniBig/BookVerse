@@ -12,6 +12,7 @@ margin-bottom: 40px;
 }
 
 
+
 .best-list-name {
   text-transform: uppercase;
   font-size: 14px;
@@ -56,11 +57,10 @@ margin-bottom: 40px;
   overflow: hidden;
   white-space: nowrap;
  
-
+  color: #B4AFAF;
 }
 
 .see-more {
-margin-bottom: 40px;
 padding: 14px 28px;
 
 font-weight: 700;
@@ -78,7 +78,6 @@ background-color: var(--black2-color);
 color: var(--violet-color);
 }
 
-
 /* .book-item{ */
 /*     width: 335px; */
   /* height: 571px; */
@@ -86,17 +85,60 @@ color: var(--violet-color);
 /* } */
 
 .bestseller {
-display: block;
+  display: flex;
+  gap: 40px;   
 }
 
+@media only screen and (max-width: 767px) {
+  .bestseller {
+    flex-direction: column;
+  }
+}  
+
+@media only screen and (min-width: 768px) {
+  .bestseller {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}  
+  
+@media only screen and (min-width: 1440px) {
+  .bestseller{
+    gap: 24px;  
+  }
+}
+
+.best-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.best-book-category {
+  display: flex;
+  gap: 24px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (max-width: 767px) {
+  .best-book-category {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .best-book-category {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
 
 .right-wrapper {
-display: block;
+  display: block;
 }
 
 .book-wrap {
-
-
 /*     width: 335px;
   height: 485px; */
   margin-bottom: 14px;
@@ -107,6 +149,11 @@ display: block;
 .categoryes-book-img {
   max-width: 218;
   height: 316;
+}
+
+.book-info-block {
+  margin-bottom: 20px;
+  max-width: 180px;
 }
 
 
@@ -137,25 +184,6 @@ text-overflow: ellipsis;
 overflow: hidden;
 white-space: nowrap;
 }
-
-
-@media only screen and (min-width: 768px) {
-.bestseller {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 25px;
- 
-}
-}
-
-
-@media only screen and (min-width: 1440px) {
-.bestseller{
-  display: flex;
-  
-}
-}
-
 
 
 @media only screen and (min-width: 1440px) {
@@ -195,4 +223,22 @@ white-space: nowrap;
 .book-author {
   margin-bottom: 20px;
 }
+}
+
+.btn-see-more {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+@media screen and (max-width: 1439px) {
+  .books-is-hidden :nth-child(n+4) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .books-is-hidden :nth-child(n+2) {
+    display: none;
+  }
 }
