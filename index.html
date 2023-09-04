@@ -12,9 +12,9 @@
       rel="stylesheet"
     />
     
-    <script type="module" crossorigin src="/BookVerse/assets/index-9f9ca94f.js"></script>
-    <link rel="modulepreload" crossorigin href="/BookVerse/assets/mobileMenuBurger-92a3b3e7.js">
-    <link rel="stylesheet" href="/BookVerse/assets/mobileMenuBurger-4538eca5.css">
+    <script type="module" crossorigin src="/BookVerse/assets/index-161f981f.js"></script>
+    <link rel="modulepreload" crossorigin href="/BookVerse/assets/mobileMenuBurger-a99c8e29.js">
+    <link rel="stylesheet" href="/BookVerse/assets/mobileMenuBurger-cb999fc5.css">
   </head>
   <body>
     <header class="header container">
@@ -169,18 +169,20 @@
 
       <div class="backdrop is-hidden" id="modalWindow">
   <div class="modalWindow-container">
-    <button type="button" class="openModalLink" id="openModalLink">test</button>
-    <button type="button" class="modalWindow-btn">
+    <button type="button" class="modalWindow-close">
       <svg class="modal-close-icon" width="24" height="24">
         <use href="/BookVerse/assets/icomoon-ab2a2bb0.svg#icon-x-close"></use>
       </svg>
     </button>
+    <div class="modal-card"></div>
     <div class="modalWindow-add-book">
-      <button type="button" class="modalWindow-add-btn">
-        <p class="modalWindow-btn-text">add to shopping list</p>
-        <p class="modalWindow-btn-text">remove from the shopping list</p>
+      <button type="button" class="modalWindow-btn">
+        <p class="modalWindow-btn-add">add to shopping list</p>
+        <p class="modalWindow-btn-delete is-hidden">
+          remove from the shopping list
+        </p>
       </button>
-      <p class="modalWindow-text">
+      <p class="modalWindow-text is-hidden">
         Сongratulations! You have added the book to the shopping list. To
         delete, press the button “Remove from the shopping list”.
       </p>
