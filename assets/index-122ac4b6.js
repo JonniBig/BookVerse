@@ -13,7 +13,7 @@ import"./mobileMenuBurger-3051bb5a.js";function Oe(e,t){return function(){return
   `;$e.insertAdjacentHTML("beforeend",r),hn()}function hn(){if($e._seeMoreBound)return;document.querySelectorAll(".see-more").forEach(t=>{t.addEventListener("click",()=>{const n=t.getAttribute("data-category");ve(n),document.querySelectorAll(".categories .category_link").forEach(o=>{o.textContent===n?o.classList.add("active-category"):o.classList.remove("active-category")})})})}function mn({book_image:e,title:t,author:n,_id:r}){return`
   <li class="book-item" id="${r}">
     <a href="" class="best-img-link">
-      <img class="book-wrap" src="${e}" alt="${t}"/>
+      <img class="book-wrap" src="${e}" alt="${t}" loading="lazy"/>
         <div class="book-info-block">
           <p class="book-name">${t}</p>
           <p class="book-author">${n}</p>
