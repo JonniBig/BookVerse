@@ -81,13 +81,6 @@ color: var(--violet-color);
 }
 
 
-/* .book-item{ */
-/*     width: 335px; */
-  /* height: 571px; */
-
-/* } */
-
-
 .bestseller {
   display: flex;
   gap: 40px;   
@@ -194,6 +187,7 @@ white-space: nowrap;
 }
 
 
+
 @media only screen and (min-width: 768px) and (max-width: 1439px) {
   .left-wrapper {
     display: flex;
@@ -235,6 +229,7 @@ white-space: nowrap;
     
     
   }
+
 
 
 
