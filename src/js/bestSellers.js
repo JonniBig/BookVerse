@@ -50,19 +50,44 @@ export function createMarkupBookShelf(category) {
 function bindSeeMoreEvent() {
   if (bestSellers._seeMoreBound) return;
 
-  bestSellers.addEventListener('click', async event => {
-    if (event.target.classList.contains('see-more')) {
-      const categoryName = event.target.getAttribute('data-category');
-      try {
-        await fetchAndDisplayBooks(categoryName);
-      } catch (error) {
-        console.error('Error handling book click:', error);
-      }
-    }
+  
+  //----------------------------
+  const seeMoreButtons = document.querySelectorAll('.see-more');
+
+  seeMoreButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const categoryName = button.getAttribute('data-category');
+      fetchAndDisplayBooks(categoryName);
+
+      const categoryLinks = document.querySelectorAll('.categories .category_link');
+
+      categoryLinks.forEach(link => {
+        if (link.textContent === categoryName) {
+          link.classList.add('active-category');
+        } else {
+          link.classList.remove('active-category');
+        }
+      });
+    });
   });
-  bestSellers._seeMoreBound = true;
 }
 
+  //----------------------------
+
+//   bestSellers.addEventListener('click', async event => {
+//     if (event.target.classList.contains('see-more')) {
+//       const categoryName = event.target.getAttribute('data-category');
+//       try {
+//         await fetchAndDisplayBooks(categoryName);
+//       } catch (error) {
+//         console.error('Error handling book click:', error);
+//       }
+//     }
+//   });
+//   bestSellers._seeMoreBound = true;
+
+//--------------------------------
+ 
 export function renderBook({ book_image, title, author, _id }) {
   return `
   <li class="book-item" id="${_id}">
