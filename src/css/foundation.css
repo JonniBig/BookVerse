@@ -82,6 +82,7 @@
 @media only screen and (min-width: 768px) {
   .foundation {
     height: 474px;
+    width: 335px;
   }
 
   .found-list {

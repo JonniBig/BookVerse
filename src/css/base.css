@@ -96,6 +96,7 @@ display: flex;
   background-color: var(--violet-color);
   fill: var(--yellow-color);
 }
+
 @media only screen and (min-width: 768px) {
   .scroll-button {
     bottom: 30px;
@@ -106,5 +107,5 @@ display: flex;
 }
 
 .scroll-button.show {
-  display: block; /* Показуємо кнопку при прокрутці */
+  display: block;
 }

@@ -6,6 +6,8 @@
   border: 1.5px solid var(--black1-color);
   border-radius: 0 0 8px 8px;
   background-color: var(--white-color);
+
+  margin-bottom: 40px;
 }
 
 .header-container {
@@ -195,7 +197,7 @@
   height: 100vh;
 
   opacity: 0;
-  pointer-events: auto; /* Блокуємо кліки під меню */
+  pointer-events: auto;
 
   background-image: url(../images/header/books.png),
     linear-gradient(32deg, rgba(200, 192, 247, 1) 0%, rgba(79, 46, 232, 1) 90%);
@@ -371,7 +373,6 @@ label:after {
 }
 
 input:checked + label {
-  /* background: #4a40c8; */
   background-image: linear-gradient(to bottom, #4f2ee8, #686868);
 }
 
