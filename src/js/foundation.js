@@ -46,7 +46,7 @@ const foundations = [
   {
     title: 'World vision',
     url: 'https://www.wvi.org/emergencies/ukraine',
-    img: 'https://jonnibig.github.io/BookVerse/images/found/world.png',
+    img: 'https://raw.githubusercontent.com/JonniBig/BookVerse/main/src/images/found/world.png',
   },
   {
     title: 'UNITED24',
