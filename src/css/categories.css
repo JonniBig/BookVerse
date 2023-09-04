@@ -14,7 +14,7 @@
 
 .book_list {
   display: flex;
-  width: 307px;
+  width: 335px;
   height: 228px;
   flex-direction: column;
   align-items: flex-start;
@@ -72,7 +72,8 @@
 
 @media only screen and (min-width: 768px) {
   .categories {
-    width: 337px;
+    /* width: 337px; */
+    width: 334px;
     height: 472px;
   }
 
@@ -83,6 +84,7 @@
   }
 
   .category_link {
+  
     line-height: 1.33;
     letter-spacing: -0.36px;
   }

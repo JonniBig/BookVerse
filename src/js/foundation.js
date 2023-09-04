@@ -1,50 +1,56 @@
 
 
+const isLocalhost =
+  window.location.hostname === 'localhost' ||
+  window.location.hostname === '127.0.0.1';
+
 const foundations = [
   {
     title: 'Save the Children',
     url: 'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
-    img: 'children.png',
+    img: isLocalhost
+      ? '/images/found/children.png'
+      : 'https://jonnibig.github.io/BookVerse/images/found/children.png',
   },
   {
     title: 'Project HOPE',
     url: 'https://www.projecthope.org/country/ukraine/',
-    img: 'hope.png',
+    img: 'https://jonnibig.github.io/BookVerse/images/found/hope.png',
   },
   {
     title: 'International Medical Corps',
     url: 'https://internationalmedicalcorps.org/country/ukraine/',
-    img: 'medical.png',
+    img: 'https://jonnibig.github.io/BookVerse/images/found/medical.png',
   },
   {
     title: 'RAZOM',
     url: 'https://www.razomforukraine.org/',
-    img: 'razom.png',
+    img: 'https://jonnibig.github.io/BookVerse/images/found/razom.png',
   },
   {
     title: 'Action against hunger',
     url: 'https://www.actionagainsthunger.org/location/europe/ukraine/',
-    img: 'action.png',
+    img: 'https://jonnibig.github.io/BookVerse/images/found/action.png',
   },
   {
     title: 'Serhiy Prytula Charity Foundation',
     url: 'https://prytulafoundation.org/en',
-    img: 'sergiy.png',
+    img: 'https://jonnibig.github.io/BookVerse/images/found/sergiy.png',
   },
   {
     title: 'Medicins Sans Frontieres',
     url: 'https://www.msf.org/ukraine',
-    img: 'medecins.png',
+    img: 'https://jonnibig.github.io/BookVerse/images/found/medecins.png',
   },
   {
     title: 'World vision',
     url: 'https://www.wvi.org/emergencies/ukraine',
-    img: 'world.png',
+    img: 'https://jonnibig.github.io/BookVerse/images/found/world.png',
   },
   {
     title: 'UNITED24',
     url: 'https://u24.gov.ua/uk',
-    img: 'united.png',
+    img: 'https://jonnibig.github.io/BookVerse/images/found/united.png',
   },
 ];
 
@@ -79,10 +85,10 @@ function createMarkupListItem(item, i) {
         <a href="${item.url}" class="found-link" title="${
     item.title
   }" target="_blank"> 
-            <img src="./images/found/${item.img}" alt="${
-    item.title
-  }" class="found-logo">
-        </a>
-    </li>
-`;
+
+                <img src="${item.img}" alt="${item.title}" class="found-logo">
+            </a>
+        </li>
+    `;
+
 }
