@@ -20,6 +20,8 @@ const scrollControl = {
   },
 };
 
+let fetchedObj = null;
+let bookId = 0;
 let savedBooks = [];
 if (localStorage.getItem('ListOfBooks') === null) {
   localStorage.setItem('ListOfBooks', JSON.stringify(savedBooks));
@@ -48,12 +50,10 @@ function openModalWindow(evt) {
   window.addEventListener('keydown', onEscPressed);
   refs.modalWindow.addEventListener('click', onBackdropclick);
 
-  const bookId = closestLi.id;
-
+  bookId = closestLi.id;
   getBookOnId(bookId).then(data => {
-    console.log(data);
-    // refs.modalBtnEl.addEventListener('click', bookAndStorage);
-    setTimeout(bookAndStorage,250,data)
+   
+    fetchedObj = data;
   });
 }
 
@@ -87,8 +87,12 @@ async function getBookOnId(id) {
     console.log(error);
   }
 }
-  function bookAndStorage(data) {
-  savedBooks = JSON.parse(localStorage.getItem('ListOfBooks'));
-  savedBooks.push(data);
-  localStorage.setItem('ListOfBooks', JSON.stringify(savedBooks));
+
+refs.modalBtnEl.addEventListener('click', bookAndStorage);
+function bookAndStorage() {
+  console.log(fetchedObj)
+    savedBooks = JSON.parse(localStorage.getItem('ListOfBooks'));
+    savedBooks.push(fetchedObj);
+    localStorage.setItem('ListOfBooks', JSON.stringify(savedBooks));
+ 
 }
