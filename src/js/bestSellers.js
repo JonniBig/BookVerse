@@ -1,10 +1,10 @@
 import axios from 'axios';
+import fetchAndDisplayBooks from './categories-book';
 
 const bestSellers = document.querySelector('.bestseller');
 
 const URL = 'https://books-backend.p.goit.global/books/top-books';
 export async function fetchBookShelf() {
-
   const response = await axios.get(URL);
   // console.log(response.data);
 
@@ -35,20 +35,35 @@ export function createMarkupBookShelf(category) {
       <ul class="best-book-category">
          ${books
            .map(book => {
-            // console.log(book);
              return renderBook(book);
            })
            .join('')}
       </ul>
-      <button type="button" class="see-more">SEE MORE</button>
+      <button type="button" class="see-more" data-category="${list_name}">SEE MORE</button>
   </div>
   `;
-
   bestSellers.insertAdjacentHTML('beforeend', arrBookShelf);
+
+  bindSeeMoreEvent();
+}
+
+function bindSeeMoreEvent() {
+  if (bestSellers._seeMoreBound) return;
+
+  bestSellers.addEventListener('click', async event => {
+    if (event.target.classList.contains('see-more')) {
+      const categoryName = event.target.getAttribute('data-category');
+      try {
+        await fetchAndDisplayBooks(categoryName);
+      } catch (error) {
+        console.error('Error handling book click:', error);
+      }
+    }
+  });
+  bestSellers._seeMoreBound = true;
 }
 
 export function renderBook({ book_image, title, author, _id }) {
-
   return `
   <li class="book-item" id="${_id}">
     <img class="book-wrap" src="${book_image}" alt="${title}"/>
@@ -58,4 +73,3 @@ export function renderBook({ book_image, title, author, _id }) {
       </div>
   </li>`;
 }
-
