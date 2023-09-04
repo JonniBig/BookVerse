@@ -1,19 +1,17 @@
-const isLocalhost =
-  window.location.hostname === 'localhost' ||
-  window.location.hostname === '127.0.0.1';
+
 
 const foundations = [
   {
     title: 'Save the Children',
     url: 'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
-    img: isLocalhost
-      ? '/images/found/children.png'
-      : 'https://raw.githubusercontent.com/JonniBig/BookVerse/main/src/images/found/children.png',
+    img: 'https://raw.githubusercontent.com/JonniBig/BookVerse/main/src/images/found/children.png',
+
   },
   {
     title: 'Project HOPE',
     url: 'https://www.projecthope.org/country/ukraine/',
     img: 'https://raw.githubusercontent.com/JonniBig/BookVerse/main/src/images/found/hope.png',
+
   },
   {
     title: 'International Medical Corps',
