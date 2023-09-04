@@ -5,7 +5,7 @@ const scrollControl = {
   disabledScroll() {
     scrollControl.scrollPosition = window.scrollY;
     document.body.style.cssText = `
-      overflow: hidden;
+      overflow: auto;
       position: fixed;
       top: -${scrollControl.scrollPosition}px;
       left: 0;
@@ -33,6 +33,7 @@ const refs = {
   modalWindow: document.querySelector('#modalWindow'),
   modalCard: document.querySelector('.modal-card'),
   modalBtnEl: document.querySelector('.modalWindow-btn'),
+  markupCard:document.querySelector('.modal-card'),
 };
 
 refs.openModal.addEventListener('click', openModalWindow);
@@ -52,7 +53,7 @@ function openModalWindow(evt) {
 
   bookId = closestLi.id;
   getBookOnId(bookId).then(data => {
-   
+    makeMarkupModal(data);
     fetchedObj = data;
   });
 }
@@ -96,3 +97,35 @@ function bookAndStorage() {
     localStorage.setItem('ListOfBooks', JSON.stringify(savedBooks));
  
 }
+
+
+function makeMarkupModal(obj) {
+  refs.markupCard.innerHTML = '';
+  const { book_image, title, list_name, description, author, buy_links, _id } = obj;
+  const modalMarkup =
+    `    <img
+             src="${book_image}"
+             alt="${title}"
+             class="modal-book-img"
+             loading="lazy"
+             width="287px"
+             height: 408px;
+             />         
+          <div class="modal-info-box">
+           <h3 class="modal-book-title">${title}</h3>
+           <p class="modal-book-author">${author}</p>
+           <p class="modal-book-deskr" id="style-4">${description}</p>  
+             <div class="modal-book-links">
+               <a href="${buy_links[0].url}" target="_blank" rel="noreferrer noopener" aria-label="Link to Amazon">
+                 <img src="./images/shopingList/amazon-62.png" alt="Logo Amazon" width="62px" class="link-1"/>
+               </a>
+               <a href="${buy_links[1].url}" target="_blank" rel="noreferrer noopener" aria-label="Link to Apple book shop">
+                 <img src="./images/shopingList/apple.png" alt="Logo Apple book store" width="28px" class="link-2"/>
+               </a>
+               <a href="${buy_links[4].url}" target="_blank" rel="noreferrer noopener" aria-label="Link to Book shop">
+                 <img src="./images/shopingList/book_shop-62.png" alt="Logo book shop" width="32px" class="link-3"/>
+               </a>
+             </div>
+          </div>`;
+  refs.markupCard.insertAdjacentHTML('beforeend', modalMarkup);
+ }
