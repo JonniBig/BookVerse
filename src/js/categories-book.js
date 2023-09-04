@@ -37,6 +37,7 @@ async function fetchAndDisplayBooks(categoryName) {
 
       resultContainer.appendChild(noBooksMessage);
     } else {
+
       
       const ul = document.createElement('ul');
       ul.className = 'bestseller'; 
@@ -56,6 +57,7 @@ async function fetchAndDisplayBooks(categoryName) {
           book.book_image || '../images/plug picture/plug335x485@1x.jpg';
         img.alt = book.title;
 
+
         const title = document.createElement('p');
         title.classList.add('book-name');
         title.textContent = book.title || 'N/A';
@@ -64,9 +66,11 @@ async function fetchAndDisplayBooks(categoryName) {
         author.classList.add('book-author');
         author.textContent = book.author || 'N/A';
 
+
         li.appendChild(img);
         li.appendChild(title);
         li.appendChild(author);
+
 
         ul.appendChild(li);
       });
@@ -81,3 +85,4 @@ async function fetchAndDisplayBooks(categoryName) {
 fetchAndDisplayBooks();
 
 export default fetchAndDisplayBooks;
+
