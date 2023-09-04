@@ -24,7 +24,7 @@ async function fetchAndDisplayBooks(categoryName) {
     const formattedCategoryName = words.join(' ');
 
     const categoryTitle = document.createElement('h2');
-    categoryTitle.classList.add('title_books');
+    categoryTitle.classList.add('title-books');
     categoryTitle.innerHTML = formattedCategoryName;
     resultContainer.appendChild(categoryTitle);
 
