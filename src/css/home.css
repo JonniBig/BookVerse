@@ -72,6 +72,7 @@
 
 .dark-theme .see-more {
   background-color: var(--black2-color);
+
 }
 
 .colored {
@@ -125,6 +126,7 @@
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+
 }
 
 .book-author {
@@ -133,6 +135,83 @@
   font-size: 12px;
   letter-spacing: -0.04em;
   line-height: 1.17;
+
+
+/* .book-item{ */
+/*     width: 335px; */
+    /* height: 571px; */
+
+/* } */
+
+.bestseller {
+  display: block;
+}
+
+
+.right-wrapper {
+  display: block;
+}
+
+.book-wrap {
+
+  
+/*     width: 335px;
+    height: 485px; */
+    margin-bottom: 14px;
+    border-radius: 8px;
+
+}
+
+.categoryes-book-img {
+    max-width: 218;
+    height: 316;
+  }
+
+
+.book-name {
+  margin-bottom: 4px;
+
+  color: var(--black-text-color);
+  font-size: 16px;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+
+  text-transform: uppercase;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.book-author {
+  margin-bottom: 8px;
+
+  font-size: 12px;
+  letter-spacing: -0.04em;
+  line-height: 1.17;
+
+  font-style: italic;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+
+@media only screen and (min-width: 768px) {
+  .bestseller {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+   
+  }
+}
+
+
+@media only screen and (min-width: 1440px) {
+.bestseller{
+    display: flex;
+    
+}
 
   font-style: italic;
   text-overflow: ellipsis;
@@ -169,7 +248,10 @@
     gap: 32px;
     display: block;
   }
+
 }
+
+
 
 @media only screen and (min-width: 1440px) {
 
@@ -180,8 +262,7 @@
     }
   }
   
-  
-  
+
   @media only screen and (min-width: 768px) {
      .book-wrap{
       
@@ -209,4 +290,6 @@
   .book-author {
     margin-bottom: 20px;
   }
+
 }
+

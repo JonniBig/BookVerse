@@ -37,28 +37,26 @@ async function fetchAndDisplayBooks(categoryName) {
 
       resultContainer.appendChild(noBooksMessage);
     } else {
+
+      
       const ul = document.createElement('ul');
-      ul.className = 'bestseller';
+      ul.className = 'bestseller'; 
 
       books.forEach(book => {
         const li = document.createElement('li');
-        li.className = 'book-item';
+        li.className = 'book-item'; 
         li.id = `book-${book._id}`;
+        
 
-        const a = document.createElement('a');
-        a.href = '/book-details.html?id=' + book._id;
-        // a.target = '_blank';
-
-        const div1 = document.createElement('div');
         const img = document.createElement('img');
+
         img.classList.add('book-wrap');
+        // img.height = 316;
+        // img.width = 218;
         img.src =
           book.book_image || '../images/plug picture/plug335x485@1x.jpg';
         img.alt = book.title;
-        div1.appendChild(img);
 
-        const div2 = document.createElement('div');
-        div2.classList.add('noName');
 
         const title = document.createElement('p');
         title.classList.add('book-name');
@@ -68,12 +66,12 @@ async function fetchAndDisplayBooks(categoryName) {
         author.classList.add('book-author');
         author.textContent = book.author || 'N/A';
 
-        div2.appendChild(title);
-        div2.appendChild(author);
 
-        a.appendChild(div1);
-        a.appendChild(div2);
-        li.appendChild(a);
+        li.appendChild(img);
+        li.appendChild(title);
+        li.appendChild(author);
+
+
         ul.appendChild(li);
       });
 
@@ -87,3 +85,4 @@ async function fetchAndDisplayBooks(categoryName) {
 fetchAndDisplayBooks();
 
 export default fetchAndDisplayBooks;
+

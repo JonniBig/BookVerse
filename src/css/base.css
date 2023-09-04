@@ -46,6 +46,14 @@ body {
     padding-left: 32px;
     padding-right: 32px;
   }
+
+}
+
+@media only screen and (min-width: 768px) {
+  .left-wrapper {
+    display: flex;
+   
+  }
 }
 
 /* Desktop style */
@@ -55,7 +63,13 @@ body {
     padding-left: 24px;
     padding-right: 24px;
   }
+  .main-container{
+display: flex;
+  }
+  .left-wrapper {
+  flex-direction: column;
 }
+
 
 .scroll-button {
   position: fixed;
@@ -90,3 +104,4 @@ body {
 .scroll-button.show {
   display: block; /* Показуємо кнопку при прокрутці */
 }
+
