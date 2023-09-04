@@ -2,7 +2,7 @@ import axios from 'axios';
 
 async function fetchAndDisplayBooks(categoryName) {
   const lowerCaseCategory = categoryName.toLowerCase();
-  if (lowerCaseCategory === 'all categories') {
+  if (typeof e === 'string' && e.toLowerCase() === "all categories") {
     window.location.href = 'index.html';
     return;
   }
