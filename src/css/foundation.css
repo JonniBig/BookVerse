@@ -1,95 +1,102 @@
 /* Phone styles */
 .foundation {
-    background: radial-gradient(ellipse 600px 800px at top, #4F2EE8, #FFFFFF);
-    color: white;
-   
-    height: 352px;
-    padding: 24px 40px;
-    border-radius: 16px;
-    position: relative;
+  background: radial-gradient(ellipse 600px 800px at top, #4f2ee8, #ffffff);
+  color: white;
+
+  height: 352px;
+  padding: 24px 40px;
+  border-radius: 16px;
+  position: relative;
 }
 
 .found-title {
-    font-family: DM Sans, Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 24px;
-    display: flex;
-    gap: 12px;
-    margin-bottom: 40px;
+  font-family: DM Sans, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  display: flex;
+  gap: 12px;
+  margin-bottom: 40px;
 }
 
 .found-list {
-    counter-reset: list-counter;
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    overflow: hidden;
-    /* height: 292px;    */
-    height: 188px;
+  counter-reset: list-counter;
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: hidden;
+  /* height: 292px;    */
+  height: 188px;
 }
 
 .found-item {
-    counter-increment: list-counter;
-    filter: brightness(0) invert(1);
-    display: flex;
-    align-items: center;
-    height: 32px;
-    gap: 16px;
+  counter-increment: list-counter;
+  filter: brightness(0) invert(1);
+  display: flex;
+  align-items: center;
+  height: 32px;
+  gap: 16px;
 }
 
 .found-item::before {
-    content: counter(list-counter, decimal-leading-zero);
+  content: counter(list-counter, decimal-leading-zero);
 }
 
 .found-link {
-    display: inline-block;
-    height: 100%;
+  display: inline-block;
+  height: 100%;
 }
 
 .found-logo {
-    height: 100%;
-    object-fit: scale-down;
-    object-position: left;
+  height: 100%;
+  object-fit: scale-down;
+  object-position: left;
 }
 
 .found-down,
 .found-up {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    border: none;
-    background-color: #FFFFFF;
-    background-image: url("../images/found/arrow.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    position: absolute;
-    bottom: 24px;
-    left: 50%;
-    /* transform: translateX(-50%); */
-    transition: 300ms;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  /* transform: translateX(-50%); */
+  transition: 300ms;
 }
 
 .found-up {
-    /* transform: translateX(-50%) rotate(180deg); */
-    rotate: 180deg;
+  /* transform: translateX(-50%) rotate(180deg); */
+  rotate: 180deg;
 }
 
 /* Tablet style */
 @media only screen and (min-width: 768px) {
-    .foundation {
-        height: 474px;
-    }
+  .foundation {
+    height: 474px;
+  }
 
-    .found-list {
-        height: 292px;
-    }
+  .found-list {
+    height: 292px;
+  }
+  .found-down,
+  .found-up {
+    width: 38px;
+    height: 38px;
+  }
 }
 
 /* Desktop style */
 @media only screen and (min-width: 1440px) {
-    .foundation {
-        width: 356px;
-    }
+  .foundation {
+    width: 356px;
+  }
 }

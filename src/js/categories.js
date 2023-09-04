@@ -1,3 +1,17 @@
+// import axios from 'axios';
+// import fetchAndDisplayBooks from './categories-book.js';
+
+// const BASE_URL = 'https://books-backend.p.goit.global/';
+// const categoriesContainer = document.querySelector('.categories');
+
+// async function fetchCategories() {
+//   try {
+//     const { data: categories } = await axios.get(
+//       `${BASE_URL}books/category-list`
+//     );
+//     const categoriesAll = { list_name: 'All categories' };
+//     categories.unshift(categoriesAll);
+//----------------------------------------------
 import axios from 'axios';
 import fetchAndDisplayBooks from './categories-book.js';
 
@@ -9,15 +23,17 @@ async function fetchCategories() {
     const { data: categories } = await axios.get(
       `${BASE_URL}books/category-list`
     );
+
     const categoriesAll = { list_name: 'All categories' };
-    categories.unshift(categoriesAll);
+
+
+    categories.sort((a, b) => a.list_name.localeCompare(b.list_name));
+        categories.unshift(categoriesAll);
 
     renderCategories(categories);
 
     const firstCategoryLink = categories[0].categoryLink;
-    if (firstCategoryLink) {
-      firstCategoryLink.classList.add('active-category');
-    }
+    if (firstCategoryLink) firstCategoryLink.classList.add('active-category');
   } catch (error) {
     console.error('Помилка при отриманні категорій:', error);
   }
@@ -39,9 +55,9 @@ async function renderCategories(categories) {
     categoryLink.addEventListener('click', async () => {
       await fetchAndDisplayBooks(categoryName);
 
-      categories.forEach(cat => {
-        cat.categoryLink.classList.remove('active-category');
-      });
+      categories.forEach(cat =>
+        cat.categoryLink.classList.remove('active-category')
+      );
 
       categoryLink.classList.add('active-category');
     });

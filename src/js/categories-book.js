@@ -2,7 +2,7 @@ import axios from 'axios';
 
 async function fetchAndDisplayBooks(categoryName) {
   const lowerCaseCategory = categoryName.toLowerCase();
-  if (typeof e === 'string' && e.toLowerCase() === "all categories") {
+  if (lowerCaseCategory === 'all categories') {
     window.location.href = 'index.html';
     return;
   }
@@ -24,7 +24,7 @@ async function fetchAndDisplayBooks(categoryName) {
     const formattedCategoryName = words.join(' ');
 
     const categoryTitle = document.createElement('h2');
-    categoryTitle.classList.add('title_books');
+    categoryTitle.classList.add('title-books');
     categoryTitle.innerHTML = formattedCategoryName;
     resultContainer.appendChild(categoryTitle);
 
@@ -79,11 +79,15 @@ async function fetchAndDisplayBooks(categoryName) {
 
       resultContainer.appendChild(ul);
     }
+     const activeCategoryLi = document.querySelector(`li[data-category="${categoryName}"]`);
+    if (activeCategoryLi) {
+      activeCategoryLi.classList.add('active-category');
+    }
   } catch (error) {
     console.error('Error fetching books:', error);
   }
 }
 
-fetchAndDisplayBooks();
+// fetchAndDisplayBooks();
 
 export default fetchAndDisplayBooks;
