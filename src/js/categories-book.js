@@ -43,7 +43,7 @@ async function fetchAndDisplayBooks(categoryName) {
       books.forEach(book => {
         const li = document.createElement('li');
         li.className = 'book-item';
-        li.id = `book-${book._id}`;
+        li.id = `${book._id}`;
 
         const a = document.createElement('a');
         a.href = '/book-details.html?id=' + book._id;
