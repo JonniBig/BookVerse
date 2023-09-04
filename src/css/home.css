@@ -78,12 +78,6 @@ background-color: var(--black2-color);
 color: var(--violet-color);
 }
 
-/* .book-item{ */
-/*     width: 335px; */
-  /* height: 571px; */
-
-/* } */
-
 .bestseller {
   display: flex;
   gap: 40px;   
@@ -183,16 +177,6 @@ font-style: italic;
 text-overflow: ellipsis;
 overflow: hidden;
 white-space: nowrap;
-}
-
-
-@media only screen and (min-width: 1440px) {
-
-  .book-item{
-      flex-wrap: calc((100%-24px)/5);
-    
-    
-  }
 }
 
 
