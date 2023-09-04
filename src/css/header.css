@@ -225,8 +225,9 @@
   left: 0;
   top: 100%;
   z-index: 1;
-  width: 375px;
-  height: 92vh;
+
+  width: inherit;
+  height: 100vh;
 
   opacity: 0;
   pointer-events: auto; /* Блокуємо кліки під меню */
