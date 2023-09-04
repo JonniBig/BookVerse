@@ -1,47 +1,40 @@
 
 
-const isLocalhost =
-  window.location.hostname === 'localhost' ||
-  window.location.hostname === '127.0.0.1';
-
 const foundations = [
   {
     title: 'Save the Children',
     url: 'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
-    // img: new URL('../../images/found/children.png', import.meta.url),
-    img: isLocalhost
-      ? '../../images/found/save-the-children.png'
-      : 'https://github.com/JonniBig/BookVerse/blob/main/src/images/found/children.png',
+   img: 'https://raw.githubusercontent.com/JonniBig/BookVerse/main/src/images/found/children.png',
   },
   {
     title: 'Project HOPE',
     url: 'https://www.projecthope.org/country/ukraine/',
-    img: 'https://github.com/JonniBig/BookVerse/blob/main/src/images/found/hope.png',
+    img: 'https://raw.githubusercontent.com/JonniBig/BookVerse/main/src/images/found/hope.png',
   },
   {
     title: 'International Medical Corps',
     url: 'https://internationalmedicalcorps.org/country/ukraine/',
-    img: 'https://jonnibig.github.io/BookVerse/images/found/medical.png',
+        img: 'https://raw.githubusercontent.com/JonniBig/BookVerse/main/src/images/found/medical.png',
   },
   {
     title: 'RAZOM',
     url: 'https://www.razomforukraine.org/',
-    img: 'https://jonnibig.github.io/BookVerse/images/found/razom.png',
+        img: 'https://raw.githubusercontent.com/JonniBig/BookVerse/main/src/images/found/razom.png',
   },
   {
     title: 'Action against hunger',
     url: 'https://www.actionagainsthunger.org/location/europe/ukraine/',
-    img: 'https://jonnibig.github.io/BookVerse/images/found/action.png',
+     img: 'https://raw.githubusercontent.com/JonniBig/BookVerse/main/src/images/found/action.png',
   },
   {
     title: 'Serhiy Prytula Charity Foundation',
     url: 'https://prytulafoundation.org/en',
-    img: 'https://jonnibig.github.io/BookVerse/images/found/sergiy.png',
+      img: 'https://raw.githubusercontent.com/JonniBig/BookVerse/main/src/images/found/sergiy.png',
   },
   {
     title: 'Medicins Sans Frontieres',
     url: 'https://www.msf.org/ukraine',
-    img: 'https://jonnibig.github.io/BookVerse/images/found/medecins.png',
+     img: 'https://raw.githubusercontent.com/JonniBig/BookVerse/main/src/images/found/medecins.png',
   },
   {
     title: 'World vision',
@@ -51,7 +44,7 @@ const foundations = [
   {
     title: 'UNITED24',
     url: 'https://u24.gov.ua/uk',
-    img: 'https://jonnibig.github.io/BookVerse/images/found/united.png',
+        img: 'https://raw.githubusercontent.com/JonniBig/BookVerse/main/src/images/found/united.png',
   },
 ];
 
