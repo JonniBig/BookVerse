@@ -1,35 +1,35 @@
-import axios from 'axios';
-import Pagination from 'tui-pagination';
-import 'tui-pagination/dist/tui-pagination.css';
+// import axios from 'axios';
+// import Pagination from 'tui-pagination';
+// import 'tui-pagination/dist/tui-pagination.css';
 
 const listCards = document.querySelector('.book-shop-list');
 const emptyList = document.querySelector('.empty-list');
 const container = document.querySelector('.tui-pagination');
 
-async function getBook() {
-  const url = 'https://books-backend.p.goit.global/books/top-books';
-  try {
-    // Запит на бекенд за допомогою axios
-    const getData = await axios.get(`${url}`);
-    return getData.data;
-  } catch (error) {
-    console.log(error);
-  }
-}
+// async function getBook() {
+//   const url = 'https://books-backend.p.goit.global/books/top-books';
+//   try {
+//     // Запит на бекенд за допомогою axios
+//     const getData = await axios.get(`${url}`);
+//     return getData.data;
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
 
-getBook().then(data => {
-  localStorage.removeItem('ListofBooks');
-  const savedBook = data[15].books;
-  localStorage.setItem('ListOfBooks', JSON.stringify(savedBook));
-});
-const savedData = JSON.parse(localStorage.getItem('ListOfBooks'));
+// getBook().then(data => {
+//   localStorage.removeItem('ListofBooks');
+//   const savedBook = data[15].books;
+//   localStorage.setItem('ListOfBooks', JSON.stringify(savedBook));
+// });
 
+  const savedData = JSON.parse(localStorage.getItem('ListOfBooks'));
 addCard();
 
 function addCard() {
+
   if (savedData.length === 0) {
     emptyList.classList.remove('is-hidden');
-    localStorage.removeItem('ListofBooks');
     listCards.innerHTML = '';
     listCards.classList.add('is-hidden');
     return;
@@ -61,7 +61,7 @@ function deleteCard(evt) {
   const cardId = evt.target.id;
   const cardIndex = savedData.findIndex(option => option._id === cardId);
   savedData.splice(cardIndex, 1);
-  localStorage.removeItem('ListofBooks');
+  localStorage.removeItem('ListOfBooks');
   localStorage.setItem('ListOfBooks', JSON.stringify(savedData));
   addCard();
 }
