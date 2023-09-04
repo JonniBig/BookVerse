@@ -230,14 +230,12 @@ white-space: nowrap;
     width: 218px;
     height: 316px;
   }
-}
 
-  .book-item{
-      flex-wrap: calc((100%-24px)/5);
+
     
     
   }
-}
+
 
 
 
