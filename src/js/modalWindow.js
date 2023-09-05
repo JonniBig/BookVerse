@@ -120,16 +120,11 @@ function bookAddStorage(evt) {
     refs.modalBtnDelEl.classList.remove('is-hidden');
     refs.modaltextBottom.classList.remove('is-hidden');
 }
- 
+// ---------Прослуховування події кліку по кнопці видалити зі сховища
 refs.modalBtnDelEl.addEventListener('click', bookDelStorage);
+// ------------Функція видалення обраної книги зі сховища
 function bookDelStorage(evt) {
   evt.preventDefault();
-  // const targetFind = evt.target.id;
-  // const IndexBook = targetFind.closest('a');
-  // // кщо не знайшли батька елемента з потрібними параметрами, значить клікнули поза карткою
-  // if (!IndexBook) {
-  //   return;
-  // }
   const savedData=JSON.parse(localStorage.getItem('ListOfBooks'))
   const cardIndex = savedData.findIndex(option => option._id === bookId);
   savedData.splice(cardIndex, 1);
@@ -139,11 +134,10 @@ function bookDelStorage(evt) {
     refs.modaltextBottom.classList.add('is-hidden');
   }
 
-
+// ---------------Функція створення розмітки картки з об'єкта і розміщення в DOM
 function makeMarkupModal(obj) {
   refs.markupCard.innerHTML = '';
-  const { book_image, title, list_name, description, author, buy_links, _id } = obj;
-  refs.modalBtnDelEl.id = `${ _id }`;
+  const { book_image, title, description, author, buy_links} = obj;
   const modalMarkup =
     `    <img
              src="${book_image}"
