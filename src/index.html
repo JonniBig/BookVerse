@@ -18,17 +18,22 @@
 
     <main class="container container-bestseller">
       <div class="main-container">
-        <h1 class="hidden">bookvers</h1>
+        <h1 class="hidden">BookVerse</h1>
 
         <aside class="left-wrapper">
           <load ="partials/categories.html" />
           <load ="partials/foundation.html" />
         </aside>
-        <load ="partials/home.html" />
-        <div class="Best Seller"></div>
+        <div class="container-bestsellers">
+          <div class="right-wrapper" id="result-container">
+            <h2 class="title-books">
+              Best Sellers <span class="colored">Books</span>
+            </h2>
+            <div class="bestseller"></div>
+          </div>
+        </div>
       </div>
-      <load ="partials/categories-book.html" />
-
+      <load ="partials/home.html" />
       <load ="partials/modalWindow.html" />
     </main>
     <script type="module" src="/main.js"></script>
