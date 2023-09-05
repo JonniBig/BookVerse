@@ -13,7 +13,7 @@ function trackScroll() {
 
 function goTop() {
   if (document.documentElement.scrollTop > 0) {
-    window.scrollBy(0, -40);
+    window.scrollBy(0, -120);
     requestAnimationFrame(goTop);
   }
 }
