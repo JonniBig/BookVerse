@@ -1,5 +1,6 @@
+// -------------Імпорт бібліотеки Axios------------
 import axios from 'axios';
-
+// -----------------Створюємо методи об'єкту для вимкнення скролу фону
 const scrollControl = {
   scrollPosition: 0,
   disabledScroll() {
@@ -19,65 +20,84 @@ const scrollControl = {
     window.scroll({ top: scrollControl.scrollPosition });
   },
 };
-
+// ----------вводимо змінні 
 let fetchedObj = null;
 let bookId = 0;
 let savedBooks = [];
+// -------------Перевірка сховища на наявність ключа, та створення якщо відсутній
 if (localStorage.getItem('ListOfBooks') === null) {
   localStorage.setItem('ListOfBooks', JSON.stringify(savedBooks));
 }
-
+// ---------------Посилання на елементи DOM
 const refs = {
   openModal: document.querySelector('.right-wrapper'),
   closeModal: document.querySelector('.modalWindow-close'),
   modalWindow: document.querySelector('#modalWindow'),
   modalCard: document.querySelector('.modal-card'),
-  modalBtnEl: document.querySelector('.modalWindow-btn'),
+  modalBtnAddEl: document.querySelector('.modalWindow-btn-1'),
+  modalBtnDelEl: document.querySelector('.modalWindow-btn-2'),
+  modaltextBottom:document.querySelector('.modalWindow-text'),
   markupCard:document.querySelector('.modal-card'),
 };
-
+// -------------Додаємо слухачів події відкриття та закриття модального вікна
 refs.openModal.addEventListener('click', openModalWindow);
 refs.closeModal.addEventListener('click', closeModalWindow);
-
+// --------------Функція відкриття модального вікна
 function openModalWindow(evt) {
+  // --------------Заборона базових дій браузера
   evt.preventDefault();
+  // ----------------Шукаємо через сплиття елемент списку з ID книжки для запиту на сервер
   const clickedElement = evt.target;
   const closestLi = clickedElement.closest('.book-item');
+  // кщо не знайшли батька елемента з потрібними параметрами, значить клікнули поза карткою
   if (!closestLi) {
     return;
   }
+  // ----------Прибираємо клас hidden та вимикаємо скрол, слухаємо події клавіатури та клік  за межами модального вікна
   refs.modalWindow.classList.remove('is-hidden');
   scrollControl.disabledScroll();
   window.addEventListener('keydown', onEscPressed);
   refs.modalWindow.addEventListener('click', onBackdropclick);
 
   bookId = closestLi.id;
+  // ----------Перевірка наявності книги в сховищі
+  const checkBook = JSON.parse(localStorage.getItem('ListOfBooks'));
+  if (checkBook.find(option => option._id === bookId)) {
+    refs.modalBtnAddEl.classList.add('is-hidden');
+    refs.modalBtnDelEl.classList.remove('is-hidden');
+    refs.modaltextBottom.classList.remove('is-hidden');
+  } else {
+    refs.modalBtnAddEl.classList.remove('is-hidden');
+    refs.modalBtnDelEl.classList.add('is-hidden');
+    refs.modaltextBottom.classList.add('is-hidden');
+  }
+  // -----------Виклик функції запиту з ID обраної книги та створення розмітки картки
   getBookOnId(bookId).then(data => {
     makeMarkupModal(data);
     fetchedObj = data;
   });
 }
-
+// --------------Функція закриття модального вікна
 function closeModalWindow(evt) {
   refs.modalWindow.classList.add('is-hidden');
   scrollControl.enabledScroll();
   window.removeEventListener('keydown', onEscPressed);
   modalWindow.removeEventListener('click', onBackdropclick);
 }
-
+// ----------Функція кліку за межами модального вікна
 function onBackdropclick(evt) {
   if (evt.currentTarget === evt.target) {
     closeModalWindow();
   }
 }
-
+// ---------------Функція закриття після натискання клавіші ESC
 function onEscPressed(evt) {
   const ESC_KEY = 'Escape';
   if (evt.code === ESC_KEY) {
     closeModalWindow();
   }
 }
-
+// -------Асинхронна функція запиту на сервер
 async function getBookOnId(id) {
   const url = 'https://books-backend.p.goit.global/books/';
   try {
@@ -88,20 +108,42 @@ async function getBookOnId(id) {
     console.log(error);
   }
 }
-
-refs.modalBtnEl.addEventListener('click', bookAndStorage);
-function bookAndStorage() {
-  console.log(fetchedObj)
+// ---------Прослуховування події кліку по кнопці Додати до сховища
+refs.modalBtnAddEl.addEventListener('click', bookAddStorage);
+// ------------Функція збереження обраної книги в сховищі
+function bookAddStorage(evt) {
+   evt.preventDefault();
     savedBooks = JSON.parse(localStorage.getItem('ListOfBooks'));
     savedBooks.push(fetchedObj);
-    localStorage.setItem('ListOfBooks', JSON.stringify(savedBooks));
- 
+  localStorage.setItem('ListOfBooks', JSON.stringify(savedBooks));
+    refs.modalBtnAddEl.classList.add('is-hidden');
+    refs.modalBtnDelEl.classList.remove('is-hidden');
+    refs.modaltextBottom.classList.remove('is-hidden');
 }
+ 
+refs.modalBtnDelEl.addEventListener('click', bookDelStorage);
+function bookDelStorage(evt) {
+  evt.preventDefault();
+  // const targetFind = evt.target.id;
+  // const IndexBook = targetFind.closest('a');
+  // // кщо не знайшли батька елемента з потрібними параметрами, значить клікнули поза карткою
+  // if (!IndexBook) {
+  //   return;
+  // }
+  const savedData=JSON.parse(localStorage.getItem('ListOfBooks'))
+  const cardIndex = savedData.findIndex(option => option._id === bookId);
+  savedData.splice(cardIndex, 1);
+  localStorage.setItem('ListOfBooks', JSON.stringify(savedData));
+      refs.modalBtnAddEl.classList.remove('is-hidden');
+    refs.modalBtnDelEl.classList.add('is-hidden');
+    refs.modaltextBottom.classList.add('is-hidden');
+  }
 
 
 function makeMarkupModal(obj) {
   refs.markupCard.innerHTML = '';
   const { book_image, title, list_name, description, author, buy_links, _id } = obj;
+  refs.modalBtnDelEl.id = `${ _id }`;
   const modalMarkup =
     `    <img
              src="${book_image}"
