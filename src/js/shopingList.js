@@ -72,7 +72,7 @@ function makeMarkup(arr) {
       ({ book_image, title, list_name, description, author, buy_links, _id }) =>
         `<li class="shop-list-item">
              <img
-             src="https://raw.githubusercontent.com/JonniBig/BookVerse/main/src/images/icomoon.svg#icon-dump"
+             src="./images/shopingList/dump.png
              alt="Close button"
              class="icon-damp"
              loading="lazy"
