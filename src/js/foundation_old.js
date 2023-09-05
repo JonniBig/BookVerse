@@ -48,21 +48,19 @@ const foundations = [
 
 const foundationList = document.querySelector('.found-list');
 const downBtn = document.querySelector('.found-down');
-const upBtn = document.querySelector('.found-up');
 
 showFoundations();
 
-downBtn.addEventListener('click', handleScrollDown);
-upBtn.addEventListener('click', handleScrollUp);
+downBtn.addEventListener('click', handleScrollFoundations);
 
-function handleScrollDown() {
-  const itemHeight = foundationList.querySelector('.found-item').offsetHeight;
-  foundationList.scrollTop += itemHeight;
-}
-
-function handleScrollUp() {
-  const itemHeight = foundationList.querySelector('.found-item').offsetHeight;
-  foundationList.scrollTop -= itemHeight;
+function handleScrollFoundations() {
+  if (downBtn.matches('.found-down')) {
+    foundationList.scrollTo({ top: 500, behavior: 'smooth' });
+  } else {
+    foundationList.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  downBtn.classList.toggle('found-down');
+  downBtn.classList.toggle('found-up');
 }
 
 function showFoundations() {
@@ -76,11 +74,12 @@ function createMarkupListItems() {
 function createMarkupListItem(item, i) {
   return `
     <li class="found-item" value="${i + 1}">
-      <a href="${item.url}" class="found-link" title="${
+        <a href="${item.url}" class="found-link" title="${
     item.title
-  }" target="_blank">
-        <img src="${item.img}" alt="${item.title}" class="found-logo">
-      </a>
-    </li>
-  `;
+  }" target="_blank"> 
+
+                <img src="${item.img}" alt="${item.title}" class="found-logo">
+            </a>
+        </li>
+    `;
 }
