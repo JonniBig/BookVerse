@@ -52,7 +52,6 @@ export function createMarkupBookShelf(category) {
 function bindSeeMoreEvent() {
   if (bestSellers._seeMoreBound) return;
 
-  
   //----------------------------
   const seeMoreButtons = document.querySelectorAll('.see-more');
 
@@ -61,7 +60,9 @@ function bindSeeMoreEvent() {
       const categoryName = button.getAttribute('data-category');
       fetchAndDisplayBooks(categoryName);
 
-      const categoryLinks = document.querySelectorAll('.categories .category_link');
+      const categoryLinks = document.querySelectorAll(
+        '.categories .category_link'
+      );
 
       categoryLinks.forEach(link => {
         if (link.textContent === categoryName) {
@@ -74,7 +75,7 @@ function bindSeeMoreEvent() {
   });
 }
 
-  //----------------------------
+//----------------------------
 
 //   bestSellers.addEventListener('click', async event => {
 //     if (event.target.classList.contains('see-more')) {
@@ -89,13 +90,14 @@ function bindSeeMoreEvent() {
 //   bestSellers._seeMoreBound = true;
 
 //--------------------------------
- 
+
 export function renderBook({ book_image, title, author, _id }) {
   return `
   <li class="book-item" id="${_id}">
     <a href="" class="best-img-link">
       <img class="book-wrap" src="${book_image}" alt="${title}" loading="lazy"/>
         <div class="book-info-block">
+          <p class="view">view</p>
           <p class="book-name">${title}</p>
           <p class="book-author">${author}</p>
         </div>

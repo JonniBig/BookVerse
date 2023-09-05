@@ -1,59 +1,71 @@
-
 /**
   |============================
-  | СТИЛІ ДО КАРТОК З ВИБРАНИМИ КНИГАМИ
+  | ВИПЛИВАЮЧЕ VIEW ДО КАРТОК З ВИБРАНИМИ КНИГАМИ
   |============================
 */
-.list-categoryes-selected-books {
-  max-width: 100vw;
-  float: right;
+
+:root {
+  /* layers */
+  --z-10: 10;
+  --z-100: 100;
+  --z-1000: 1000;
+  --z-10001: 10000;
+}
+.book-info-block {
+  z-index: var(--z-1001);
+}
+.btn-see-more {
+  z-index: var(--z-1000);
+}
+.best-img-link {
+  z-index: var(--z-1000);
+  position: relative;
+  display: inline-block;
 }
 
-.categoryesNotFound {
-  font-weight: 700;
+.book-wrap {
+  z-index: var(--z-10);
+  position: relative;
+  /* padding-bottom: 70px; */
+  box-sizing: border-box;
 }
 
-.categoryes-book-title {
-  padding-top: 112px;
-  padding-bottom: 40px;
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 52px;
-}
-.categoryes-book-list {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-}
-.categoryes-book-item {
-  max-width: 218;
-  height: 366;
-}
-
-.categoryes-book-img {
-  max-width: 218;
-  height: 316;
+.view {
+  z-index: var(--z-100);
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 0px 52px 0px 52px;
+  border-radius: 0px 0px 8px 8px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  margin: 0;
+  opacity: 0;
+  background-color: #eac645;
+  color: #202024;
+  padding-top: 26px;
+  transform: translateY(100%);
+  transition: opacity 0.9s ease, transform 1s;
 }
 
-.categoryes-title-book {
-  padding-top: 14px;
-  color: var(--black1-color);
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 18px;
-  letter-spacing: -0.04em;
-  text-align: left;
+.best-img-link:hover .view,
+.best-img-link:focus .view {
+  opacity: 50;
+  transform: translateY(0%);
 }
 
-.categoryes-author-book {
-  padding-top: 4px;
-  color: #b4afaf;
-  font-size: 12px;
-  font-style: italic;
-  font-weight: 400;
-  line-height: 14px;
-  letter-spacing: -0.04em;
-  text-align: left;
+@media screen and (min-width: 768px) {
+  .best-img-link:hover .view,
+  .best-img-link:focus .view {
+    bottom: 18%;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .best-img-link:hover .view,
+  .best-img-link:focus .view {
+    bottom: 21%;
+  }
 }

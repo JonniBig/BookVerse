@@ -43,43 +43,55 @@ async function fetchAndDisplayBooks(categoryName) {
       books.forEach(book => {
         const li = document.createElement('li');
         li.className = 'book-item';
-        li.id = `${book._id}`;
+        li.id = book._id;
 
         const a = document.createElement('a');
+        a.classList.add('best-img-link');
         a.href = '/book-details.html?id=' + book._id;
-        // a.target = '_blank';
 
-        const div1 = document.createElement('div');
         const img = document.createElement('img');
         img.classList.add('book-wrap');
         img.src =
           book.book_image || '../images/plug picture/plug335x485@1x.jpg';
         img.alt = book.title;
-        div1.appendChild(img);
+
+        // const pView = document.createElement('p');
+        // pView.classList.add('view');
+        // pView.textContent = 'view';
+
+        a.appendChild(img);
+        // a.appendChild(pView);
 
         const div2 = document.createElement('div');
-        div2.classList.add('noName');
+        div2.classList.add('book-info-block');
 
-        const title = document.createElement('p');
-        title.classList.add('book-name');
-        title.textContent = book.title || 'N/A';
+        const pView = document.createElement('p');
+        pView.classList.add('view');
+        pView.textContent = 'view';
 
-        const author = document.createElement('p');
-        author.classList.add('book-author');
-        author.textContent = book.author || 'N/A';
+        const pTitle = document.createElement('p');
+        pTitle.classList.add('book-name');
+        pTitle.textContent = book.title || 'N/A';
 
-        div2.appendChild(title);
-        div2.appendChild(author);
+        const pAuthor = document.createElement('p');
+        pAuthor.classList.add('book-author');
+        pAuthor.textContent = book.author || 'N/A';
 
-        a.appendChild(div1);
+        div2.appendChild(pView);
+        div2.appendChild(pTitle);
+        div2.appendChild(pAuthor);
+
         a.appendChild(div2);
+
         li.appendChild(a);
         ul.appendChild(li);
       });
 
       resultContainer.appendChild(ul);
     }
-     const activeCategoryLi = document.querySelector(`li[data-category="${categoryName}"]`);
+    const activeCategoryLi = document.querySelector(
+      `li[data-category="${categoryName}"]`
+    );
     if (activeCategoryLi) {
       activeCategoryLi.classList.add('active-category');
     }
