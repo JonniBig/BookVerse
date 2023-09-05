@@ -207,20 +207,6 @@
   }
 }
 
-@media only screen and (min-width: 768px) {
-  .book-wrap {
-    width: 218px;
-    height: 316px;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .book-wrap {
-    width: 218px;
-    height: 316px;
-  }
-}
-
 @media only screen and (min-width: 1440px) {
   .book-wrap {
     width: 180px;
@@ -249,4 +235,7 @@
   .books-is-hidden :nth-child(n + 2) {
     display: none;
   }
+}
+iframe[seamless] {
+  border: none;
 }

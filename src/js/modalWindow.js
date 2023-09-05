@@ -20,7 +20,7 @@ const scrollControl = {
     window.scroll({ top: scrollControl.scrollPosition });
   },
 };
-// ----------вводимо змінні 
+// ----------вводимо змінні
 let fetchedObj = null;
 let bookId = 0;
 let savedBooks = [];
@@ -36,8 +36,8 @@ const refs = {
   modalCard: document.querySelector('.modal-card'),
   modalBtnAddEl: document.querySelector('.modalWindow-btn-1'),
   modalBtnDelEl: document.querySelector('.modalWindow-btn-2'),
-  modaltextBottom:document.querySelector('.modalWindow-text'),
-  markupCard:document.querySelector('.modal-card'),
+  modaltextBottom: document.querySelector('.modalWindow-text'),
+  markupCard: document.querySelector('.modal-card'),
 };
 // -------------Додаємо слухачів події відкриття та закриття модального вікна
 refs.openModal.addEventListener('click', openModalWindow);
@@ -112,40 +112,32 @@ async function getBookOnId(id) {
 refs.modalBtnAddEl.addEventListener('click', bookAddStorage);
 // ------------Функція збереження обраної книги в сховищі
 function bookAddStorage(evt) {
-   evt.preventDefault();
-    savedBooks = JSON.parse(localStorage.getItem('ListOfBooks'));
-    savedBooks.push(fetchedObj);
+  evt.preventDefault();
+  savedBooks = JSON.parse(localStorage.getItem('ListOfBooks'));
+  savedBooks.push(fetchedObj);
   localStorage.setItem('ListOfBooks', JSON.stringify(savedBooks));
-    refs.modalBtnAddEl.classList.add('is-hidden');
-    refs.modalBtnDelEl.classList.remove('is-hidden');
-    refs.modaltextBottom.classList.remove('is-hidden');
+  refs.modalBtnAddEl.classList.add('is-hidden');
+  refs.modalBtnDelEl.classList.remove('is-hidden');
+  refs.modaltextBottom.classList.remove('is-hidden');
 }
- 
+
 refs.modalBtnDelEl.addEventListener('click', bookDelStorage);
 function bookDelStorage(evt) {
   evt.preventDefault();
-  // const targetFind = evt.target.id;
-  // const IndexBook = targetFind.closest('a');
-  // // кщо не знайшли батька елемента з потрібними параметрами, значить клікнули поза карткою
-  // if (!IndexBook) {
-  //   return;
-  // }
-  const savedData=JSON.parse(localStorage.getItem('ListOfBooks'))
+
+  const savedData = JSON.parse(localStorage.getItem('ListOfBooks'));
   const cardIndex = savedData.findIndex(option => option._id === bookId);
   savedData.splice(cardIndex, 1);
   localStorage.setItem('ListOfBooks', JSON.stringify(savedData));
-      refs.modalBtnAddEl.classList.remove('is-hidden');
-    refs.modalBtnDelEl.classList.add('is-hidden');
-    refs.modaltextBottom.classList.add('is-hidden');
-  }
-
+  refs.modalBtnAddEl.classList.remove('is-hidden');
+  refs.modalBtnDelEl.classList.add('is-hidden');
+  refs.modaltextBottom.classList.add('is-hidden');
+}
 
 function makeMarkupModal(obj) {
   refs.markupCard.innerHTML = '';
-  const { book_image, title, list_name, description, author, buy_links, _id } = obj;
-  refs.modalBtnDelEl.id = `${ _id }`;
-  const modalMarkup =
-    `    <img
+  const { book_image, title, description, author, buy_links } = obj;
+  const modalMarkup = `    <img
              src="${book_image}"
              alt="${title}"
              class="modal-book-img"
@@ -170,4 +162,4 @@ function makeMarkupModal(obj) {
              </div>
           </div>`;
   refs.markupCard.insertAdjacentHTML('beforeend', modalMarkup);
- }
+}
