@@ -26,7 +26,7 @@
   opacity: 1;
   visibility: visible;
   pointer-events: initial;
-  overflow: hidden;
+  overflow: auto;
   z-index: 9999;
 }
 
