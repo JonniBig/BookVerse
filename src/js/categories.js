@@ -26,9 +26,8 @@ async function fetchCategories() {
 
     const categoriesAll = { list_name: 'All categories' };
 
-
     categories.sort((a, b) => a.list_name.localeCompare(b.list_name));
-        categories.unshift(categoriesAll);
+    categories.unshift(categoriesAll);
 
     renderCategories(categories);
 
