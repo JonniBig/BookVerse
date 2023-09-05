@@ -72,19 +72,18 @@
 
 @media only screen and (min-width: 768px) {
   .categories {
-    /* width: 337px; */
-    width: 334px;
+    max-width: 337px;
+    /* max-width: 334px; */
     height: 472px;
   }
 
   .book_list {
-    width: 309px;
+    /* width: 309px; */
     height: 472px;
     gap: 32px;
   }
 
   .category_link {
-  
     line-height: 1.33;
     letter-spacing: -0.36px;
   }
@@ -95,9 +94,10 @@
 }
 
 /* Desktop style */
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 1440px) {
   .categories {
     width: 356px;
+    margin-bottom: 86px;
   }
 
   .book_list {

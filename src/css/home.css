@@ -5,10 +5,8 @@
   line-height: 1.19;
 
 
-  margin-top: 40px;
   margin-bottom: 40px;
 }
-
 
 .best-list-name {
   text-transform: uppercase;
@@ -17,15 +15,12 @@
   line-height: 1.29;
   letter-spacing: 0.02em;
 
-  color: #B4AFAF;
-
+  color: #b4afaf;
 
   margin-bottom: 18px;
 }
 
 .book-name {
-
-
   margin-bottom: 4px;
 
   color: var(--black-text-color);
@@ -33,7 +28,6 @@
   font-weight: 700;
   line-height: 1.12;
   letter-spacing: -0.04em;
-
 
   text-transform: uppercase;
 
@@ -48,7 +42,6 @@
 .book-author {
   margin-bottom: 8px;
 
-
   font-size: 12px;
   letter-spacing: -0.04em;
   line-height: 1.17;
@@ -58,8 +51,7 @@
   overflow: hidden;
   white-space: nowrap;
 
-  color: #B4AFAF;
-
+  color: #b4afaf;
 }
 
 .see-more {
@@ -79,7 +71,6 @@
 .colored {
   color: var(--violet-color);
 }
-
 
 .bestseller {
   display: flex;
@@ -127,7 +118,7 @@
 @media only screen and (min-width: 768px) {
   .best-book-category {
     width: 100%;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
   }
 }
 
@@ -136,12 +127,10 @@
 }
 
 .book-wrap {
-
   /*     width: 335px;
     height: 485px; */
   margin-bottom: 14px;
   border-radius: 8px;
-
 }
 
 .categoryes-book-img {
@@ -149,14 +138,10 @@
   height: 316;
 }
 
-
-
 .book-info-block {
   margin-bottom: 20px;
   max-width: 180px;
 }
-
-
 
 .book-name {
   margin-bottom: 4px;
@@ -186,11 +171,11 @@
   white-space: nowrap;
 }
 
-
-
 @media only screen and (min-width: 768px) and (max-width: 1439px) {
   .left-wrapper {
     display: flex;
+    gap: 32px;
+    margin-bottom: 100px;
   }
 
   .container-bestseller {
@@ -215,42 +200,13 @@
   }
 }
 
-
-
-
-
-
-
-@media only screen and (min-width: 768px) {
-  .book-wrap {
-    width: 218px;
-    height: 316px;
-  }
-
-
-
-
-}
-
-
-
-
-
-@media only screen and (min-width: 768px) {
-  .book-wrap {
-
-    width: 218px;
-    height: 316px;
-  }
-
-}
-
 @media only screen and (min-width: 768px) {
   .book-wrap {
     width: 218px;
     height: 316px;
   }
 }
+
 
 @media only screen and (min-width: 1440px) {
   .book-wrap {
@@ -270,15 +226,14 @@
   justify-content: flex-end;
 }
 
-
 @media screen and (max-width: 1439px) {
-  .books-is-hidden :nth-child(n+4) {
+  .books-is-hidden :nth-child(n + 4) {
     display: none;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .books-is-hidden :nth-child(n+2) {
+  .books-is-hidden :nth-child(n + 2) {
     display: none;
   }
 }
