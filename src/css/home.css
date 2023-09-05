@@ -87,12 +87,14 @@
   .bestseller {
     width: 100%;
     flex-wrap: wrap;
+    gap: 24px;
   }
 }
 
 @media only screen and (min-width: 1440px) {
   .bestseller {
     gap: 24px;
+    min-width: 996px;
   }
 }
 
@@ -188,7 +190,7 @@
   .bestseller {
     display: flex;
     flex-wrap: wrap;
-    gap: 25px;
+    gap: 24px;
     row-gap: 40px;
   }
 }
