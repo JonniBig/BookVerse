@@ -105,5 +105,6 @@ body {
 }
 
 .scroll-button.show {
+  z-index: 100000;
   display: block;
 }
