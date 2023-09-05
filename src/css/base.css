@@ -45,17 +45,15 @@ body {
     max-width: 768px;
     padding-left: 32px;
     padding-right: 32px;
-   
   }
-
 }
 
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
   .left-wrapper {
     display: flex;
    
   }
-}
+} */
 
 /* Desktop style */
 @media only screen and (min-width: 1440px) {
@@ -63,22 +61,22 @@ body {
     max-width: 1440px;
     padding-left: 24px;
     padding-right: 24px;
-    
   }
-  .main-container{
-display: flex;
+  .main-container {
+    display: flex;
   }
   .left-wrapper {
-  flex-direction: column;
-}
+    flex-direction: column;
+    padding-right: 40px;
+  }
 }
 
 .scroll-button {
   position: fixed;
   bottom: 40px;
   right: 40px;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   background-color: #836fde;
   fill: var(--white-color);
   border-radius: 50%;
@@ -101,8 +99,8 @@ display: flex;
   .scroll-button {
     bottom: 30px;
     right: 30px;
-    width: 64px;
-    height: 64px;
+    width: 45px;
+    height: 45px;
   }
 }
 
