@@ -64,6 +64,17 @@
   border-radius: 25px;
 }
 
+.see-more:hover,
+.see-more:focus {
+  background-color: var(--yellow-color);
+}
+
+.dark-theme .see-more:hover,
+.dark-theme .see-more:focus {
+  background-color: var(--yellow-color);
+  color: var(--black1-color);
+}
+
 .dark-theme .see-more {
   background-color: var(--black2-color);
 }

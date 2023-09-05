@@ -67,7 +67,7 @@ async function fetchAndDisplayBooks(categoryName) {
 
         const pView = document.createElement('p');
         pView.classList.add('view');
-        pView.textContent = 'view';
+        pView.textContent = 'quick view';
 
         const pTitle = document.createElement('p');
         pTitle.classList.add('book-name');
