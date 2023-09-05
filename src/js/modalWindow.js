@@ -6,7 +6,7 @@ const scrollControl = {
   disabledScroll() {
     scrollControl.scrollPosition = window.scrollY;
     document.body.style.cssText = `
-      overflow: auto;
+      overflow: hidden;
       position: fixed;
       top: -${scrollControl.scrollPosition}px;
       left: 0;
