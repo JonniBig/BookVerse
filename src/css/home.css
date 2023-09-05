@@ -5,8 +5,8 @@
   line-height: 1.19;
 
 
-margin-top: 40px;
-margin-bottom: 40px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 
@@ -28,7 +28,7 @@ margin-bottom: 40px;
 
   margin-bottom: 4px;
 
-  color:var(--black-text-color);
+  color: var(--black-text-color);
   font-size: 16px;
   font-weight: 700;
   line-height: 1.12;
@@ -63,45 +63,45 @@ margin-bottom: 40px;
 }
 
 .see-more {
-padding: 14px 28px;
+  padding: 14px 28px;
 
-font-weight: 700;
-letter-spacing: -0.01em;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 
-border: 2px solid var(--violet-color);
-border-radius: 25px;
+  border: 2px solid var(--violet-color);
+  border-radius: 25px;
 }
 
 .dark-theme .see-more {
-background-color: var(--black2-color);
+  background-color: var(--black2-color);
 }
 
 .colored {
-color: var(--violet-color);
+  color: var(--violet-color);
 }
 
 
 .bestseller {
   display: flex;
-  gap: 40px;   
+  gap: 40px;
 }
 
 @media only screen and (max-width: 767px) {
   .bestseller {
     flex-direction: column;
   }
-}  
+}
 
 @media only screen and (min-width: 768px) {
   .bestseller {
     width: 100%;
     flex-wrap: wrap;
   }
-}  
-  
+}
+
 @media only screen and (min-width: 1440px) {
-  .bestseller{
-    gap: 24px;  
+  .bestseller {
+    gap: 24px;
   }
 }
 
@@ -159,31 +159,31 @@ color: var(--violet-color);
 
 
 .book-name {
-margin-bottom: 4px;
+  margin-bottom: 4px;
 
-color: var(--black-text-color);
-font-size: 16px;
-line-height: 1.12;
-letter-spacing: -0.04em;
+  color: var(--black-text-color);
+  font-size: 16px;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
 
-text-transform: uppercase;
+  text-transform: uppercase;
 
-text-overflow: ellipsis;
-overflow: hidden;
-white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .book-author {
-margin-bottom: 8px;
+  margin-bottom: 8px;
 
-font-size: 12px;
-letter-spacing: -0.04em;
-line-height: 1.17;
+  font-size: 12px;
+  letter-spacing: -0.04em;
+  line-height: 1.17;
 
-font-style: italic;
-text-overflow: ellipsis;
-overflow: hidden;
-white-space: nowrap;
+  font-style: italic;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 
@@ -192,6 +192,7 @@ white-space: nowrap;
   .left-wrapper {
     display: flex;
   }
+
   .container-bestseller {
     display: flex;
     flex-wrap: wrap;
@@ -207,6 +208,7 @@ white-space: nowrap;
     row-gap: 40px;
   }
 }
+
 @media screen and (min-width: 1440px) {
   .container-bestseller {
     flex-direction: row;
@@ -226,17 +228,17 @@ white-space: nowrap;
   }
 
 
-    
-    
-  }
+
+
+}
 
 
 
 
 
 @media only screen and (min-width: 768px) {
-   .book-wrap{
-    
+  .book-wrap {
+
     width: 218px;
     height: 316px;
   }
@@ -244,23 +246,23 @@ white-space: nowrap;
 }
 
 @media only screen and (min-width: 768px) {
-.book-wrap {
-  width: 218px;
-  height: 316px;
-}
+  .book-wrap {
+    width: 218px;
+    height: 316px;
+  }
 }
 
 @media only screen and (min-width: 1440px) {
-.book-wrap {
-  width: 180px;
-  height: 256px;
-}
+  .book-wrap {
+    width: 180px;
+    height: 256px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
-.book-author {
-  margin-bottom: 20px;
-}
+  .book-author {
+    margin-bottom: 20px;
+  }
 }
 
 .btn-see-more {
@@ -279,4 +281,9 @@ white-space: nowrap;
   .books-is-hidden :nth-child(n+2) {
     display: none;
   }
+}
+
+/* ----Стиль для старих версій браузера, вони не знають параметр seamless */
+iframe[seamless] {
+  border: none;
 }
