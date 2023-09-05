@@ -97,7 +97,7 @@ body {
 
 @media only screen and (min-width: 768px) {
   .scroll-button {
-    bottom: 30px;
+    bottom: 90px;
     right: 30px;
     width: 45px;
     height: 45px;
