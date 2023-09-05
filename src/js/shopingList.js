@@ -37,7 +37,7 @@ function addCard() {
   listCards.classList.remove('is-hidden');
   emptyList.classList.add('is-hidden');
   listCards.innerHTML = '';
-  listCards.insertAdjacentHTML('beforeend', makeMarkup11(savedData));
+  listCards.insertAdjacentHTML('beforeend', makeMarkup(savedData));
   // listCards.firstChild.classList.add('tui-first-child');
   // listCards.lastChild.classList.add('tui-last-child');
   // const options = {
@@ -51,14 +51,14 @@ function addCard() {
   // };
 
   // const myPagination = new Pagination(container, options);
-  const dumpEl = document
+   document
     .querySelectorAll('.icon-damp')
     .forEach(item => item.addEventListener('click', deleteCard));
 }
 
 function deleteCard(evt) {
   evt.preventDefault();
-  const cardId = evt.target.id;
+  const cardId = evt.currentTarget.id;
   const cardIndex = savedData.findIndex(option => option._id === cardId);
   savedData.splice(cardIndex, 1);
   localStorage.removeItem('ListOfBooks');
@@ -66,14 +66,20 @@ function deleteCard(evt) {
   addCard();
 }
 // --------------------Функція створення розмітки картки книги
-function makeMarkup11(arr) {
+function makeMarkup(arr) {
   return arr
     .flatMap(
       ({ book_image, title, list_name, description, author, buy_links, _id }) =>
         `<li class="shop-list-item">
-              <svg class="icon-damp" width="28" height="28">
-                <use href="../images/icomoon.svg#icon-dump" id="${_id}"></use>
-              </svg>
+             <img
+             src="../images/shopingList/dump.png"
+             alt="Close button"
+             class="icon-damp"
+             loading="lazy"
+             width="28px"
+             height: 28px;
+             id="${_id}"
+             />
          
            <img
              src="${book_image}"
