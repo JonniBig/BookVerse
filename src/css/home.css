@@ -4,11 +4,9 @@
   letter-spacing: -0.04em;
   line-height: 1.19;
 
-
-margin-top: 40px;
-margin-bottom: 40px;
+  /* margin-top: 40px; */
+  margin-bottom: 40px;
 }
-
 
 .best-list-name {
   text-transform: uppercase;
@@ -17,23 +15,19 @@ margin-bottom: 40px;
   line-height: 1.29;
   letter-spacing: 0.02em;
 
-  color: #B4AFAF;
-
+  color: #b4afaf;
 
   margin-bottom: 18px;
 }
 
 .book-name {
-
-
   margin-bottom: 4px;
 
-  color:var(--black-text-color);
+  color: var(--black-text-color);
   font-size: 16px;
   font-weight: 700;
   line-height: 1.12;
   letter-spacing: -0.04em;
-
 
   text-transform: uppercase;
 
@@ -48,7 +42,6 @@ margin-bottom: 40px;
 .book-author {
   margin-bottom: 8px;
 
-
   font-size: 12px;
   letter-spacing: -0.04em;
   line-height: 1.17;
@@ -58,50 +51,48 @@ margin-bottom: 40px;
   overflow: hidden;
   white-space: nowrap;
 
-  color: #B4AFAF;
-
+  color: #b4afaf;
 }
 
 .see-more {
-padding: 14px 28px;
+  padding: 14px 28px;
 
-font-weight: 700;
-letter-spacing: -0.01em;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 
-border: 2px solid var(--violet-color);
-border-radius: 25px;
+  border: 2px solid var(--violet-color);
+  border-radius: 25px;
 }
 
 .dark-theme .see-more {
-background-color: var(--black2-color);
+  background-color: var(--black2-color);
 }
 
 .colored {
-color: var(--violet-color);
+  color: var(--violet-color);
 }
-
 
 .bestseller {
   display: flex;
-  gap: 40px;   
+  gap: 40px;
 }
 
 @media only screen and (max-width: 767px) {
   .bestseller {
     flex-direction: column;
   }
-}  
+}
 
 @media only screen and (min-width: 768px) {
   .bestseller {
     width: 100%;
     flex-wrap: wrap;
   }
-}  
-  
+}
+
 @media only screen and (min-width: 1440px) {
-  .bestseller{
-    gap: 24px;  
+  .bestseller {
+    gap: 24px;
   }
 }
 
@@ -127,7 +118,7 @@ color: var(--violet-color);
 @media only screen and (min-width: 768px) {
   .best-book-category {
     width: 100%;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
   }
 }
 
@@ -136,12 +127,10 @@ color: var(--violet-color);
 }
 
 .book-wrap {
-
   /*     width: 335px;
     height: 485px; */
   margin-bottom: 14px;
   border-radius: 8px;
-
 }
 
 .categoryes-book-img {
@@ -149,48 +138,44 @@ color: var(--violet-color);
   height: 316;
 }
 
-
-
 .book-info-block {
   margin-bottom: 20px;
   max-width: 180px;
 }
 
-
-
 .book-name {
-margin-bottom: 4px;
+  margin-bottom: 4px;
 
-color: var(--black-text-color);
-font-size: 16px;
-line-height: 1.12;
-letter-spacing: -0.04em;
+  color: var(--black-text-color);
+  font-size: 16px;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
 
-text-transform: uppercase;
+  text-transform: uppercase;
 
-text-overflow: ellipsis;
-overflow: hidden;
-white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .book-author {
-margin-bottom: 8px;
+  margin-bottom: 8px;
 
-font-size: 12px;
-letter-spacing: -0.04em;
-line-height: 1.17;
+  font-size: 12px;
+  letter-spacing: -0.04em;
+  line-height: 1.17;
 
-font-style: italic;
-text-overflow: ellipsis;
-overflow: hidden;
-white-space: nowrap;
+  font-style: italic;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
-
-
 
 @media only screen and (min-width: 768px) and (max-width: 1439px) {
   .left-wrapper {
     display: flex;
+    gap: 32px;
+    margin-bottom: 100px;
   }
   .container-bestseller {
     display: flex;
@@ -213,54 +198,38 @@ white-space: nowrap;
   }
 }
 
-
-
-
-
-
+@media only screen and (min-width: 768px) {
+  .book-wrap {
+    width: 218px;
+    height: 316px;
+  }
+}
 
 @media only screen and (min-width: 768px) {
   .book-wrap {
     width: 218px;
     height: 316px;
   }
-
-
-    
-    
-  }
-
-
-
-
+}
 
 @media only screen and (min-width: 768px) {
-   .book-wrap{
-    
+  .book-wrap {
     width: 218px;
     height: 316px;
   }
-
-}
-
-@media only screen and (min-width: 768px) {
-.book-wrap {
-  width: 218px;
-  height: 316px;
-}
 }
 
 @media only screen and (min-width: 1440px) {
-.book-wrap {
-  width: 180px;
-  height: 256px;
-}
+  .book-wrap {
+    width: 180px;
+    height: 256px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
-.book-author {
-  margin-bottom: 20px;
-}
+  .book-author {
+    margin-bottom: 20px;
+  }
 }
 
 .btn-see-more {
@@ -268,15 +237,14 @@ white-space: nowrap;
   justify-content: flex-end;
 }
 
-
 @media screen and (max-width: 1439px) {
-  .books-is-hidden :nth-child(n+4) {
+  .books-is-hidden :nth-child(n + 4) {
     display: none;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .books-is-hidden :nth-child(n+2) {
+  .books-is-hidden :nth-child(n + 2) {
     display: none;
   }
 }
