@@ -1,60 +1,44 @@
-// import axios from 'axios';
-// import Pagination from 'tui-pagination';
-// import 'tui-pagination/dist/tui-pagination.css';
+import Pagination from 'tui-pagination';
+import 'tui-pagination/dist/tui-pagination.css';
 
 const listCards = document.querySelector('.book-shop-list');
 const emptyList = document.querySelector('.empty-list');
 const container = document.querySelector('.tui-pagination');
 
-// async function getBook() {
-//   const url = 'https://books-backend.p.goit.global/books/top-books';
-//   try {
-//     // Запит на бекенд за допомогою axios
-//     const getData = await axios.get(`${url}`);
-//     return getData.data;
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
+const itemsPerPage = 3;
+let currentPage = 1;
 
-// getBook().then(data => {
-//   localStorage.removeItem('ListofBooks');
-//   const savedBook = data[15].books;
-//   localStorage.setItem('ListOfBooks', JSON.stringify(savedBook));
-// });
+const savedData = JSON.parse(localStorage.getItem('ListOfBooks'));
+addCard(currentPage);
 
-  const savedData = JSON.parse(localStorage.getItem('ListOfBooks'));
-addCard();
-
-function addCard() {
-
+function addCard(page) {
   if (savedData.length === 0) {
-    emptyList.classList.remove('is-hidden');
-    listCards.innerHTML = '';
-    listCards.classList.add('is-hidden');
+    checkEmptyList();
     return;
   }
-  listCards.classList.remove('is-hidden');
-  emptyList.classList.add('is-hidden');
-  listCards.innerHTML = '';
-  listCards.insertAdjacentHTML('beforeend', makeMarkup(savedData));
-  // listCards.firstChild.classList.add('tui-first-child');
-  // listCards.lastChild.classList.add('tui-last-child');
-  // const options = {
-  //   // totalItems: 5,
-  //   itemsPerPage: 3,
-  //   visiblePages: 2,
-  //   page: 1,
-  //   centerAlign: true,
-  //   firstItemClassName: 'tui-first-child',
-  //   lastItemClassName: 'tui-last-child',
-  // };
+  prepareCard();
 
-  // const myPagination = new Pagination(container, options);
-   document
+  const startIndex = (page - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const pageBooks = savedData.slice(startIndex, endIndex);
+  listCards.insertAdjacentHTML('beforeend', makeMarkup(pageBooks));
+
+  document
     .querySelectorAll('.icon-damp')
     .forEach(item => item.addEventListener('click', deleteCard));
 }
+
+  const options = {
+    totalItems: savedData.length,
+    itemsPerPage,
+    visiblePages: 2,
+    centerAlign: true,
+  };
+ const myPagination = new Pagination(container, options);
+  myPagination.on('beforeMove', eventData => {
+    currentPage = eventData.page;
+    addCard(currentPage);
+  });
 
 function deleteCard(evt) {
   evt.preventDefault();
@@ -63,8 +47,27 @@ function deleteCard(evt) {
   savedData.splice(cardIndex, 1);
   localStorage.removeItem('ListOfBooks');
   localStorage.setItem('ListOfBooks', JSON.stringify(savedData));
-  addCard();
+  NavigateToPreviousPage(savedData);
+  console.log(savedData)
 }
+
+function NavigateToPreviousPage(arr) {
+  const totalPages = Math.ceil(arr.length / itemsPerPage);
+    if (totalPages <= 1) {
+    container.classList.add('is-hidden')
+  }
+    if (currentPage > totalPages) {
+        currentPage = totalPages;
+    }
+    if (currentPage === totalPages && savedData.length % itemsPerPage === 0) {
+        currentPage -= 1;
+  }
+  
+
+    addCard(currentPage);
+    myPagination.movePageTo(currentPage);
+}
+
 // --------------------Функція створення розмітки картки книги
 function makeMarkup(arr) {
   return arr
@@ -116,4 +119,16 @@ function makeMarkup(arr) {
     .join(' ');
 }
 
+function checkEmptyList() {
+  emptyList.classList.remove('is-hidden');
+  listCards.innerHTML = '';
+  listCards.classList.add('is-hidden');
+  container.classList.add('is-hidden')
+}
 
+function prepareCard() {
+  listCards.classList.remove('is-hidden');
+  container.classList.remove('is-hidden')
+  emptyList.classList.add('is-hidden');
+  listCards.innerHTML = '';
+}
