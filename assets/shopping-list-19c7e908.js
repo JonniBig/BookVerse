@@ -1,6 +1,6 @@
 import"./mobileMenuBurger-8c6d2f3b.js";const e=document.querySelector(".book-shop-list"),r=document.querySelector(".empty-list");document.querySelector(".tui-pagination");const t=JSON.parse(localStorage.getItem("ListOfBooks"));l();function l(){if(t.length===0){r.classList.remove("is-hidden"),e.innerHTML="",e.classList.add("is-hidden");return}e.classList.remove("is-hidden"),r.classList.add("is-hidden"),e.innerHTML="",e.insertAdjacentHTML("beforeend",m(t)),document.querySelectorAll(".icon-damp").forEach(o=>o.addEventListener("click",g))}function g(o){o.preventDefault();const i=o.currentTarget.id,s=t.findIndex(a=>a._id===i);t.splice(s,1),localStorage.removeItem("ListOfBooks"),localStorage.setItem("ListOfBooks",JSON.stringify(t)),l()}function m(o){return o.flatMap(({book_image:i,title:s,list_name:a,description:c,author:d,buy_links:n,_id:p})=>`<li class="shop-list-item">
              <img
-             src="https://raw.githubusercontent.com/ім'я_користувача/репозиторій/main/images/image.svg#myElement "
+             src="https://raw.githubusercontent.com/JonniBig/BookVerse/main/src/images/icomoon.svg#icon-dump"
              alt="Close button"
              class="icon-damp"
              loading="lazy"
