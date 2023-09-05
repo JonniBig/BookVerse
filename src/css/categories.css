@@ -10,6 +10,7 @@
   display: flex;
   width: auto;
   height: 228px;
+  overflow-y: scroll;
 }
 
 .book_list {
@@ -19,14 +20,13 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 24px;
-  overflow-y: scroll;
 }
 
-.book_list::-webkit-scrollbar {
+.categories::-webkit-scrollbar {
   width: 8px;
 }
 
-.book_list::-webkit-scrollbar-thumb {
+.categories::-webkit-scrollbar-thumb {
   background-color: #e0e0e0;
   border-radius: 12px;
 }
@@ -60,6 +60,7 @@
 .dark-theme .category_link {
   color: rgba(255, 255, 255, 0.6);
 }
+
 .category_link.uppercase {
   color: #4f2ee8;
   font-weight: 700;
@@ -72,7 +73,7 @@
 
 @media only screen and (min-width: 768px) {
   .categories {
-    max-width: 337px;
+    width: 337px;
     /* max-width: 334px; */
     height: 472px;
   }
