@@ -4,7 +4,7 @@
   letter-spacing: -0.04em;
   line-height: 1.19;
 
-
+  /* margin-top: 40px; */
   margin-bottom: 40px;
 }
 
@@ -177,7 +177,6 @@
     gap: 32px;
     margin-bottom: 100px;
   }
-
   .container-bestseller {
     display: flex;
     flex-wrap: wrap;
@@ -193,7 +192,6 @@
     row-gap: 40px;
   }
 }
-
 @media screen and (min-width: 1440px) {
   .container-bestseller {
     flex-direction: row;
@@ -207,6 +205,19 @@
   }
 }
 
+@media only screen and (min-width: 768px) {
+  .book-wrap {
+    width: 218px;
+    height: 316px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .book-wrap {
+    width: 218px;
+    height: 316px;
+  }
+}
 
 @media only screen and (min-width: 1440px) {
   .book-wrap {
@@ -236,9 +247,4 @@
   .books-is-hidden :nth-child(n + 2) {
     display: none;
   }
-}
-
-/* ----Стиль для старих версій браузера, вони не знають параметр seamless */
-iframe[seamless] {
-  border: none;
 }
