@@ -1,5 +1,6 @@
 import Pagination from 'tui-pagination';
-import 'tui-pagination/dist/tui-pagination.css';
+// import 'tui-pagination/dist/tui-pagination.min.css';
+import '../css/pagination-styles.css';
 
 const listCards = document.querySelector('.book-shop-list');
 const emptyList = document.querySelector('.empty-list');
@@ -28,17 +29,40 @@ function addCard(page) {
     .forEach(item => item.addEventListener('click', deleteCard));
 }
 
-  const options = {
-    totalItems: savedData.length,
-    itemsPerPage,
-    visiblePages: 2,
-    centerAlign: true,
-  };
- const myPagination = new Pagination(container, options);
-  myPagination.on('beforeMove', eventData => {
-    currentPage = eventData.page;
-    addCard(currentPage);
-  });
+
+
+let options = {
+  totalItems: savedData.length,
+  itemsPerPage,
+  visiblePages: 2,
+  centerAlign: true,
+  usageStatistics: false,
+  template: {
+    page: '<a href="#" class="tui-page-btn custom-page">{{page}}</a>',
+    currentPage:
+      '<strong class="tui-page-btn custom-is-selected tui-is-selected">{{page}} </strong>',
+    moveButton:
+      '<a href="#" class="tui-page-btn tui-{{type}} custom-class-{{type}}">' +
+      '<span class="tui-ico-{{type}}">{{type}}</span>' +
+      '</a>',
+    disabledMoveButton:
+      '<span class="tui-page-btn tui-is-disabled tui-{{type}} custom-class-{{type}}">' +
+      '<span class="tui-ico-{{type}}">{{type}}</span>' +
+      '</span>',
+    moreButton:
+      '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip custom-class-{{type}}">' +
+      '<span class="tui-ico-ellip">...</span>' +
+      '</a>',
+  },
+};
+applyStylesForScreenSize();
+const myPagination = new Pagination(container, options);
+myPagination.on('beforeMove', eventData => {
+  currentPage = eventData.page;
+  addCard(currentPage);
+});
+
+
 
 function deleteCard(evt) {
   evt.preventDefault();
@@ -48,24 +72,22 @@ function deleteCard(evt) {
   localStorage.removeItem('ListOfBooks');
   localStorage.setItem('ListOfBooks', JSON.stringify(savedData));
   NavigateToPreviousPage(savedData);
-  console.log(savedData)
 }
 
 function NavigateToPreviousPage(arr) {
   const totalPages = Math.ceil(arr.length / itemsPerPage);
-    if (totalPages <= 1) {
-    container.classList.add('is-hidden')
+  if (totalPages <= 1) {
+    container.classList.add('is-hidden');
   }
-    if (currentPage > totalPages) {
-        currentPage = totalPages;
-    }
-    if (currentPage === totalPages && savedData.length % itemsPerPage === 0) {
-        currentPage -= 1;
+  if (currentPage > totalPages) {
+    currentPage = totalPages;
   }
-  
+  if (currentPage === totalPages && savedData.length % itemsPerPage === 0) {
+    currentPage -= 1;
+  }
 
-    addCard(currentPage);
-    myPagination.movePageTo(currentPage);
+  addCard(currentPage);
+  myPagination.movePageTo(currentPage);
 }
 
 // --------------------Функція створення розмітки картки книги
@@ -123,12 +145,22 @@ function checkEmptyList() {
   emptyList.classList.remove('is-hidden');
   listCards.innerHTML = '';
   listCards.classList.add('is-hidden');
-  container.classList.add('is-hidden')
+  container.classList.add('is-hidden');
 }
 
 function prepareCard() {
   listCards.classList.remove('is-hidden');
-  container.classList.remove('is-hidden')
+  container.classList.remove('is-hidden');
   emptyList.classList.add('is-hidden');
   listCards.innerHTML = '';
 }
+
+
+function applyStylesForScreenSize() {
+  if (window.matchMedia('(max-width: 767px)').matches) {
+    options.visiblePages = 2;
+  } else  {
+    options.visiblePages = 3;
+  }
+  }
+
