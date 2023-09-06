@@ -1,36 +1,41 @@
 import Pagination from 'tui-pagination';
 // import 'tui-pagination/dist/tui-pagination.min.css';
 import '../css/pagination-styles.css';
-
+// ----------------Створюємо посилання на елементи розмітки
 const listCards = document.querySelector('.book-shop-list');
 const emptyList = document.querySelector('.empty-list');
 const container = document.querySelector('.tui-pagination');
-
+// -------------Отримаємо зі сховища масив книжок
+const savedData = JSON.parse(localStorage.getItem('ListOfBooks'));
+// --------------Початкові параметри пагінації
 const itemsPerPage = 3;
 let currentPage = 1;
 
-const savedData = JSON.parse(localStorage.getItem('ListOfBooks'));
+// -------------Виклик функції створення розмітки карток
 addCard(currentPage);
-
+// -----------Функція виводу збережених карток
 function addCard(page) {
+  // -------Перевірка наявності даних в сховищі
   if (savedData.length === 0) {
     checkEmptyList();
     return;
   }
   prepareCard();
 
+
+// ---------Вирізаємо з масиву задану кількість об'єктів для створення розмітки
   const startIndex = (page - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const pageBooks = savedData.slice(startIndex, endIndex);
+  // --------------Заповнюємо контейнер картками
   listCards.insertAdjacentHTML('beforeend', makeMarkup(pageBooks));
-
+  // -----------------Прослуховування подій на кнопках видалення книжки зі сховища
   document
     .querySelectorAll('.icon-damp')
     .forEach(item => item.addEventListener('click', deleteCard));
 }
 
-
-
+// -------------Набір опцій для tui-pagination з розміткою для кнопок
 let options = {
   totalItems: savedData.length,
   itemsPerPage,
@@ -55,43 +60,60 @@ let options = {
       '</a>',
   },
 };
+// -------------------Зміна конфігурації відображення пагінації відповідно до ширини екрану(працює статично)
 applyStylesForScreenSize();
+// ----------------Запускаємо пагінацію карток в сховищі
 const myPagination = new Pagination(container, options);
+// при зміні номеру сторінки запускаємо функцію створення нової порції карток на новій сторінці
 myPagination.on('beforeMove', eventData => {
   currentPage = eventData.page;
   addCard(currentPage);
 });
-
-
-
+  // ---------Розраховуємо загальну к-сть сторінок
+  const totalPages = Math.ceil(savedData.length / itemsPerPage);
+  // ---------Якщо залишилась тільки одна сторінка ховаємо пагінацію
+  if (totalPages === 1) {
+    container.classList.add('is-hidden');
+  }
+// -------------Функція видалення картки
 function deleteCard(evt) {
   evt.preventDefault();
+  // ------Отримвємо id  номер картки
   const cardId = evt.currentTarget.id;
+  // ---------Згідно номеру отримає індекс картки в масиві
   const cardIndex = savedData.findIndex(option => option._id === cardId);
+  // Вирізаємо з масиву необхідний об'єкт
   savedData.splice(cardIndex, 1);
+  // --------Очищаємо сховище
   localStorage.removeItem('ListOfBooks');
+  // ---------Записуємо в сховище новий масив об'єктів
   localStorage.setItem('ListOfBooks', JSON.stringify(savedData));
+  // --------------Визначаємо поточний номер сторінки
   myPagination.on('beforeMove', eventData => {
-  currentPage = eventData.page;
+    currentPage = eventData.page;
   });
-
+  // ------------Виконуємо функцію перевірки кількості карток і у випадку коли всі картки зі сторінки видалені, переходимо на -1 сторінку і видаляємо з пагінації порожню сторінку
   navigateToPreviousPage(savedData);
-  
 }
-
+// -------------Функція перевірки відповідності к-сті карток к-сті видимих сторінок, якщо залишилась тільки одна сторінка пагінацію ховаємо
 function navigateToPreviousPage(arr) {
+  // ---------Розраховуємо загальну к-сть сторінок
   const totalPages = Math.ceil(arr.length / itemsPerPage);
+  // ---------Якщо залишилась тільки одна сторінка ховаємо пагінацію
   if (totalPages === 1) {
-    container.classList.add('is-hidden')
+    container.classList.add('is-hidden');
   }
+  // Якщо номер поточної сторінки більше макс. кількості, приймаємо макс номер за поточний
   if (currentPage > totalPages) {
     currentPage = totalPages;
-    myPagination.reset(arr.length)
+    // ------Перезавантажуємо пагінацію для перерахунку кількості сторінок
+    myPagination.reset(arr.length);
+    // ---------Переходимо на -1 сторінку, якщо поточна без карток
     myPagination.movePageTo(currentPage);
-
   }
+  // --------Перемальовуємо картки на новій сторінці
   addCard(currentPage);
-  }
+}
 
 // --------------------Функція створення розмітки картки книги
 function makeMarkup(arr) {
@@ -143,27 +165,24 @@ function makeMarkup(arr) {
     )
     .join(' ');
 }
-
+// -------------налаштування сторінки при відсутності книжок
 function checkEmptyList() {
   emptyList.classList.remove('is-hidden');
   listCards.innerHTML = '';
   listCards.classList.add('is-hidden');
   container.classList.add('is-hidden');
 }
-
+// -------------налаштування сторінки перед розміткою карток
 function prepareCard() {
   listCards.classList.remove('is-hidden');
-  // container.classList.remove('is-hidden');
   emptyList.classList.add('is-hidden');
   listCards.innerHTML = '';
 }
-
-
+// ------------Функція зміни макс. к-сті видимих сторінок з номером згідно макету
 function applyStylesForScreenSize() {
   if (window.matchMedia('(max-width: 767px)').matches) {
     options.visiblePages = 2;
-  } else  {
+  } else {
     options.visiblePages = 3;
   }
-  }
-
+}
