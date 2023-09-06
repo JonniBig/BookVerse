@@ -28,6 +28,10 @@ getBooks();
 
 export function createMarkupBookShelf(category) {
   const { list_name, books } = category;
+  // loader
+  const loader = document.querySelector('.loader');
+
+  loader.style.display = 'none';
 
   const arrBookShelf = `
   <div class="best-list">
