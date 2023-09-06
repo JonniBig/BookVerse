@@ -12,16 +12,27 @@ const toggleMenu = () => {
     ? 'disableBodyScroll'
     : 'enableBodyScroll';
   bodyScrollLock[scrollLockMethod](document.body);
+
+  openMenuBtn.classList.toggle('hidden');
+  closeMenuBtn.classList.toggle('hidden');
 };
 
 openMenuBtn.addEventListener('click', toggleMenu);
 closeMenuBtn.addEventListener('click', toggleMenu);
 
 window.matchMedia('(min-width: 768px)').addEventListener('change', e => {
-  if (!e.matches) return;
-  mobileMenu.classList.remove('is-open');
-  openMenuBtn.setAttribute('aria-expanded', false);
-  bodyScrollLock.enableBodyScroll(document.body);
+  if (e.matches) {
+    mobileMenu.classList.remove('is-open');
+    openMenuBtn.setAttribute('aria-expanded', false);
+    // bodyScrollLock.enableBodyScroll(document.body);
+    closeMenuBtn.classList.add('hidden');
+    openMenuBtn.classList.remove('hidden');
+  } else {
+    if (!openMenuBtn.classList.contains('hidden')) {
+      closeMenuBtn.classList.add('hidden');
+      openMenuBtn.classList.remove('hidden');
+    }
+  }
 });
 
 // Переключання стилю на активних сторінках мобільного меню
