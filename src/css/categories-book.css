@@ -1,7 +1,7 @@
 /**
-  |============================
+  |==============================================
   | ВИПЛИВАЮЧЕ VIEW ДО КАРТОК З ВИБРАНИМИ КНИГАМИ
-  |============================
+  |==============================================
 */
 
 :root {
@@ -36,7 +36,6 @@
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
-  padding: 0px 52px 0px 52px;
   border-radius: 0px 0px 8px 8px;
   position: absolute;
   bottom: 0;
