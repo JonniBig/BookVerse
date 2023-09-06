@@ -221,7 +221,7 @@
 .mobile-menu {
   position: relative;
   left: 0;
-  top: -45px;
+  top: -47px;
   z-index: 0;
   display: none;
 
@@ -344,8 +344,16 @@
   gap: 4px;
 }
 
+.menu-login:focus {
+  background-color: var(--yellow-color);
+}
+
 .arrow {
   stroke: var(--yellow-color);
+}
+
+.arrow:focus {
+  stroke: var(--black1-color);
 }
 
 /* toogle button */
