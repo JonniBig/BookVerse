@@ -61,7 +61,9 @@ async function fetchAndDisplayBooks(categoryName) {
           const div2 = document.createElement('div');
           div2.classList.add('book-info-block');
 
-         
+           const pTitle = document.createElement('p');
+        pTitle.classList.add('book-name');
+        pTitle.textContent = book.title || 'N/A';
 
       
 
