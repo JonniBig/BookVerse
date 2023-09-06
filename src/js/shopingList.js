@@ -71,24 +71,27 @@ function deleteCard(evt) {
   savedData.splice(cardIndex, 1);
   localStorage.removeItem('ListOfBooks');
   localStorage.setItem('ListOfBooks', JSON.stringify(savedData));
-  NavigateToPreviousPage(savedData);
+  myPagination.on('beforeMove', eventData => {
+  currentPage = eventData.page;
+  });
+
+  navigateToPreviousPage(savedData);
+  
 }
 
-function NavigateToPreviousPage(arr) {
+function navigateToPreviousPage(arr) {
   const totalPages = Math.ceil(arr.length / itemsPerPage);
-  if (totalPages <= 1) {
-    container.classList.add('is-hidden');
+  if (totalPages === 1) {
+    container.classList.add('is-hidden')
   }
   if (currentPage > totalPages) {
     currentPage = totalPages;
-  }
-  if (currentPage === totalPages && savedData.length % itemsPerPage === 0) {
-    currentPage -= 1;
-  }
+    myPagination.reset(arr.length)
+    myPagination.movePageTo(currentPage);
 
+  }
   addCard(currentPage);
-  myPagination.movePageTo(currentPage);
-}
+  }
 
 // --------------------Функція створення розмітки картки книги
 function makeMarkup(arr) {
@@ -150,7 +153,7 @@ function checkEmptyList() {
 
 function prepareCard() {
   listCards.classList.remove('is-hidden');
-  container.classList.remove('is-hidden');
+  // container.classList.remove('is-hidden');
   emptyList.classList.add('is-hidden');
   listCards.innerHTML = '';
 }
