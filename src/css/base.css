@@ -110,11 +110,11 @@ body {
 }
 
 .loader {
-  margin-top: 60px;
+  margin-top: 50px;
 
   position: absolute;
   top: 0;
-  left: 50%;
+  left: 40%;
   transform: translate(-50%, -50%);
   width: 60px;
   height: 60px;
@@ -148,5 +148,18 @@ body {
   }
   100% {
     transform: translate(-25px, -25px) scale(1);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .loader {
+    margin-top: 100px;
+    left: 45%;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .loader {
+    margin-top: 200px;
+    left: 47%;
   }
 }
