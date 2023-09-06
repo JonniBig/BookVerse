@@ -12,10 +12,10 @@
       rel="stylesheet"
     /> -->
     
-    <script type="module" crossorigin src="/BookVerse/assets/shopping-list-da08c2b9.js"></script>
-    <link rel="modulepreload" crossorigin href="/BookVerse/assets/mobileMenuBurger-20580121.js">
+    <script type="module" crossorigin src="/BookVerse/assets/shopping-list-fe2710af.js"></script>
+    <link rel="modulepreload" crossorigin href="/BookVerse/assets/mobileMenuBurger-9c65e612.js">
     <link rel="stylesheet" href="/BookVerse/assets/shopping-list-a0b14d8a.css">
-    <link rel="stylesheet" href="/BookVerse/assets/styles-89081216.css">
+    <link rel="stylesheet" href="/BookVerse/assets/styles-be041df6.css">
   </head>
   <body>
     <header class="header container">
@@ -48,13 +48,14 @@
 
     <input type="checkbox" id="switch" /><label for="switch"></label>
 
-    <a class="log-form" href="./index.html">
+    <a class="log-form" href="">
       <svg class="icon-hello" width="30" height="30">
         <use href="/BookVerse/assets/icomoon-df1fc233.svg#icon-vector"></use>
       </svg>
       Hello!
     </a>
 
+    <!-- Irina Kolos-->
     <button
       class="menu-mobile-open js-open-menu"
       type="button"
@@ -66,52 +67,52 @@
         <use href="/BookVerse/assets/icomoon-df1fc233.svg#icon-align-left"></use>
       </svg>
     </button>
+  </div>
 
-    <button
-      class="mobile-menu-close js-close-menu hidden"
-      type="button"
-      aria-label="Mobile menu"
-    >
-      <svg class="mobile-menu-close-icon" width="28" height="28">
-        <use href="/BookVerse/assets/icomoon-df1fc233.svg#icon-x-close"></use>
-      </svg>
-    </button>
+  <div class="mobile-menu js-menu-container" id="mobile-menu">
+    <div class="mobil-menu-modal js-close-menu">
+      <button
+        class="mobile-menu-close js-close-menu"
+        type="button"
+        aria-label="Mobile menu"
+      >
+        <svg class="mobile-menu-close-icon" width="28" height="28">
+          <use href="/BookVerse/assets/icomoon-df1fc233.svg#icon-x-close"></use>
+        </svg>
+      </button>
+
+      <a class="menu-log-form" href="">
+        <svg class="menu-icon-hello" width="30" height="30">
+          <use href="/BookVerse/assets/icomoon-df1fc233.svg#icon-vector"></use>
+        </svg>
+        Hello!
+      </a>
+
+      <div class="menu-container">
+        <ul class="mobil-nav-list list">
+          <li class="mobil-nav-item-home">
+            <a class="mobil-nav-link current link" href="./index.html">Home</a>
+          </li>
+          <li class="mobil-nav-item-shopping">
+            <a class="mobil-nav-link link" href="./shopping-list.html"
+              >Shopping list
+              <svg class="mobil-lock" width="20" height="20">
+                <use href="/BookVerse/assets/icomoon-df1fc233.svg#icon-shopping-bag"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <button class="menu-login" type="button">
+        Log out
+        <svg class="arrow" width="20" height="20">
+          <use href="/BookVerse/assets/icomoon-df1fc233.svg#icon-arrow-right"></use>
+        </svg>
+      </button>
+    </div>
   </div>
 </header>
-<!--  Mobile-menu  -->
-<div class="mobile-menu container js-menu-container" id="mobile-menu">
-  <div class="mobil-menu-modal js-close-menu">
-    <a class="menu-log-form" href="">
-      <svg class="menu-icon-hello" width="30" height="30">
-        <use href="/BookVerse/assets/icomoon-df1fc233.svg#icon-vector"></use>
-      </svg>
-      Hello!
-    </a>
-
-    <div class="menu-container">
-      <ul class="mobil-nav-list list">
-        <li class="mobil-nav-item-home">
-          <a class="mobil-nav-link current link" href="./index.html">Home</a>
-        </li>
-        <li class="mobil-nav-item-shopping">
-          <a class="mobil-nav-link link" href="./shopping-list.html"
-            >Shopping list
-            <svg class="mobil-lock" width="20" height="20">
-              <use href="/BookVerse/assets/icomoon-df1fc233.svg#icon-shopping-bag"></use>
-            </svg>
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <button class="menu-login" type="button">
-      Log out
-      <svg class="arrow" width="20" height="20">
-        <use href="/BookVerse/assets/icomoon-df1fc233.svg#icon-arrow-right"></use>
-      </svg>
-    </button>
-  </div>
-</div>
 
     <main class="container">
       <div class="container-book-shop">
