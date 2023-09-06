@@ -184,6 +184,11 @@
 }
 
 /* ------------/BOOK CARD------------- */
+
+/* ----------ПАГІНАЦІЯ ----------------*/
+
+
+
 /* ------------MEDIA QUERRY----------- */
 
 @media only screen and (min-width: 768px) {
@@ -288,20 +293,7 @@
     width: 808px;
   }
 
-  #style-4::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    background-color: #f5f5f5;
-  }
 
-  #style-4::-webkit-scrollbar {
-    width: 2px;
-    background-color: #f5f5f5;
-  }
-
-  #style-4::-webkit-scrollbar-thumb {
-    background-color: #000000;
-    border: 1px solid #555555;
-  }
 }
 
 /* ----------------/MEDIA QUERRY---------------- */
@@ -333,4 +325,19 @@
 .dark-theme .link-2:hover,
 .dark-theme .link-3:hover {
   filter: drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
+}
+
+#style-4::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+}
+
+#style-4::-webkit-scrollbar {
+  width: 2px;
+  background-color: #f5f5f5;
+}
+
+#style-4::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  border: 1px solid #555555;
 }

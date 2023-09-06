@@ -45,6 +45,11 @@
   align-items: center;
   padding: 19px 0px;
 }
+@media screen and (min-width: 768px) {
+  .logo-box {
+    padding: 24px 0px;
+  }
+}
 
 .dark-theme .logo-text {
   fill: var(--white-color);
@@ -91,6 +96,20 @@
   display: flex;
   align-items: center;
   gap: 4px;
+}
+
+.nav-link:not(.nav-item-active):hover,
+.nav-link:not(.nav-item-active):focus {
+  padding: 8px 16px;
+  background-color: var(--yellow-color);
+  border: 1px solid var(--yellow-color);
+  border-radius: 36px;
+  color: #111111;
+  font-weight: 600;
+}
+.nav-item-active:hover,
+.nav-item-active:focus {
+  padding: initial;
 }
 
 .dark-theme .nav-link {
@@ -164,7 +183,7 @@
   .log-form {
     display: flex;
     align-items: flex-end;
-    width: 184px;
+    width: 115px;
     height: 45px;
     padding-top: 8px;
     padding-bottom: 8px;

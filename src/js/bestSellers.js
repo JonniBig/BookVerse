@@ -31,7 +31,7 @@ export function createMarkupBookShelf(category) {
 
   const arrBookShelf = `
   <div class="best-list">
-    <h2 class="best-list-name">${list_name}</h2>
+    <h3 class="best-list-name">${list_name}</h3>
       <ul class="best-book-category books-is-hidden">
          ${books
            .map(book => {
@@ -97,7 +97,7 @@ export function renderBook({ book_image, title, author, _id }) {
     <a href="" class="best-img-link">
       <img class="book-wrap" src="${book_image}" alt="${title}" loading="lazy"/>
         <div class="book-info-block">
-          <p class="view">view</p>
+          <p class="view">quick view</p>
           <p class="book-name">${title}</p>
           <p class="book-author">${author}</p>
         </div>

@@ -61,13 +61,14 @@ async function fetchAndDisplayBooks(categoryName) {
           const div2 = document.createElement('div');
           div2.classList.add('book-info-block');
 
-          const pView = document.createElement('p');
-          pView.classList.add('view');
-          pView.textContent = 'view';
+         
 
-          const pTitle = document.createElement('p');
-          pTitle.classList.add('book-name');
-          pTitle.textContent = book.title || 'N/A';
+      
+
+        const pView = document.createElement('p');
+        pView.classList.add('view');
+        pView.textContent = 'quick view';
+
 
           const pAuthor = document.createElement('p');
           pAuthor.classList.add('book-author');
