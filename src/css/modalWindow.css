@@ -319,6 +319,10 @@
   color: var(--violet-color);
 }
 
+.dark-theme .icon-cart-shopping {
+  color: var(--white-color);
+}
+
 .icon-cart {
   fill: var(--violet-color);
 }
@@ -339,10 +343,6 @@
     padding: 5px 10px;
     background-color: transparent;
     box-shadow: 2px 5px 16px #4f2ee8;
-  }
-
-  .dark-theme .icon-cart-shopping {
-    color: var(--white-color);
   }
 
   .dark-theme .icon-cart-shopping:hover,
