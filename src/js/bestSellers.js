@@ -80,7 +80,7 @@ export function renderBook({ book_image, title, author, _id }) {
   <li class="book-item" id="${_id}">
 
     <a href= "${book_image}" aria-label="${title}" class="best-img-link">
-      <img class="book-wrap" src="${book_image}" alt="${title}" loading="lazy"/>
+      <img class="book-wrap" srcset="${book_image}" src="${book_image}" alt="${title}" loading="lazy"/>
 
         <div class="book-info-block">
           <p class="view">quick view</p>

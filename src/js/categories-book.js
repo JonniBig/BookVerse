@@ -45,6 +45,8 @@ async function fetchAndDisplayBooks(categoryName) {
 
           const img = document.createElement('img');
           img.classList.add('book-wrap');
+          img.srcset =
+            book.book_image || '../images/plug picture/plug335x485@1x.jpg';
           img.src =
             book.book_image || '../images/plug picture/plug335x485@1x.jpg';
           img.alt = book.title;

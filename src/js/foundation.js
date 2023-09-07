@@ -79,7 +79,7 @@ function createMarkupListItem(item, i) {
       <a href="${item.url}" class="found-link" title="${
     item.title
   }" target="_blank" aria-label="${item.title}">
-        <img src="${item.img}" alt="${
+        <img srcset="${item.img}" src="${item.img}" alt="${
     item.title
   }" class="found-logo" style="height: 32px;">
       </a>
