@@ -78,7 +78,7 @@ function createMarkupListItem(item, i) {
     item.title
   }" target="_blank"> 
 
-                <img src="${item.img}" alt="${item.title}" class="found-logo">
+                <img srcset="${item.img}" src="${item.img}" alt="${item.title}" class="found-logo">
             </a>
         </li>
     `;

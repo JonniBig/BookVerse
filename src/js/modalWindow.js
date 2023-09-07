@@ -138,6 +138,7 @@ function makeMarkupModal(obj) {
   refs.markupCard.innerHTML = '';
   const { book_image, title, description, author, buy_links } = obj;
   const modalMarkup = `    <img
+             srcset="${book_image}"
              src="${book_image}"
              alt="${title}"
              class="modal-book-img"
@@ -151,13 +152,17 @@ function makeMarkupModal(obj) {
            <p class="modal-book-deskr" id="style-4">${description}</p>  
              <div class="modal-book-links">
                <a href="${buy_links[0].url}" target="_blank" rel="noreferrer noopener" aria-label="Link to Amazon">
-                 <img src="https://raw.githubusercontent.com/JonniBig/BookVerse/main/src/images/shopingList/amazon-62.png" alt="Logo Amazon" width="62px" class="link-1"/>
+                 <img srcset="https://raw.githubusercontent.com/JonniBig/BookVerse/main/src/images/shopingList/amazon.png"
+                 src="https://raw.githubusercontent.com/JonniBig/BookVerse/main/src/images/shopingList/amazon.png" loading="lazy"
+                 alt="Logo Amazon" width="32px" class="link-1"/>
                </a>
                <a href="${buy_links[1].url}" target="_blank" rel="noreferrer noopener" aria-label="Link to Apple book shop">
-                 <img src="https://raw.githubusercontent.com/JonniBig/BookVerse/main/src/images/shopingList/apple.png" alt="Logo Apple book store" width="28px" class="link-2"/>
+                 <img srcset="https://raw.githubusercontent.com/JonniBig/BookVerse/main/src/images/shopingList/apple.png" 
+                 src="https://raw.githubusercontent.com/JonniBig/BookVerse/main/src/images/shopingList/apple.png" loading="lazy" alt="Logo Apple book store" width="16px" class="link-2"/>
                </a>
                <a href="${buy_links[4].url}" target="_blank" rel="noreferrer noopener" aria-label="Link to Book shop">
-                 <img src="https://raw.githubusercontent.com/JonniBig/BookVerse/main/src/images/shopingList/book_shop-62.png" alt="Logo book shop" width="32px" class="link-3"/>
+                 <img src="https://raw.githubusercontent.com/JonniBig/BookVerse/main/src/images/shopingList/book_shop.png"
+                  src="https://raw.githubusercontent.com/JonniBig/BookVerse/main/src/images/shopingList/book_shop.png" loading="lazy" alt="Logo book shop" width="16px" class="link-3"/>
                </a>
              </div>
           </div>`;
