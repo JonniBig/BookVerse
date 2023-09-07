@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Search description of books and purchase"
+    />
+    <link rel="icon" type="image/svg+xml" href="/BookVerse/assets/favicon-0291e329.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookVerse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700;9..40,900&family=Raleway:wght@800&family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    
+    <script type="module" crossorigin src="/BookVerse/assets/mobileMenuBurger-a40bf7ea.js"></script>
+    <link rel="stylesheet" href="/BookVerse/assets/mobileMenuBurger-35b04302.css">
+  </head>
+
+  <body>
+    <header class="header container">
+  <div class="header-container">
+    <a class="link logo" href="index.html" aria-label="logotype">
+      <div class="logo-box">
+        <svg class="icon icon-logo" width="24" height="24">
+          <use href="/BookVerse/assets/icomoon-43959e70.svg#icon-logo"></use>
+        </svg>
+        <svg class="logo-text" width="77" height="13">
+          <use href="/BookVerse/assets/icomoon-43959e70.svg#icon-bookshelf"></use>
+        </svg></div
+    ></a>
+
+    <nav class="nav">
+      <ul class="list nav-list">
+        <li class="nav-item-home">
+          <a class="nav-link current link" href="./index.html">Home</a>
+        </li>
+        <li class="nav-item-shopping">
+          <a class="nav-link link" href="./shopping-list.html"
+            >Shopping list
+            <svg class="nav-lock" width="20" height="20">
+              <use href="/BookVerse/assets/icomoon-43959e70.svg#icon-shopping-bag"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <input type="checkbox" id="switch" /><label for="switch"></label>
+
+    <!-- <a class="log-form" href="./index.html">
+      <svg class="icon-hello" width="30" height="30">
+        <use href="./images/icomoon.svg#icon-vector"></use>
+      </svg>
+      Hello!
+    </a> -->
+
+    <button
+      class="menu-mobile-open js-open-menu"
+      type="button"
+      aria-label="Menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <svg class="menu-mobile-open-icon" width="28" height="28">
+        <use href="/BookVerse/assets/icomoon-43959e70.svg#icon-align-left"></use>
+      </svg>
+    </button>
+
+    <button
+      class="mobile-menu-close js-close-menu hidden"
+      type="button"
+      aria-label="Mobile menu"
+    >
+      <svg class="mobile-menu-close-icon" width="28" height="28">
+        <use href="/BookVerse/assets/icomoon-43959e70.svg#icon-x-close"></use>
+      </svg>
+    </button>
+  </div>
+</header>
+<!--  Mobile-menu  -->
+<div class="mobile-menu container js-menu-container" id="mobile-menu">
+  <div class="mobil-menu-modal js-close-menu">
+    <!-- <a aria-label="logo" class="menu-log-form" href="index.html">
+      <svg class="menu-icon-hello" width="30" height="30">
+        <use href="./images/icomoon.svg#icon-vector"></use>
+      </svg>
+      Hello!
+    </a> -->
+
+    <div class="menu-container">
+      <ul class="mobil-nav-list list">
+        <li class="mobil-nav-item-home">
+          <a class="mobil-nav-link current link" href="./index.html">Home</a>
+        </li>
+        <li class="mobil-nav-item-shopping">
+          <a class="mobil-nav-link link" href="./shopping-list.html"
+            >Shopping list
+            <svg class="mobil-lock" width="20" height="20">
+              <use href="/BookVerse/assets/icomoon-43959e70.svg#icon-shopping-bag"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- <button class="menu-login" type="button">
+      Log out
+      <svg class="arrow" width="20" height="20">
+        <use href="./images/icomoon.svg#icon-arrow-right"></use>
+      </svg>
+    </button> -->
+  </div>
+</div>
+
+    <!--  Mobile-menu  -->
+    <div class="mobile-menu container js-menu-container" id="mobile-menu">
+      <div class="mobil-menu-modal js-close-menu">
+        <a aria-label="back" class="btn-back" href="index.html"> </a>
+        <div class="menu-container">
+          <ul class="mobil-nav-list list">
+            <li class="mobil-nav-item-home">
+              <a class="mobil-nav-link current link" href="./index.html"
+                >Home</a
+              >
+            </li>
+            <li class="mobil-nav-item-shopping">
+              <a class="mobil-nav-link link" href="./shopping-list.html"
+                >Shopping list
+                <svg class="mobil-lock" width="20" height="20">
+                  <use href="/BookVerse/assets/icomoon-43959e70.svg#icon-shopping-bag"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <button class="menu-login" type="button">
+          Log out
+          <svg class="arrow" width="20" height="20">
+            <use href="/BookVerse/assets/icomoon-43959e70.svg#icon-arrow-right"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <main class="main">
+      <div class="teams container">
+        <h1 class="visually-hidden"></h1>
+        <h4 class="title-books teams-title">
+          Our <span class="colored">Team</span>
+        </h4>
+        <ul class="list card-set">
+          <li class="team-img-frame">
+            <div class="pop-up-box">
+              <div class="link img-team">
+                <img
+                  class="img-border"
+                  srcset="/BookVerse/assets/Bigun-506f5a1e.jpg "
+                  src="/BookVerse/assets/Bigun-506f5a1e.jpg"
+                  alt="FOTO NAME"
+                  width="300"
+                  height="200"
+                />
+                <div class="pop-up-box-card">
+                  <ul class="pop-up-txt-card">
+                    <li class="social-box-icons">
+                      <a
+                        class="social-item-icon"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub-icon"
+                      >
+                        <svg class="social-icons" width="16" height="16">
+                          <use href="/BookVerse/assets/icomoon-43959e70.svg#icon-github"></use>
+                        </svg>
+                      </a>
+                    </li>
+
+                    <li class="social-box-icons">
+                      <a
+                        class="social-item-icon"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Linkedin-icon"
+                      >
+                        <svg class="social-icons" width="16" height="16">
+                          <use href="/BookVerse/assets/icomoon-43959e70.svg#icon-linkedin"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="title-card-box">
+              <h2 class="title-name-teams">Бігун Іван</h2>
+              <p class="text-who-is-who">Team lead</p>
+            </div>
+          </li>
+          <li class="team-img-frame">
+            <div class="pop-up-box">
+              <div class="link img-team">
+                <img
+                  class="img-border"
+                  srcset="/BookVerse/assets/Machyhin-10525f09.jpg "
+                  src="/BookVerse/assets/Machyhin-10525f09.jpg"
+                  alt="FOTO NAME"
+                  width="300"
+                  height="200"
+                />
+
+                <div class="pop-up-box-card">
+                  <ul class="pop-up-txt-card">
+                    <li class="social-box-icons">
+                      <a
+                        class="social-item-icon"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub-icon"
+                      >
+                        <svg class="social-icons" width="16" height="16">
+                          <use href="/BookVerse/assets/icomoon-43959e70.svg#icon-github"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="social-box-icons">
+                      <a
+                        class="social-item-icon"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Linkedin-icon"
+                      >
+                        <svg class="social-icons" width="16" height="16">
+                          <use href="/BookVerse/assets/icomoon-43959e70.svg#icon-linkedin"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="title-card-box">
+              <h2 class="title-name-teams">Сергій Мачигін</h2>
+              <p class="text-who-is-who">Scrum master</p>
+            </div>
+          </li>
+          <li class="team-img-frame">
+            <div class="pop-up-box">
+              <div class="link img-team">
+                <img
+                  class="img-border"
+                  srcset="/BookVerse/assets/Fedorenko-f0488709.jpg "
+                  src="/BookVerse/assets/Fedorenko-f0488709.jpg"
+                  alt="FOTO NAME"
+                  width="300"
+                  height="200"
+                />
+                <div class="pop-up-box-card">
+                  <ul class="pop-up-txt-card">
+                    <li class="social-box-icons">
+                      <a
+                        class="social-item-icon"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub-icon"
+                      >
+                        <svg class="social-icons" width="16" height="16">
+                          <use href="/BookVerse/assets/icomoon-43959e70.svg#icon-github"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="social-box-icons">
+                      <a
+                        class="social-item-icon"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Linkedin-icon"
+                      >
+                        <svg class="social-icons" width="16" height="16">
+                          <use href="/BookVerse/assets/icomoon-43959e70.svg#icon-linkedin"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="title-card-box">
+              <h2 class="title-name-teams">Олександр Федоренко</h2>
+              <p class="text-who-is-who">Developer</p>
+            </div>
+          </li>
+          <li class="team-img-frame">
+            <div class="pop-up-box">
+              <div class="link img-team">
+                <img
+                  class="img-border"
+                  srcset="/BookVerse/assets/Chaplynska-eb185462.jpg "
+                  src="/BookVerse/assets/Chaplynska-eb185462.jpg"
+                  alt="FOTO NAME"
+                  width="300"
+                  height="200"
+                />
+
+                <div class="pop-up-box-card">
+                  <ul class="pop-up-txt-card">
+                    <li class="social-box-icons">
+                      <a
+                        class="social-item-icon"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub-icon"
+                      >
+                        <svg class="social-icons" width="16" height="16">
+                          <use href="/BookVerse/assets/icomoon-43959e70.svg#icon-github"></use>
+                        </svg>
+                      </a>
+                    </li>
+
+                    <li class="social-box-icons">
+                      <a
+                        class="social-item-icon"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Linkedin-icon"
+                      >
+                        <svg class="social-icons" width="16" height="16">
+                          <use href="/BookVerse/assets/icomoon-43959e70.svg#icon-linkedin"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="title-card-box">
+              <h2 class="title-name-teams">Катерина Чаплинська</h2>
+              <p class="text-who-is-who">Developer</p>
+            </div>
+          </li>
+          <li class="team-img-frame">
+            <div class="pop-up-box">
+              <div class="link img-team">
+                <img
+                  class="img-border"
+                  srcset="/BookVerse/assets/Kolos-dc156921.jpg "
+                  src="/BookVerse/assets/Kolos-dc156921.jpg"
+                  alt="FOTO NAME"
+                  width="300"
+                  height="200"
+                />
+
+                <div class="pop-up-box-card">
+                  <ul class="pop-up-txt-card">
+                    <li class="social-box-icons">
+                      <a
+                        class="social-item-icon"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub-icon"
+                      >
+                        <svg class="social-icons" width="16" height="16">
+                          <use href="/BookVerse/assets/icomoon-43959e70.svg#icon-github"></use>
+                        </svg>
+                      </a>
+                    </li>
+
+                    <li class="social-box-icons">
+                      <a
+                        class="social-item-icon"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Linkedin-icon"
+                      >
+                        <svg class="social-icons" width="16" height="16">
+                          <use href="/BookVerse/assets/icomoon-43959e70.svg#icon-linkedin"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="title-card-box">
+              <h2 class="title-name-teams">Ірина Колос</h2>
+              <p class="text-who-is-who">Developer</p>
+            </div>
+          </li>
+          <li class="team-img-frame">
+            <div class="pop-up-box">
+              <div class="link img-team">
+                <img
+                  class="img-border"
+                  srcset="/BookVerse/assets/Yevhen-f4952d45.jpg "
+                  src="/BookVerse/assets/Yevhen-f4952d45.jpg"
+                  alt="FOTO NAME"
+                  width="300"
+                  height="200"
+                />
+
+                <div class="pop-up-box-card">
+                  <ul class="pop-up-txt-card">
+                    <li class="social-box-icons">
+                      <a
+                        class="social-item-icon"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub-icon"
+                      >
+                        <svg class="social-icons" width="16" height="16">
+                          <use href="/BookVerse/assets/icomoon-43959e70.svg#icon-github"></use>
+                        </svg>
+                      </a>
+                    </li>
+
+                    <li class="social-box-icons">
+                      <a
+                        class="social-item-icon"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Linkedin-icon"
+                      >
+                        <svg class="social-icons" width="16" height="16">
+                          <use href="/BookVerse/assets/icomoon-43959e70.svg#icon-linkedin"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="title-card-box">
+              <h2 class="title-name-teams">Євген Либін</h2>
+              <p class="text-who-is-who">Developer</p>
+            </div>
+          </li>
+          <li class="team-img-frame">
+            <div class="pop-up-box">
+              <div class="link img-team">
+                <img
+                  class="img-border"
+                  srcset="/BookVerse/assets/Lapin-65bce7e7.jpg "
+                  src="/BookVerse/assets/Lapin-65bce7e7.jpg"
+                  alt="FOTO NAME"
+                  width="300"
+                  height="200"
+                />
+
+                <div class="pop-up-box-card">
+                  <ul class="pop-up-txt-card">
+                    <li class="social-box-icons">
+                      <a
+                        class="social-item-icon"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub-icon"
+                      >
+                        <svg class="social-icons" width="16" height="16">
+                          <use href="/BookVerse/assets/icomoon-43959e70.svg#icon-github"></use>
+                        </svg>
+                      </a>
+                    </li>
+
+                    <li class="social-box-icons">
+                      <a
+                        class="social-item-icon"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Linkedin-icon"
+                      >
+                        <svg class="social-icons" width="16" height="16">
+                          <use href="/BookVerse/assets/icomoon-43959e70.svg#icon-linkedin"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="title-card-box">
+              <h2 class="title-name-teams">Олександр Лапін</h2>
+              <p class="text-who-is-who">Developer</p>
+            </div>
+          </li>
+          <li class="team-img-frame">
+            <div class="pop-up-box">
+              <div class="link img-team">
+                <img
+                  class="img-border"
+                  srcset="/BookVerse/assets/Balandina-04a59469.jpg "
+                  src="/BookVerse/assets/Balandina-04a59469.jpg"
+                  alt="FOTO NAME"
+                  width="300"
+                  height="200"
+                />
+
+                <div class="pop-up-box-card">
+                  <ul class="pop-up-txt-card">
+                    <li class="social-box-icons">
+                      <a
+                        class="social-item-icon"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub-icon"
+                      >
+                        <svg class="social-icons" width="16" height="16">
+                          <use href="/BookVerse/assets/icomoon-43959e70.svg#icon-github"></use>
+                        </svg>
+                      </a>
+                    </li>
+
+                    <li class="social-box-icons">
+                      <a
+                        class="social-item-icon"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Linkedin-icon"
+                      >
+                        <svg class="social-icons" width="16" height="16">
+                          <use href="/BookVerse/assets/icomoon-43959e70.svg#icon-linkedin"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="title-card-box">
+              <h2 class="title-name-teams">Ірина Баландіна</h2>
+              <p class="text-who-is-who">Developer</p>
+            </div>
+          </li>
+          <li class="team-img-frame">
+            <div class="pop-up-box">
+              <div class="link img-team">
+                <img
+                  class="img-border"
+                  srcset="/BookVerse/assets/Бред-b10ed1b7.jpg "
+                  src="/BookVerse/assets/Бред-b10ed1b7.jpg"
+                  alt="FOTO NAME"
+                  width="300"
+                  height="200"
+                />
+
+                <div class="pop-up-box-card">
+                  <ul class="pop-up-txt-card">
+                    <li class="social-box-icons">
+                      <a
+                        class="social-item-icon"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub-icon"
+                      >
+                        <svg class="social-icons" width="16" height="16">
+                          <use href="/BookVerse/assets/icomoon-43959e70.svg#icon-github"></use>
+                        </svg>
+                      </a>
+                    </li>
+
+                    <li class="social-box-icons">
+                      <a
+                        class="social-item-icon"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Linkedin-icon"
+                      >
+                        <svg class="social-icons" width="16" height="16">
+                          <use href="/BookVerse/assets/icomoon-43959e70.svg#icon-linkedin"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="title-card-box">
+              <h2 class="title-name-teams">Віталій Неживенко</h2>
+              <p class="text-who-is-who">Developer</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </main>
+    
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+      integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
