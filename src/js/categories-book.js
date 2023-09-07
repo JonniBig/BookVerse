@@ -39,8 +39,10 @@ async function fetchAndDisplayBooks(categoryName) {
           li.className = 'book-item';
           li.id = book._id;
           const a = document.createElement('a');
+          a.setAttribute('aria-label', book.title);
           a.classList.add('best-img-link');
           a.href = '/book-details.html?id=' + book._id;
+
           const img = document.createElement('img');
           img.classList.add('book-wrap');
           img.src =

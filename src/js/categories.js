@@ -48,9 +48,9 @@ async function renderCategories(categories) {
     const { list_name: categoryName } = category;
     const categoryItem = document.createElement('li');
     categoryItem.classList.add('category_item');
-    const categoryLink = document.createElement('a');
-    categoryLink.textContent = categoryName;
+    const categoryLink = document.createElement('p');
     categoryLink.setAttribute('aria-label', categoryName);
+    categoryLink.textContent = categoryName;
 
     categoryLink.addEventListener('click', async () => {
       await fetchAndDisplayBooks(categoryName);
