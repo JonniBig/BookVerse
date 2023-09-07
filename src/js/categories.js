@@ -50,6 +50,7 @@ async function renderCategories(categories) {
     categoryItem.classList.add('category_item');
     const categoryLink = document.createElement('a');
     categoryLink.textContent = categoryName;
+    categoryLink.setAttribute('aria-label', categoryName);
 
     categoryLink.addEventListener('click', async () => {
       await fetchAndDisplayBooks(categoryName);

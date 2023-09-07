@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 async function fetchAndDisplayBooks(categoryName) {
   const lowerCaseCategory = categoryName.toLowerCase();
   if (lowerCaseCategory === 'all categories') {
@@ -30,38 +31,41 @@ async function fetchAndDisplayBooks(categoryName) {
     } else {
       const ul = document.createElement('ul');
       ul.className = 'bestseller';
-      books.forEach(book => {
-        const li = document.createElement('li');
-        li.className = 'book-item';
-        li.id = book._id;
-        const a = document.createElement('a');
-        a.classList.add('best-img-link');
-        a.href = '/book-details.html?id=' + book._id;
-        const img = document.createElement('img');
-        img.classList.add('book-wrap');
-        img.src =
-          book.book_image || '../images/plug picture/plug335x485@1x.jpg';
-        img.alt = book.title;
-        a.appendChild(img);
-        const div2 = document.createElement('div');
-        div2.classList.add('book-info-block');
-        const pView = document.createElement('p');
-        pView.classList.add('view');
-        pView.textContent = 'quick view';
-        const pTitle = document.createElement('p');
-        pTitle.classList.add('book-name');
-        pTitle.textContent = book.title || 'N/A';
-        const pAuthor = document.createElement('p');
-        pAuthor.classList.add('book-author');
-        pAuthor.textContent = book.author || 'N/A';
-        div2.appendChild(pView);
-        div2.appendChild(pTitle);
-        div2.appendChild(pAuthor);
-        a.appendChild(div2);
-        li.appendChild(a);
-        ul.appendChild(li);
+      resultContainer.appendChild(ul); // Додаємо ul до контейнера перед додаванням книг
+
+      books.forEach((book, index) => {
+        setTimeout(() => {
+          const li = document.createElement('li');
+          li.className = 'book-item';
+          li.id = book._id;
+          const a = document.createElement('a');
+          a.classList.add('best-img-link');
+          a.href = '/book-details.html?id=' + book._id;
+          const img = document.createElement('img');
+          img.classList.add('book-wrap');
+          img.src =
+            book.book_image || '../images/plug picture/plug335x485@1x.jpg';
+          img.alt = book.title;
+          a.appendChild(img);
+          const div2 = document.createElement('div');
+          div2.classList.add('book-info-block');
+          const pView = document.createElement('p');
+          pView.classList.add('view');
+          pView.textContent = 'quick view';
+          const pTitle = document.createElement('p');
+          pTitle.classList.add('book-name');
+          pTitle.textContent = book.title || 'N/A';
+          const pAuthor = document.createElement('p');
+          pAuthor.classList.add('book-author');
+          pAuthor.textContent = book.author || 'N/A';
+          div2.appendChild(pView);
+          div2.appendChild(pTitle);
+          div2.appendChild(pAuthor);
+          a.appendChild(div2);
+          li.appendChild(a);
+          ul.appendChild(li);
+        }, index * 100); // Затримка у мілісекундах, тут 500 мс (пів секунди)
       });
-      resultContainer.appendChild(ul);
     }
     const activeCategoryLi = document.querySelector(
       `li[data-category="${categoryName}"]`
@@ -73,21 +77,5 @@ async function fetchAndDisplayBooks(categoryName) {
     console.error('Error fetching books:', error);
   }
 }
-// fetchAndDisplayBooks();
+
 export default fetchAndDisplayBooks;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
