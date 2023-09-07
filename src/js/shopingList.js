@@ -43,7 +43,7 @@ let options = {
   centerAlign: true,
   usageStatistics: false,
   template: {
-    page: '<a href="#" class="tui-page-btn custom-page">{{page}}</a>',
+    page: '<a href="#"  id="identified" class="tui-page-btn custom-page">{{page}}</a>',
     currentPage:
       '<strong class="tui-page-btn custom-is-selected tui-is-selected">{{page}} </strong>',
     moveButton:
