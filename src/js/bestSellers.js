@@ -6,19 +6,19 @@ const bestSellers = document.querySelector('.bestseller');
 const URL = 'https://books-backend.p.goit.global/books/top-books';
 export async function fetchBookShelf() {
   const response = await axios.get(URL);
+  // console.log(response.data);
+
   return response.data;
 }
-
 fetchBookShelf();
 
 async function getBooks(data) {
   try {
     const response = await fetchBookShelf(data);
 
-    for (let listBooks of response) {
-      createMarkupBookShelf(listBooks);
-      await new Promise(resolve => setTimeout(resolve, 500));
-    }
+    response.map(listBooks => {
+      return createMarkupBookShelf(listBooks);
+    });
   } catch (error) {
     console.error('Try again!');
   }
@@ -56,6 +56,7 @@ export function createMarkupBookShelf(category) {
 function bindSeeMoreEvent() {
   if (bestSellers._seeMoreBound) return;
 
+  //----------------------------
   const seeMoreButtons = document.querySelectorAll('.see-more');
 
   seeMoreButtons.forEach(button => {
@@ -78,10 +79,24 @@ function bindSeeMoreEvent() {
   });
 }
 
+//----------------------------
+
+//   bestSellers.addEventListener('click', async event => {
+//     if (event.target.classList.contains('see-more')) {
+//       const categoryName = event.target.getAttribute('data-category');
+//       try {
+//         await fetchAndDisplayBooks(categoryName);
+//       } catch (error) {
+//         console.error('Error handling book click:', error);
+//       }
+//     }
+//   });
+//   bestSellers._seeMoreBound = true;
+
+//--------------------------------
+
 export function renderBook({ book_image, title, author, _id }) {
-  const imageSrc = book_image
-    ? book_image
-    : 'https://raw.githubusercontent.com/JonniBig/BookVerse/main/src/images/plug picture/plug335x485@1x.jpg';
+  const imageSrc = book_image ? book_image : 'https://raw.githubusercontent.com/JonniBig/BookVerse/main/src/images/plug picture/plug335x485@1x.jpg';
   return `
   <li class="book-item" id="${_id}">
     <a href="" class="best-img-link">
