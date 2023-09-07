@@ -57,6 +57,7 @@
   object-fit: scale-down;
   object-position: left;
 }
+
 /* 
 .found-down,
 .found-up {
@@ -126,11 +127,21 @@
 .btn-skroll-found:focus {
   transition: box-shadow 0.2s ease;
   box-shadow: 0px 3px 25px 15px rgba(73, 42, 211, 0.589);
-  filter: none;
+  /* filter: none; */
 }
 
 .icon-found {
-  fill: #4f2ee8;
+  fill: var(--violet-color);
+}
+
+.found-down:hover .icon-found {
+  transition: fill 0.3s ease;
+  fill: var(--yellow-color);
+}
+
+.found-up:hover .icon-found {
+  transition: fill 0.3s ease;
+  fill: var(--yellow-color);
 }
 
 .found-down {

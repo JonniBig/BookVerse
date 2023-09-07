@@ -78,8 +78,10 @@ export function renderBook({ book_image, title, author, _id }) {
   const imageSrc = book_image ? book_image : 'https://raw.githubusercontent.com/JonniBig/BookVerse/main/src/images/plug picture/plug335x485@1x.jpg';
   return `
   <li class="book-item" id="${_id}">
-    <a href="" class="best-img-link">
-      <img class="book-wrap" src="${imageSrc}" alt="${title}" loading="lazy"/>
+
+    <a href= "${book_image}" aria-label="${title}" class="best-img-link">
+      <img class="book-wrap" src="${book_image}" alt="${title}" loading="lazy"/>
+
         <div class="book-info-block">
           <p class="view">quick view</p>
           <p class="book-name">${title}</p>
