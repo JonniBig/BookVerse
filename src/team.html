@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Search description of books and purchase"
+    />
+    <link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookVerse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700;9..40,900&family=Raleway:wght@800&family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+
+  <body>
+    <load ="partials/header.html" />
+    <!--  Mobile-menu  -->
+    <div class="mobile-menu container js-menu-container" id="mobile-menu">
+      <div class="mobil-menu-modal js-close-menu">
+        <a aria-label="back" class="btn-back" href="index.html"> </a>
+        <div class="menu-container">
+          <ul class="mobil-nav-list list">
+            <li class="mobil-nav-item-home">
+              <a class="mobil-nav-link current link" href="./index.html"
+                >Home</a
+              >
+            </li>
+            <li class="mobil-nav-item-shopping">
+              <a class="mobil-nav-link link" href="./shopping-list.html"
+                >Shopping list
+                <svg class="mobil-lock" width="20" height="20">
+                  <use href="./images/icomoon.svg#icon-shopping-bag"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <button class="menu-login" type="button">
+          Log out
+          <svg class="arrow" width="20" height="20">
+            <use href="./images/icomoon.svg#icon-arrow-right"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <main class="main">
+      <div class="teams container">
+        <h1 class="visually-hidden"></h1>
+        <h4 class="title-books teams-title">
+          Our <span class="colored">Team</span>
+        </h4>
+        <ul class="list card-set">
+          <li class="team-img-frame">
+            <div class="pop-up-box">
+              <div class="link img-team">
+                <img
+                  class="img-border"
+                  srcset="./images/team/Bigun.jpg"
+                  src="./images/team/Bigun.jpg"
+                  alt="FOTO NAME"
+                  width="300"
+                  height="200"
+                />
+                <div class="pop-up-box-card">
+                  <ul class="pop-up-txt-card">
+                    <li class="social-box-icons">
+                      <a
+                        class="social-item-icon"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub-icon"
+                      >
+                        <svg class="social-icons" width="16" height="16">
+                          <use href="./images/icomoon.svg#icon-github"></use>
+                        </svg>
+                      </a>
+                    </li>
+
+                    <li class="social-box-icons">
+                      <a
+                        class="social-item-icon"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Linkedin-icon"
+                      >
+                        <svg class="social-icons" width="16" height="16">
+                          <use href="./images/icomoon.svg#icon-linkedin"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="title-card-box">
+              <h2 class="title-name-teams">Бігун Іван</h2>
+              <p class="text-who-is-who">Team lead</p>
+            </div>
+          </li>
+          <li class="team-img-frame">
+            <div class="pop-up-box">
+              <div class="link img-team">
+                <img
+                  class="img-border"
+                  srcset="./images/team/Machyhin.jpg"
+                  src="./images/team/Machyhin.jpg"
+                  alt="FOTO NAME"
+                  width="300"
+                  height="200"
+                />
+
+                <div class="pop-up-box-card">
+                  <ul class="pop-up-txt-card">
+                    <li class="social-box-icons">
+                      <a
+                        class="social-item-icon"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub-icon"
+                      >
+                        <svg class="social-icons" width="16" height="16">
+                          <use href="./images/icomoon.svg#icon-github"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="social-box-icons">
+                      <a
+                        class="social-item-icon"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Linkedin-icon"
+                      >
+                        <svg class="social-icons" width="16" height="16">
+                          <use href="./images/icomoon.svg#icon-linkedin"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="title-card-box">
+              <h2 class="title-name-teams">Сергій Мачигін</h2>
+              <p class="text-who-is-who">Scrum master</p>
+            </div>
+          </li>
+          <li class="team-img-frame">
+            <div class="pop-up-box">
+              <div class="link img-team">
+                <img
+                  class="img-border"
+                  srcset="./images/team/Fedorenko.jpg"
+                  src="./images/team/Fedorenko.jpg"
+                  alt="FOTO NAME"
+                  width="300"
+                  height="200"
+                />
+                <div class="pop-up-box-card">
+                  <ul class="pop-up-txt-card">
+                    <li class="social-box-icons">
+                      <a
+                        class="social-item-icon"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub-icon"
+                      >
+                        <svg class="social-icons" width="16" height="16">
+                          <use href="./images/icomoon.svg#icon-github"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="social-box-icons">
+                      <a
+                        class="social-item-icon"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Linkedin-icon"
+                      >
+                        <svg class="social-icons" width="16" height="16">
+                          <use href="./images/icomoon.svg#icon-linkedin"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="title-card-box">
+              <h2 class="title-name-teams">Олександр Федоренко</h2>
+              <p class="text-who-is-who">Developer</p>
+            </div>
+          </li>
+          <li class="team-img-frame">
+            <div class="pop-up-box">
+              <div class="link img-team">
+                <img
+                  class="img-border"
+                  srcset="./images/team/Chaplynska.jpg"
+                  src="./images/team/Chaplynska.jpg"
+                  alt="FOTO NAME"
+                  width="300"
+                  height="200"
+                />
+
+                <div class="pop-up-box-card">
+                  <ul class="pop-up-txt-card">
+                    <li class="social-box-icons">
+                      <a
+                        class="social-item-icon"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub-icon"
+                      >
+                        <svg class="social-icons" width="16" height="16">
+                          <use href="./images/icomoon.svg#icon-github"></use>
+                        </svg>
+                      </a>
+                    </li>
+
+                    <li class="social-box-icons">
+                      <a
+                        class="social-item-icon"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Linkedin-icon"
+                      >
+                        <svg class="social-icons" width="16" height="16">
+                          <use href="./images/icomoon.svg#icon-linkedin"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="title-card-box">
+              <h2 class="title-name-teams">Катерина Чаплинська</h2>
+              <p class="text-who-is-who">Developer</p>
+            </div>
+          </li>
+          <li class="team-img-frame">
+            <div class="pop-up-box">
+              <div class="link img-team">
+                <img
+                  class="img-border"
+                  srcset="./images/team/Kolos.jpg"
+                  src="./images/team/Kolos.jpg"
+                  alt="FOTO NAME"
+                  width="300"
+                  height="200"
+                />
+
+                <div class="pop-up-box-card">
+                  <ul class="pop-up-txt-card">
+                    <li class="social-box-icons">
+                      <a
+                        class="social-item-icon"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub-icon"
+                      >
+                        <svg class="social-icons" width="16" height="16">
+                          <use href="./images/icomoon.svg#icon-github"></use>
+                        </svg>
+                      </a>
+                    </li>
+
+                    <li class="social-box-icons">
+                      <a
+                        class="social-item-icon"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Linkedin-icon"
+                      >
+                        <svg class="social-icons" width="16" height="16">
+                          <use href="./images/icomoon.svg#icon-linkedin"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="title-card-box">
+              <h2 class="title-name-teams">Ірина Колос</h2>
+              <p class="text-who-is-who">Developer</p>
+            </div>
+          </li>
+          <li class="team-img-frame">
+            <div class="pop-up-box">
+              <div class="link img-team">
+                <img
+                  class="img-border"
+                  srcset="./images/team/Yevhen.jpg"
+                  src="./images/team/Yevhen.jpg"
+                  alt="FOTO NAME"
+                  width="300"
+                  height="200"
+                />
+
+                <div class="pop-up-box-card">
+                  <ul class="pop-up-txt-card">
+                    <li class="social-box-icons">
+                      <a
+                        class="social-item-icon"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub-icon"
+                      >
+                        <svg class="social-icons" width="16" height="16">
+                          <use href="./images/icomoon.svg#icon-github"></use>
+                        </svg>
+                      </a>
+                    </li>
+
+                    <li class="social-box-icons">
+                      <a
+                        class="social-item-icon"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Linkedin-icon"
+                      >
+                        <svg class="social-icons" width="16" height="16">
+                          <use href="./images/icomoon.svg#icon-linkedin"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="title-card-box">
+              <h2 class="title-name-teams">Євген Либін</h2>
+              <p class="text-who-is-who">Developer</p>
+            </div>
+          </li>
+          <li class="team-img-frame">
+            <div class="pop-up-box">
+              <div class="link img-team">
+                <img
+                  class="img-border"
+                  srcset="./images/team/Lapin.jpg"
+                  src="./images/team/Lapin.jpg"
+                  alt="FOTO NAME"
+                  width="300"
+                  height="200"
+                />
+
+                <div class="pop-up-box-card">
+                  <ul class="pop-up-txt-card">
+                    <li class="social-box-icons">
+                      <a
+                        class="social-item-icon"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub-icon"
+                      >
+                        <svg class="social-icons" width="16" height="16">
+                          <use href="./images/icomoon.svg#icon-github"></use>
+                        </svg>
+                      </a>
+                    </li>
+
+                    <li class="social-box-icons">
+                      <a
+                        class="social-item-icon"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Linkedin-icon"
+                      >
+                        <svg class="social-icons" width="16" height="16">
+                          <use href="./images/icomoon.svg#icon-linkedin"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="title-card-box">
+              <h2 class="title-name-teams">Олександр Лапін</h2>
+              <p class="text-who-is-who">Developer</p>
+            </div>
+          </li>
+          <li class="team-img-frame">
+            <div class="pop-up-box">
+              <div class="link img-team">
+                <img
+                  class="img-border"
+                  srcset="./images/team/Balandina.jpg"
+                  src="./images/team/Balandina.jpg"
+                  alt="FOTO NAME"
+                  width="300"
+                  height="200"
+                />
+
+                <div class="pop-up-box-card">
+                  <ul class="pop-up-txt-card">
+                    <li class="social-box-icons">
+                      <a
+                        class="social-item-icon"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub-icon"
+                      >
+                        <svg class="social-icons" width="16" height="16">
+                          <use href="./images/icomoon.svg#icon-github"></use>
+                        </svg>
+                      </a>
+                    </li>
+
+                    <li class="social-box-icons">
+                      <a
+                        class="social-item-icon"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Linkedin-icon"
+                      >
+                        <svg class="social-icons" width="16" height="16">
+                          <use href="./images/icomoon.svg#icon-linkedin"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="title-card-box">
+              <h2 class="title-name-teams">Ірина Баландіна</h2>
+              <p class="text-who-is-who">Developer</p>
+            </div>
+          </li>
+          <li class="team-img-frame">
+            <div class="pop-up-box">
+              <div class="link img-team">
+                <img
+                  class="img-border"
+                  srcset="./images/team/Бред.jpg"
+                  src="./images/team/Бред.jpg"
+                  alt="FOTO NAME"
+                  width="300"
+                  height="200"
+                />
+
+                <div class="pop-up-box-card">
+                  <ul class="pop-up-txt-card">
+                    <li class="social-box-icons">
+                      <a
+                        class="social-item-icon"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub-icon"
+                      >
+                        <svg class="social-icons" width="16" height="16">
+                          <use href="./images/icomoon.svg#icon-github"></use>
+                        </svg>
+                      </a>
+                    </li>
+
+                    <li class="social-box-icons">
+                      <a
+                        class="social-item-icon"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Linkedin-icon"
+                      >
+                        <svg class="social-icons" width="16" height="16">
+                          <use href="./images/icomoon.svg#icon-linkedin"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="title-card-box">
+              <h2 class="title-name-teams">Віталій Неживенко</h2>
+              <p class="text-who-is-who">Developer</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </main>
+    <script type="module" src="/team.js"></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+      integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
