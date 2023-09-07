@@ -28,6 +28,10 @@ getBooks();
 
 export function createMarkupBookShelf(category) {
   const { list_name, books } = category;
+  // loader
+  const loader = document.querySelector('.loader');
+
+  loader.style.display = 'none';
 
   const arrBookShelf = `
   <div class="best-list">
@@ -71,10 +75,13 @@ function bindSeeMoreEvent() {
   seeMoreBound = true;
 }
 export function renderBook({ book_image, title, author, _id }) {
+  const imageSrc = book_image ? book_image : 'https://raw.githubusercontent.com/JonniBig/BookVerse/main/src/images/plug picture/plug335x485@1x.jpg';
   return `
   <li class="book-item" id="${_id}">
+
     <a href= "${book_image}" aria-label="${title}" class="best-img-link">
       <img class="book-wrap" src="${book_image}" alt="${title}" loading="lazy"/>
+
         <div class="book-info-block">
           <p class="view">quick view</p>
           <p class="book-name">${title}</p>

@@ -24,7 +24,7 @@ window.matchMedia('(min-width: 768px)').addEventListener('change', e => {
   if (e.matches) {
     mobileMenu.classList.remove('is-open');
     openMenuBtn.setAttribute('aria-expanded', false);
-    // bodyScrollLock.enableBodyScroll(document.body);
+    bodyScrollLock.enableBodyScroll(document.body);
     closeMenuBtn.classList.add('hidden');
     openMenuBtn.classList.remove('hidden');
   } else {

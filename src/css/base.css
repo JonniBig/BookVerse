@@ -84,6 +84,7 @@ body {
   display: none;
   cursor: pointer;
   transition: background-color 0.3s, fill 0.3s;
+  opacity: 75%;
 
   /* box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08); */
@@ -107,4 +108,59 @@ body {
 .scroll-button.show {
   z-index: 100000;
   display: block;
+}
+
+.loader {
+  margin-top: 50px;
+
+  position: absolute;
+  top: 0;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: var(--violet-color);
+  transform: rotateX(65deg) rotate(45deg);
+
+  transform: perspective(200px) rotateX(65deg) rotate(45deg);
+  color: #6d51e8;
+  animation: layers1 1s linear infinite alternate;
+}
+.loader:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #b2a5ea;
+  animation: layerTr 1s linear infinite alternate;
+}
+
+@keyframes layers1 {
+  0% {
+    box-shadow: 0px 0px 0 0px;
+  }
+  90%,
+  100% {
+    box-shadow: 20px 20px 0 -4px;
+  }
+}
+@keyframes layerTr {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(-25px, -25px) scale(1);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .loader {
+    margin-top: 100px;
+    left: 45%;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .loader {
+    margin-top: 200px;
+    left: 47%;
+  }
 }

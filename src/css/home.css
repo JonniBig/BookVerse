@@ -135,6 +135,9 @@
   }
 }
 
+.container-bestsellers {
+  position: relative;
+}
 .right-wrapper {
   display: block;
 }

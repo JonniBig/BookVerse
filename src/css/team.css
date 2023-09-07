@@ -1,7 +1,5 @@
 .footer {
-  border: 1.5px solid var(--black1-color);
-  border-radius: 8px 8px 0 0;
-  background-color: var(--white-color);
+  background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,6 +29,7 @@
   color: var(--white-color);
   background-color: var(--violet-color);
   border-radius: 36px;
+  border: none;
 }
 .footer-site {
   color: var(--violet-color);
@@ -50,27 +49,74 @@
     gap: 140px;
   }
 }
-
-.big-big-btn {
-  font-size: 36px;
-  font-weight: bold;
-  width: 275px;
-  height: 275px;
-  background-color: var(--yellow-color);
-}
-.big-big-btn {
-  display: inline-block;
-  font-size: 36px;
-  font-weight: bold;
-  width: 275px;
-  height: 275px;
+/* cards */
+.cards-over {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
-  height: 320px;
-  border-radius: 160px;
-  background-color: var(--yellow-color);
-  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
-    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
-    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
-    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
-    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  height: 100%;
+  overflow: auto;
+  transform: translate(0, 100%);
+  transition: transform ease;
+  padding-top: 40px;
+  padding-left: 32px;
+  padding-right: 32px;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--cloud);
+  /* background-color: var(--yellow-color); */
+}
+.social-link-footer {
+  background-color: var(--iris);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: background-color var(--anim);
+}
+.team-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 72px;
+  align-items: center;
+}
+@media only screen and (min-width: 768px) {
+  .team-list {
+    display: flex;
+    flex-direction: row;
+    max-width: 768px;
+    gap: 72px 24px;
+    justify-content: space-between;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .team-list {
+    display: flex;
+    flex-direction: row;
+    max-width: 1128px;
+    gap: 24px;
+  }
+}
+.cards {
+  background-color: var(--white);
+}
+
+@media only screen and (min-width: 768px) {
+  .cards {
+    width: calc((100% - 64px) / 3);
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .cards {
+    width: calc((100% - 48px) / 3);
+  }
+}
+
+.team-home-link {
+  padding: 40px;
 }
