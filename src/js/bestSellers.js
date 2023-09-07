@@ -40,7 +40,7 @@ export function createMarkupBookShelf(category) {
            .join('')}
       </ul>
       <div class="btn-see-more">
-        <button type="button" class="see-more" data-category="${list_name}">SEE MORE</button>
+        <button type="button" aria-label="see more" class="see-more" data-category="${list_name}">SEE MORE</button>
       </div>
   </div>
   `;
@@ -48,22 +48,17 @@ export function createMarkupBookShelf(category) {
 
   bindSeeMoreEvent();
 }
-
+let seeMoreBound = false;
 function bindSeeMoreEvent() {
-  if (bestSellers._seeMoreBound) return;
-
-  //----------------------------
-  const seeMoreButtons = document.querySelectorAll('.see-more');
-
-  seeMoreButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const categoryName = button.getAttribute('data-category');
+  if (seeMoreBound) return;
+  const seeMoreContainer = document.querySelector('.bestseller'); // Контейнер, що містить кнопки "see-more"
+  seeMoreContainer.addEventListener('click', event => {
+    if (event.target.classList.contains('see-more')) {
+      const categoryName = event.target.getAttribute('data-category');
       fetchAndDisplayBooks(categoryName);
-
       const categoryLinks = document.querySelectorAll(
         '.categories .category_link'
       );
-
       categoryLinks.forEach(link => {
         if (link.textContent === categoryName) {
           link.classList.add('active-category');
@@ -71,26 +66,10 @@ function bindSeeMoreEvent() {
           link.classList.remove('active-category');
         }
       });
-    });
+    }
   });
+  seeMoreBound = true;
 }
-
-//----------------------------
-
-//   bestSellers.addEventListener('click', async event => {
-//     if (event.target.classList.contains('see-more')) {
-//       const categoryName = event.target.getAttribute('data-category');
-//       try {
-//         await fetchAndDisplayBooks(categoryName);
-//       } catch (error) {
-//         console.error('Error handling book click:', error);
-//       }
-//     }
-//   });
-//   bestSellers._seeMoreBound = true;
-
-//--------------------------------
-
 export function renderBook({ book_image, title, author, _id }) {
   return `
   <li class="book-item" id="${_id}">
