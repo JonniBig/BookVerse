@@ -4,8 +4,8 @@ Our team:
 
 1. Іvan Bigun - Team lead;
 2. Sergiy Machigin - Scrum master;
-3. 
-4. Yevhen Lubin.
+3.
+4. Yevhen Lybin.
 5. Vitaliy Negivenko.
 6. Oleksandr Fedorenko.
 7. Iryna Kolos.
